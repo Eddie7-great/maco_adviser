@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-18T02:36:26.574Z",
-  "source": "snapshot",
-  "successCount": 0,
+  "generatedAt": "2026-06-18T02:39:43.194Z",
+  "source": "FRED",
+  "successCount": 15,
   "failed": [],
   "series": {
     "FEDFUNDS": {
@@ -12,29 +12,29 @@
       "note": "기준금리 레벨이 높을수록 주식의 할인율 부담이 커집니다.",
       "observations": [
         {
-          "date": "2026-01",
+          "date": "2026-01-01",
           "value": 3.64
         },
         {
-          "date": "2026-02",
+          "date": "2026-02-01",
           "value": 3.64
         },
         {
-          "date": "2026-03",
+          "date": "2026-03-01",
           "value": 3.64
         },
         {
-          "date": "2026-04",
+          "date": "2026-04-01",
           "value": 3.64
         },
         {
-          "date": "2026-05",
+          "date": "2026-05-01",
           "value": 3.63
         }
       ],
-      "latestDate": "2026-05",
+      "latestDate": "2026-05-01",
       "latestValue": 3.63,
-      "fresh": false,
+      "fresh": true,
       "error": null
     },
     "DGS10": {
@@ -67,7 +67,7 @@
       ],
       "latestDate": "2026-06-16",
       "latestValue": 4.43,
-      "fresh": false,
+      "fresh": true,
       "error": null
     },
     "T10Y2Y": {
@@ -100,7 +100,7 @@
       ],
       "latestDate": "2026-06-17",
       "latestValue": 0.29,
-      "fresh": false,
+      "fresh": true,
       "error": null
     },
     "CPIAUCSL": {
@@ -111,29 +111,29 @@
       "note": "물가가 다시 빨라지면 금리 인하 기대와 밸류에이션에 부담입니다.",
       "observations": [
         {
-          "date": "2026-01",
+          "date": "2026-01-01",
           "value": 326.588
         },
         {
-          "date": "2026-02",
+          "date": "2026-02-01",
           "value": 327.46
         },
         {
-          "date": "2026-03",
+          "date": "2026-03-01",
           "value": 330.293
         },
         {
-          "date": "2026-04",
+          "date": "2026-04-01",
           "value": 332.407
         },
         {
-          "date": "2026-05",
+          "date": "2026-05-01",
           "value": 333.979
         }
       ],
-      "latestDate": "2026-05",
+      "latestDate": "2026-05-01",
       "latestValue": 333.979,
-      "fresh": false,
+      "fresh": true,
       "error": null
     },
     "PCEPI": {
@@ -144,29 +144,29 @@
       "note": "연준이 선호하는 물가지표라 통화정책 기대에 민감합니다.",
       "observations": [
         {
-          "date": "2025-12",
+          "date": "2025-12-01",
           "value": 128.576
         },
         {
-          "date": "2026-01",
+          "date": "2026-01-01",
           "value": 129.002
         },
         {
-          "date": "2026-02",
+          "date": "2026-02-01",
           "value": 129.52
         },
         {
-          "date": "2026-03",
+          "date": "2026-03-01",
           "value": 130.381
         },
         {
-          "date": "2026-04",
+          "date": "2026-04-01",
           "value": 130.902
         }
       ],
-      "latestDate": "2026-04",
+      "latestDate": "2026-04-01",
       "latestValue": 130.902,
-      "fresh": false,
+      "fresh": true,
       "error": null
     },
     "UNRATE": {
@@ -177,29 +177,29 @@
       "note": "급격한 상승은 침체 위험 신호이고, 안정은 소비와 이익 전망에 우호적입니다.",
       "observations": [
         {
-          "date": "2026-01",
+          "date": "2026-01-01",
           "value": 4.3
         },
         {
-          "date": "2026-02",
+          "date": "2026-02-01",
           "value": 4.4
         },
         {
-          "date": "2026-03",
+          "date": "2026-03-01",
           "value": 4.3
         },
         {
-          "date": "2026-04",
+          "date": "2026-04-01",
           "value": 4.3
         },
         {
-          "date": "2026-05",
+          "date": "2026-05-01",
           "value": 4.3
         }
       ],
-      "latestDate": "2026-05",
+      "latestDate": "2026-05-01",
       "latestValue": 4.3,
-      "fresh": false,
+      "fresh": true,
       "error": null
     },
     "PAYEMS": {
@@ -210,29 +210,29 @@
       "note": "고용 총량이 늘면 소비 여력이 유지됩니다. 둔화 속도가 핵심입니다.",
       "observations": [
         {
-          "date": "2026-01",
+          "date": "2026-01-01",
           "value": 158592
         },
         {
-          "date": "2026-02",
+          "date": "2026-02-01",
           "value": 158436
         },
         {
-          "date": "2026-03",
+          "date": "2026-03-01",
           "value": 158650
         },
         {
-          "date": "2026-04",
+          "date": "2026-04-01",
           "value": 158829
         },
         {
-          "date": "2026-05",
+          "date": "2026-05-01",
           "value": 159001
         }
       ],
-      "latestDate": "2026-05",
+      "latestDate": "2026-05-01",
       "latestValue": 159001,
-      "fresh": false,
+      "fresh": true,
       "error": null
     },
     "GDPC1": {
@@ -243,29 +243,29 @@
       "note": "실질 생산이 늘면 기업 이익 전망에 기본적으로 우호적입니다.",
       "observations": [
         {
-          "date": "2025-Q1",
+          "date": "2025-01-01",
           "value": 23548.21
         },
         {
-          "date": "2025-Q2",
+          "date": "2025-04-01",
           "value": 23770.976
         },
         {
-          "date": "2025-Q3",
+          "date": "2025-07-01",
           "value": 24026.834
         },
         {
-          "date": "2025-Q4",
+          "date": "2025-10-01",
           "value": 24055.749
         },
         {
-          "date": "2026-Q1",
+          "date": "2026-01-01",
           "value": 24152.656
         }
       ],
-      "latestDate": "2026-Q1",
+      "latestDate": "2026-01-01",
       "latestValue": 24152.656,
-      "fresh": false,
+      "fresh": true,
       "error": null
     },
     "INDPRO": {
@@ -276,29 +276,29 @@
       "note": "제조와 광공업 활동은 경기민감 업종을 볼 때 중요한 선행 단서입니다.",
       "observations": [
         {
-          "date": "2026-01",
+          "date": "2026-01-01",
           "value": 101.1235
         },
         {
-          "date": "2026-02",
+          "date": "2026-02-01",
           "value": 101.9493
         },
         {
-          "date": "2026-03",
+          "date": "2026-03-01",
           "value": 101.6273
         },
         {
-          "date": "2026-04",
+          "date": "2026-04-01",
           "value": 102.509
         },
         {
-          "date": "2026-05",
+          "date": "2026-05-01",
           "value": 102.6475
         }
       ],
-      "latestDate": "2026-05",
+      "latestDate": "2026-05-01",
       "latestValue": 102.6475,
-      "fresh": false,
+      "fresh": true,
       "error": null
     },
     "RSAFS": {
@@ -309,29 +309,29 @@
       "note": "명목 소비 흐름입니다. 물가 영향을 빼고 실질 구매력도 함께 봐야 합니다.",
       "observations": [
         {
-          "date": "2026-01",
+          "date": "2026-01-01",
           "value": 734503
         },
         {
-          "date": "2026-02",
+          "date": "2026-02-01",
           "value": 741278
         },
         {
-          "date": "2026-03",
+          "date": "2026-03-01",
           "value": 754013
         },
         {
-          "date": "2026-04",
+          "date": "2026-04-01",
           "value": 757036
         },
         {
-          "date": "2026-05",
+          "date": "2026-05-01",
           "value": 763705
         }
       ],
-      "latestDate": "2026-05",
+      "latestDate": "2026-05-01",
       "latestValue": 763705,
-      "fresh": false,
+      "fresh": true,
       "error": null
     },
     "UMCSENT": {
@@ -342,29 +342,29 @@
       "note": "소비심리는 재량소비주와 경기 체감에 민감한 경고등입니다.",
       "observations": [
         {
-          "date": "2025-12",
+          "date": "2025-12-01",
           "value": 52.9
         },
         {
-          "date": "2026-01",
+          "date": "2026-01-01",
           "value": 56.4
         },
         {
-          "date": "2026-02",
+          "date": "2026-02-01",
           "value": 56.6
         },
         {
-          "date": "2026-03",
+          "date": "2026-03-01",
           "value": 53.3
         },
         {
-          "date": "2026-04",
+          "date": "2026-04-01",
           "value": 49.8
         }
       ],
-      "latestDate": "2026-04",
+      "latestDate": "2026-04-01",
       "latestValue": 49.8,
-      "fresh": false,
+      "fresh": true,
       "error": null
     },
     "HOUST": {
@@ -375,29 +375,29 @@
       "note": "금리 부담과 건설 경기 변화를 빠르게 보여주는 민감 지표입니다.",
       "observations": [
         {
-          "date": "2026-01",
+          "date": "2026-01-01",
           "value": 1385
         },
         {
-          "date": "2026-02",
+          "date": "2026-02-01",
           "value": 1346
         },
         {
-          "date": "2026-03",
+          "date": "2026-03-01",
           "value": 1522
         },
         {
-          "date": "2026-04",
+          "date": "2026-04-01",
           "value": 1392
         },
         {
-          "date": "2026-05",
+          "date": "2026-05-01",
           "value": 1177
         }
       ],
-      "latestDate": "2026-05",
+      "latestDate": "2026-05-01",
       "latestValue": 1177,
-      "fresh": false,
+      "fresh": true,
       "error": null
     },
     "M2SL": {
@@ -408,29 +408,29 @@
       "note": "유동성 총량이 늘면 위험자산에 완충 역할을 할 수 있습니다.",
       "observations": [
         {
-          "date": "2025-12",
+          "date": "2025-12-01",
           "value": 22353.5
         },
         {
-          "date": "2026-01",
+          "date": "2026-01-01",
           "value": 22429.3
         },
         {
-          "date": "2026-02",
+          "date": "2026-02-01",
           "value": 22627
         },
         {
-          "date": "2026-03",
+          "date": "2026-03-01",
           "value": 22686.4
         },
         {
-          "date": "2026-04",
+          "date": "2026-04-01",
           "value": 22804.5
         }
       ],
-      "latestDate": "2026-04",
+      "latestDate": "2026-04-01",
       "latestValue": 22804.5,
-      "fresh": false,
+      "fresh": true,
       "error": null
     },
     "MORTGAGE30US": {
@@ -463,7 +463,7 @@
       ],
       "latestDate": "2026-06-11",
       "latestValue": 6.52,
-      "fresh": false,
+      "fresh": true,
       "error": null
     },
     "BAMLH0A0HYM2": {
@@ -496,7 +496,7 @@
       ],
       "latestDate": "2026-06-16",
       "latestValue": 2.71,
-      "fresh": false,
+      "fresh": true,
       "error": null
     }
   }
