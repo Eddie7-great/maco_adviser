@@ -384,8 +384,10 @@ function renderCharts() {
         <div class="chart-title"><strong>${chart.title}</strong>${helpMarkup(chart.help)}</div>
         <a class="chart-open-link" href="${fredGraphUrl(chart.ids)}" target="_blank" rel="noreferrer">FRED에서 열기</a>
       </header>
-      <iframe class="fred-frame" title="${chart.title} FRED 인터랙티브 차트" src="${fredGraphUrl(chart.ids)}" loading="lazy"></iframe>
-      <a class="chart-fallback-link" href="${fredGraphUrl(chart.ids)}" target="_blank" rel="noreferrer">${chart.label}</a>
+      <a class="chart-canvas-link" href="${fredGraphUrl(chart.ids)}" target="_blank" rel="noreferrer" aria-label="${chart.title} FRED 원본 열기">
+        ${macroChart(chart)}
+      </a>
+      <a class="chart-fallback-link" href="${fredGraphUrl(chart.ids)}" target="_blank" rel="noreferrer">${chart.label} · 원본 FRED</a>
     </article>
   `).join("");
 }
@@ -515,6 +517,61 @@ function sparkline(list) {
   const path = points.map(([x, y], index) => `${index === 0 ? "M" : "L"} ${x.toFixed(1)} ${y.toFixed(1)}`).join(" ");
   const last = points.at(-1);
   return `<svg class="sparkline" viewBox="0 0 ${width} ${height}" role="img" aria-label="최근 추이"><path d="${path}"></path><circle cx="${last[0].toFixed(1)}" cy="${last[1].toFixed(1)}" r="4"></circle></svg>`;
+}
+
+function macroChart(chart) {
+  const width = 720;
+  const height = 320;
+  const margin = { top: 28, right: 28, bottom: 42, left: 54 };
+  const plotWidth = width - margin.left - margin.right;
+  const plotHeight = height - margin.top - margin.bottom;
+  const ids = chart.ids.split(",");
+  const colors = ["#2d6f8f", "#176f52", "#a66b1f", "#a94c45"];
+  const series = ids.map((id, index) => {
+    const entry = get(id);
+    const observations = entry.observations;
+    const vals = observations.map((row) => row.value);
+    const min = Math.min(...vals);
+    const max = Math.max(...vals);
+    const range = max - min || 1;
+    const points = observations.map((row, pointIndex) => {
+      const x = margin.left + (pointIndex / Math.max(1, observations.length - 1)) * plotWidth;
+      const y = margin.top + plotHeight - ((row.value - min) / range) * plotHeight;
+      return { ...row, x, y };
+    });
+    return { id, entry, points, color: colors[index % colors.length] };
+  });
+  const allDates = series[0]?.points || [];
+  const firstDate = allDates[0]?.date || "";
+  const lastDate = allDates.at(-1)?.date || "";
+
+  return `
+    <svg class="macro-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeHtml(chart.title)} 최근 추이 비교">
+      <rect class="chart-bg" x="0" y="0" width="${width}" height="${height}" rx="8"></rect>
+      <line class="axis" x1="${margin.left}" y1="${margin.top}" x2="${margin.left}" y2="${height - margin.bottom}"></line>
+      <line class="axis" x1="${margin.left}" y1="${height - margin.bottom}" x2="${width - margin.right}" y2="${height - margin.bottom}"></line>
+      <line class="grid-line" x1="${margin.left}" y1="${margin.top}" x2="${width - margin.right}" y2="${margin.top}"></line>
+      <line class="grid-line" x1="${margin.left}" y1="${margin.top + plotHeight / 2}" x2="${width - margin.right}" y2="${margin.top + plotHeight / 2}"></line>
+      <text class="axis-label" x="14" y="${margin.top + 4}">상대 높음</text>
+      <text class="axis-label" x="14" y="${height - margin.bottom + 4}">상대 낮음</text>
+      <text class="axis-label" x="${margin.left}" y="${height - 14}">${escapeHtml(shortDate(firstDate))}</text>
+      <text class="axis-label end" x="${width - margin.right}" y="${height - 14}">${escapeHtml(shortDate(lastDate))}</text>
+      ${series.map((line) => `
+        <path class="macro-line" d="${line.points.map((point, index) => `${index === 0 ? "M" : "L"} ${point.x.toFixed(1)} ${point.y.toFixed(1)}`).join(" ")}" style="stroke:${line.color}"></path>
+        ${line.points.map((point) => `
+          <circle class="macro-point" cx="${point.x.toFixed(1)}" cy="${point.y.toFixed(1)}" r="5" style="fill:${line.color}">
+            <title>${line.id} · ${point.date} · ${formatValue(line.entry, point.value)} ${line.entry.unit}</title>
+          </circle>
+        `).join("")}
+      `).join("")}
+      <g class="chart-legend">
+        ${series.map((line, index) => {
+          const x = margin.left + index * 148;
+          return `<g transform="translate(${x}, 12)"><circle r="5" style="fill:${line.color}"></circle><text x="10" y="4">${line.id}</text></g>`;
+        }).join("")}
+      </g>
+    </svg>
+  `;
 }
 
 renderAll();

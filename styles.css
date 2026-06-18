@@ -274,11 +274,11 @@ h3 { font-size: 17px; }
   text-decoration: underline;
 }
 
-.fred-frame {
+.chart-canvas-link {
   width: 100%;
-  height: 520px;
   display: block;
-  border: 0;
+  color: inherit;
+  text-decoration: none;
   background: #ffffff;
 }
 
@@ -287,6 +287,60 @@ h3 { font-size: 17px; }
   padding: 10px 16px 14px;
   border-top: 1px solid var(--line);
   background: #fbfcfa;
+}
+
+.macro-chart {
+  width: 100%;
+  min-height: 320px;
+  display: block;
+  background: #ffffff;
+}
+
+.chart-bg {
+  fill: #ffffff;
+}
+
+.axis {
+  stroke: #7a8680;
+  stroke-width: 1.2;
+}
+
+.grid-line {
+  stroke: #dfe5dd;
+  stroke-width: 1;
+}
+
+.axis-label {
+  fill: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.axis-label.end {
+  text-anchor: end;
+}
+
+.macro-line {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.macro-point {
+  stroke: #ffffff;
+  stroke-width: 2;
+  cursor: pointer;
+}
+
+.macro-point:hover {
+  r: 7;
+}
+
+.chart-legend text {
+  fill: var(--ink);
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .info-wrap {
@@ -457,6 +511,5 @@ h3 { font-size: 17px; }
   .score-grid, .pulse-grid, .playbook-grid { grid-template-columns: 1fr; }
   .playbook-card { grid-template-columns: 1fr; }
   .asset-list { grid-template-columns: 1fr; }
-  .fred-frame { height: 460px; }
   .indicator-value strong { font-size: 28px; }
 }
