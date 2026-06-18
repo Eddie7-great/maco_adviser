@@ -29,11 +29,144 @@ const groupNames = {
   risk: "유동성/신용",
 };
 
+const indicatorHelp = {
+  FEDFUNDS: {
+    title: "연방기금 실효금리",
+    what: "미국 은행들이 하루짜리 자금을 빌리고 빌려줄 때 실제로 형성되는 초단기 금리입니다. 연준 통화정책의 현재 긴축 강도를 보여줍니다.",
+    up: "상승하면 자금 조달 비용과 할인율이 올라 성장주, 고평가주, 하이일드 채권 등 위험자산에는 대체로 부담입니다.",
+    down: "하락하면 유동성 기대가 커져 성장주와 위험자산에는 우호적일 수 있지만, 경기 둔화 때문에 내리는 경우라면 방어적으로 봐야 합니다.",
+  },
+  DGS10: {
+    title: "미국 10년물 국채금리",
+    what: "미국 정부가 10년 동안 돈을 빌릴 때 시장이 요구하는 금리입니다. 글로벌 자산 가격의 기준 할인율 역할을 합니다.",
+    up: "상승하면 주식 밸류에이션, 장기 성장주, 부동산·리츠에 부담입니다. 금융주는 일부 수혜를 볼 수 있습니다.",
+    down: "하락하면 성장주와 장기채에는 우호적입니다. 다만 급락은 경기침체 우려 신호일 수 있습니다.",
+  },
+  T10Y2Y: {
+    title: "10년-2년 금리차",
+    what: "10년물 금리에서 2년물 금리를 뺀 값입니다. 장단기 금리차로 경기 기대와 침체 가능성을 볼 때 자주 씁니다.",
+    up: "상승하면 경기 정상화 기대가 커진 것으로 해석될 수 있어 경기민감주에 우호적입니다.",
+    down: "하락하거나 마이너스면 경기 둔화·침체 우려가 커져 위험자산에는 부담입니다.",
+  },
+  CPIAUCSL: {
+    title: "소비자물가지수 CPI",
+    what: "미국 소비자가 사는 상품과 서비스 가격의 평균 변화를 보여주는 대표 물가지표입니다.",
+    up: "상승하면 금리 인하 기대가 약해져 주식, 특히 성장주에는 부담입니다. 원자재·물가연동 자산은 상대적으로 주목받을 수 있습니다.",
+    down: "하락하면 금리 부담 완화 기대가 생겨 주식과 채권에 우호적일 수 있습니다.",
+  },
+  PCEPI: {
+    title: "PCE 물가지수",
+    what: "개인소비지출 가격지수입니다. 연준이 통화정책 판단에서 특히 중요하게 보는 물가지표입니다.",
+    up: "상승하면 연준이 긴축적 태도를 유지할 가능성이 커져 위험자산에는 부담입니다.",
+    down: "하락하면 금리 인하 기대가 강화되어 성장주, 장기채, 리츠에 우호적일 수 있습니다.",
+  },
+  UNRATE: {
+    title: "실업률",
+    what: "경제활동인구 중 일자리를 찾고 있지만 취업하지 못한 사람의 비율입니다.",
+    up: "상승하면 소비와 기업 이익 둔화 우려가 커져 주식과 하이일드 채권에는 부담입니다.",
+    down: "하락하면 고용과 소비가 견조하다는 신호라 경기민감주에 우호적입니다. 너무 낮으면 임금·물가 압력도 봐야 합니다.",
+  },
+  PAYEMS: {
+    title: "비농업 고용",
+    what: "농업을 제외한 미국 사업체의 고용자 수입니다. 매월 고용보고서의 핵심 지표입니다.",
+    up: "증가하면 소비 여력과 기업 매출 기대가 좋아져 주식에 우호적입니다. 과열이면 금리 부담을 키울 수 있습니다.",
+    down: "감소하면 경기 둔화 신호라 위험자산에는 부담이고 방어주·국채 선호가 커질 수 있습니다.",
+  },
+  GDPC1: {
+    title: "실질 GDP",
+    what: "물가 영향을 제거한 미국 경제 전체 생산 규모입니다. 경기의 큰 방향을 보여줍니다.",
+    up: "상승하면 기업 이익 기반이 좋아져 주식, 경기민감주, 원자재에 우호적입니다.",
+    down: "하락하면 침체 우려가 커져 위험자산에는 부담이고 방어자산 선호가 커집니다.",
+  },
+  INDPRO: {
+    title: "산업생산",
+    what: "제조업, 광업, 전력·가스 등 산업 부문의 생산량을 보여줍니다.",
+    up: "상승하면 제조업과 경기민감 업종에 우호적이며 원자재 수요 기대도 좋아질 수 있습니다.",
+    down: "하락하면 수요 둔화 신호라 산업재, 소재, 반도체 등 경기민감 자산에 부담입니다.",
+  },
+  RSAFS: {
+    title: "소매판매",
+    what: "미국 소매업체의 판매액입니다. 소비가 미국 경제를 얼마나 받쳐주는지 보는 지표입니다.",
+    up: "상승하면 소비재, 경기민감주, 주식 전반에 우호적입니다. 물가 때문에 명목 판매만 늘었는지도 봐야 합니다.",
+    down: "하락하면 소비 둔화 신호라 재량소비주와 위험자산에는 부담입니다.",
+  },
+  UMCSENT: {
+    title: "미시간대 소비심리",
+    what: "가계가 현재와 미래 경제를 어떻게 느끼는지 조사한 심리지표입니다.",
+    up: "상승하면 소비 회복 기대가 커져 재량소비주와 경기민감주에 우호적입니다.",
+    down: "하락하면 소비 위축 가능성이 커져 위험자산에는 부담입니다.",
+  },
+  HOUST: {
+    title: "주택착공",
+    what: "새 주택 건설이 시작된 건수입니다. 금리와 경기 변화에 민감한 주택 경기 지표입니다.",
+    up: "상승하면 건설, 목재·소재, 주택 관련주에 우호적입니다.",
+    down: "하락하면 금리 부담이나 수요 둔화 신호라 주택 관련주와 경기민감주에 부담입니다.",
+  },
+  M2SL: {
+    title: "M2 통화량",
+    what: "현금, 예금, 단기성 금융상품 등 넓은 의미의 돈의 양입니다. 유동성 환경을 볼 때 참고합니다.",
+    up: "상승하면 유동성 완충이 생겨 주식과 위험자산에 우호적일 수 있습니다.",
+    down: "하락하면 유동성 축소 신호라 위험자산에는 부담입니다.",
+  },
+  MORTGAGE30US: {
+    title: "30년 고정 모기지 금리",
+    what: "미국 30년 고정 주택담보대출 금리입니다. 주택 수요와 가계 부담을 보여줍니다.",
+    up: "상승하면 주택 수요, 리츠, 건설주, 소비 여력에 부담입니다.",
+    down: "하락하면 주택 관련주와 소비 심리에 우호적일 수 있습니다.",
+  },
+  BAMLH0A0HYM2: {
+    title: "하이일드 OAS",
+    what: "투기등급 회사채가 미국 국채보다 얼마나 높은 보상을 요구하는지 보여주는 신용 스프레드입니다.",
+    up: "상승하면 신용위험 회피가 커진다는 뜻이라 주식, 하이일드 채권, 소형주에 부담입니다.",
+    down: "하락하면 위험 선호가 개선되는 신호라 주식과 크레딧 자산에 우호적입니다.",
+  },
+};
+
 const chartSets = [
-  { title: "금리와 경기 압력", ids: "FEDFUNDS,DGS10,T10Y2Y", label: "FEDFUNDS · DGS10 · T10Y2Y" },
-  { title: "물가 추세", ids: "CPIAUCSL,PCEPI", label: "CPIAUCSL · PCEPI" },
-  { title: "고용과 성장", ids: "UNRATE,PAYEMS,GDPC1", label: "UNRATE · PAYEMS · GDPC1" },
-  { title: "소비·주택·신용", ids: "RSAFS,HOUST,UMCSENT,BAMLH0A0HYM2", label: "RSAFS · HOUST · UMCSENT · HY OAS" },
+  {
+    title: "금리와 경기 압력",
+    ids: "FEDFUNDS,DGS10,T10Y2Y",
+    label: "FEDFUNDS · DGS10 · T10Y2Y",
+    help: {
+      title: "금리와 경기 압력",
+      what: "기준금리, 장기금리, 장단기 금리차를 함께 보며 통화정책 부담과 경기 기대를 확인합니다.",
+      up: "금리 레벨이 높아지고 금리차가 낮아지면 위험자산에는 부담입니다.",
+      down: "금리 부담이 낮아지고 금리차가 정상화되면 성장주와 경기민감주에 우호적입니다.",
+    },
+  },
+  {
+    title: "물가 추세",
+    ids: "CPIAUCSL,PCEPI",
+    label: "CPIAUCSL · PCEPI",
+    help: {
+      title: "물가 추세",
+      what: "CPI와 PCE를 함께 보며 연준의 금리 경로와 실질 구매력 부담을 판단합니다.",
+      up: "물가 재상승은 금리 인하 기대를 낮춰 주식 밸류에이션에 부담입니다.",
+      down: "물가 둔화는 금리 부담 완화와 실질소득 개선 기대를 통해 위험자산에 우호적입니다.",
+    },
+  },
+  {
+    title: "고용과 성장",
+    ids: "UNRATE,PAYEMS,GDPC1",
+    label: "UNRATE · PAYEMS · GDPC1",
+    help: {
+      title: "고용과 성장",
+      what: "노동시장과 실질 성장률을 묶어 기업 이익과 소비 기반이 유지되는지 봅니다.",
+      up: "고용과 GDP가 개선되면 주식과 경기민감 자산에 우호적입니다.",
+      down: "고용 악화와 성장 둔화가 겹치면 방어주, 현금, 국채 선호가 커질 수 있습니다.",
+    },
+  },
+  {
+    title: "소비·주택·신용",
+    ids: "RSAFS,HOUST,UMCSENT,BAMLH0A0HYM2",
+    label: "RSAFS · HOUST · UMCSENT · HY OAS",
+    help: {
+      title: "소비·주택·신용",
+      what: "소비 체력, 주택 경기, 신용위험을 함께 보며 위험 선호가 유지되는지 확인합니다.",
+      up: "소비·주택은 상승이 우호적이지만, 하이일드 스프레드 상승은 위험자산에 부담입니다.",
+      down: "소비·주택 둔화는 부담이고, 스프레드 하락은 위험 선호 개선 신호입니다.",
+    },
+  },
 ];
 
 let macroData = fallbackData;
@@ -144,6 +277,7 @@ function renderScores() {
 
 function renderPlaybook() {
   const view = buildMacroView();
+  const assets = buildAssetPreference(view);
   const stance = view.total >= 3
     ? ["주식 비중: 점진 확대", "성장과 고용이 받쳐주고 신용 스트레스가 낮은 조합입니다. 금리와 물가 부담이 남아 있으면 분할 접근이 낫습니다."]
     : view.total <= -3
@@ -158,9 +292,51 @@ function renderPlaybook() {
   const dataTrust = view.freshRatio >= 0.5
     ? ["데이터 신뢰도: 양호", "대부분 또는 절반 이상의 지표가 Actions로 갱신되었습니다. 다음 갱신 시각은 GitHub Actions 실행 주기에 따릅니다."]
     : ["데이터 신뢰도: 보조 판단", "Actions가 아직 충분히 갱신하지 못했거나 초기 스냅샷입니다. 워크플로 첫 실행 후 다시 확인하세요."];
-  document.querySelector("#playbookGrid").innerHTML = [stance, growthStyle, cyclicals, dataTrust].map(([title, text]) => `
+  const assetCard = [
+    "자산군 유리/불리",
+    `<b>유리:</b> ${assets.favorable.join(", ")}<br><b>불리:</b> ${assets.unfavorable.join(", ")}<br><b>관찰:</b> ${assets.watch}`,
+  ];
+  document.querySelector("#playbookGrid").innerHTML = [stance, growthStyle, cyclicals, assetCard, dataTrust].map(([title, text]) => `
     <article><h3>${title}</h3><p>${text}</p></article>
   `).join("");
+}
+
+function buildAssetPreference(view) {
+  const favorable = [];
+  const unfavorable = [];
+  const watch = [];
+
+  if (view.buckets.rates.score <= -2 || view.buckets.inflation.score <= -1) {
+    favorable.push("현금성 자산", "단기채", "퀄리티·배당주");
+    unfavorable.push("장기 성장주", "리츠", "주택 관련주");
+    watch.push("10년물 금리와 CPI/PCE 둔화 여부");
+  } else {
+    favorable.push("성장주", "장기채", "리츠");
+    unfavorable.push("과도한 현금 비중");
+    watch.push("금리 하락이 경기침체 신호인지 여부");
+  }
+
+  if (view.buckets.growth.score + view.buckets.consumer.score >= 2) {
+    favorable.push("산업재", "소비재", "소재·반도체");
+  } else {
+    favorable.push("필수소비재", "헬스케어");
+    unfavorable.push("경기민감주", "소형주");
+    watch.push("소매판매와 산업생산 회복 여부");
+  }
+
+  if (view.buckets.risk.score <= -1) {
+    favorable.push("미국 국채", "달러 방어 포지션");
+    unfavorable.push("하이일드 채권", "레버리지 높은 기업");
+    watch.push("하이일드 OAS 급등 여부");
+  } else {
+    favorable.push("우량 크레딧", "위험자산 분할 매수");
+  }
+
+  return {
+    favorable: unique(favorable).slice(0, 7),
+    unfavorable: unique(unfavorable).slice(0, 6),
+    watch: unique(watch).join(", "),
+  };
 }
 
 function classifyIndicator(entry) {
@@ -181,10 +357,14 @@ function renderIndicators(filter = activeFilter) {
   const visible = indicators.filter((entry) => filter === "all" || entry.group === filter);
   document.querySelector("#indicatorGrid").innerHTML = visible.map((entry) => {
     const badge = classifyIndicator(entry);
+    const help = indicatorHelp[entry.id];
     return `
       <a class="indicator-card" href="${fredUrl(entry.id)}" target="_blank" rel="noreferrer">
         <div class="indicator-head">
-          <div class="indicator-title"><span>${groupNames[entry.group]} · ${entry.id} · ${entry.fresh ? "Actions 갱신" : "스냅샷"}</span><h3>${entry.name}</h3></div>
+          <div class="indicator-title">
+            <span class="indicator-meta">${groupNames[entry.group]} · ${entry.id} · ${entry.fresh ? "Actions 갱신" : "스냅샷"}</span>
+            <h3><span class="heading-label">${entry.name}</span>${helpMarkup(help)}</h3>
+          </div>
           <span class="badge ${badge.cls}">${badge.text}</span>
         </div>
         <div class="indicator-value"><strong>${formatValue(entry, entry.latestValue)}</strong><span>${entry.unit}</span></div>
@@ -199,7 +379,10 @@ function renderIndicators(filter = activeFilter) {
 function renderCharts() {
   document.querySelector("#chartGrid").innerHTML = chartSets.map((chart) => `
     <article class="chart-card">
-      <header><strong>${chart.title}</strong><span>${chart.label}</span></header>
+      <header>
+        <div class="chart-title"><strong>${chart.title}</strong>${helpMarkup(chart.help)}</div>
+        <span class="chart-label">${chart.label}</span>
+      </header>
       <img src="${fredImage(chart.ids)}" alt="${chart.title} FRED 차트" loading="lazy" />
     </article>
   `).join("");
@@ -221,6 +404,19 @@ function bindFilters() {
   });
 }
 
+function bindInfoTooltips() {
+  document.addEventListener("click", (event) => {
+    const trigger = event.target.closest(".info-wrap");
+    document.querySelectorAll(".info-wrap.open").forEach((item) => {
+      if (item !== trigger) item.classList.remove("open");
+    });
+    if (!trigger) return;
+    event.preventDefault();
+    event.stopPropagation();
+    trigger.classList.toggle("open");
+  });
+}
+
 function renderAll() {
   renderMacroJudgement();
   renderScores();
@@ -234,11 +430,36 @@ function get(id) { return macroData.series[id] || fallbackData.series[id]; }
 function values(id) { return get(id).observations.map((row) => row.value); }
 function trend(id) { const list = values(id); return list.at(-1) - list[0]; }
 function setText(id, value) { const target = document.querySelector(`#${id}`); if (target) target.textContent = value; }
+function unique(list) { return [...new Set(list)]; }
 function fredUrl(id) { return `https://fred.stlouisfed.org/series/${id}`; }
 function fredImage(ids) { return `https://fred.stlouisfed.org/graph/fredgraph.png?id=${ids}&cosd=2019-01-01`; }
 function formatDateTime(date) { return Number.isNaN(date.valueOf()) ? "-" : new Intl.DateTimeFormat("ko-KR", { dateStyle: "medium", timeStyle: "short" }).format(date); }
 function fmt(value, unit) { return unit === "%" ? `${value.toFixed(2)}%` : value.toLocaleString("ko-KR", { maximumFractionDigits: 1 }); }
 function directionText(list) { const diff = list.at(-1) - list[0]; return Math.abs(diff) < 0.01 ? "변화 작음" : diff > 0 ? "최근 상승" : "최근 하락"; }
+
+function helpMarkup(help) {
+  if (!help) return "";
+  return `
+    <span class="info-wrap" tabindex="0" role="button" aria-label="${escapeHtml(help.title)} 설명 보기">
+      <span class="info-dot" aria-hidden="true">❔</span>
+      <span class="tooltip-panel" role="tooltip">
+        <strong>${escapeHtml(help.title)}</strong>
+        <span>${escapeHtml(help.what)}</span>
+        <span><b>상승:</b> ${escapeHtml(help.up)}</span>
+        <span><b>하락:</b> ${escapeHtml(help.down)}</span>
+      </span>
+    </span>
+  `;
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
 
 function formatValue(entry, value) {
   if (entry.unit === "%" || entry.unit === "%p") return value.toFixed(Math.abs(value) < 10 ? 2 : 1);
@@ -265,4 +486,5 @@ function sparkline(list) {
 
 renderAll();
 bindFilters();
+bindInfoTooltips();
 loadData();
