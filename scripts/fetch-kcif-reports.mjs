@@ -31,6 +31,7 @@ async function fetchText(url) {
 
 function stripHtml(value) {
   return decodeEntities(String(value || "")
+    .replace(/<br\s*\/?>/gi, "\n")
     .replace(/<script[\s\S]*?<\/script>/gi, " ")
     .replace(/<style[\s\S]*?<\/style>/gi, " ")
     .replace(/<[^>]+>/g, " ")
@@ -50,6 +51,19 @@ function decodeEntities(value) {
     .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'");
+}
+
+function stripHtmlWithBreaks(value) {
+  return decodeEntities(String(value || "")
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<\/(p|div|strong|li)>/gi, "\n")
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/[ \t]+/g, " ")
+    .replace(/\n\s+/g, "\n")
+    .replace(/\n{2,}/g, "\n")
+    .trim());
 }
 
 function absoluteUrl(href) {
@@ -92,10 +106,11 @@ function findLatestReport(listHtml, target) {
   };
 }
 
-function extractFocus(detailHtml) {
-  const bodyText = stripHtml(detailHtml);
+function extractFocus(detailHtml, kind) {
+  const contentHtml = detailHtml.match(/<div class="cont_area[^"]*">([\s\S]*?)<\/div>\s*<div class="btn_wrap">/i)?.[1] || detailHtml;
+  const bodyText = stripHtml(contentHtml);
   const focusStart = bodyText.indexOf("Monthly Focus");
-  if (focusStart < 0) return [];
+  if (focusStart < 0) return extractStructuredSections(contentHtml, kind);
 
   const tail = bodyText.slice(focusStart + "Monthly Focus".length);
   const endMarkers = ["목록", "작성자", "이전 다음", "최근 발간 보고서"];
@@ -112,6 +127,36 @@ function extractFocus(detailHtml) {
     .slice(0, 4);
 
   return bullets.length ? bullets : [focusText].filter(Boolean).slice(0, 1);
+}
+
+function extractStructuredSections(contentHtml, kind) {
+  const text = stripHtmlWithBreaks(contentHtml)
+    .replace(/\s*ㅁ\s*/g, "\nㅁ ")
+    .replace(/\s*ㅇ\s*/g, "\nㅇ ");
+  const sections = [];
+  let current = null;
+
+  for (const rawLine of text.split(/\n+/)) {
+    const line = rawLine.trim();
+    if (!line) continue;
+    if (line.startsWith("ㅁ ")) {
+      const title = line.replace(/^ㅁ\s*/, "").trim();
+      if (/최근 발간 보고서 목록/.test(title)) continue;
+      current = { title, items: [] };
+      sections.push(current);
+      continue;
+    }
+    if (line.startsWith("ㅇ ") && current) {
+      current.items.push(line.replace(/^ㅇ\s*/, "").trim());
+    }
+  }
+
+  const summaries = sections
+    .map((section) => section.items.length ? `${section.title}: ${section.items.join(", ")}` : section.title)
+    .filter((item) => item.length >= 3)
+    .slice(0, kind === "insight" ? 4 : 3);
+
+  return summaries.length ? summaries : [stripHtml(contentHtml)].filter(Boolean).slice(0, 1);
 }
 
 function defaultImplication(kind) {
@@ -134,6 +179,9 @@ function buildAdvice(reports) {
   if (/신흥국|달러|외환|자본유출/.test(text)) {
     advice.push("신흥국·달러 스트레스가 커질 때는 달러 방어 포지션과 미국 국채의 방어 역할을 같이 봅니다.");
   }
+  if (/세계경제|국제ㆍ국내금융시장|글로벌 은행산업|은행산업/.test(text)) {
+    advice.push("INSIGHT가 세계경제, 금융시장, 은행산업을 점검축으로 제시할 때는 지수 방향보다 금리·신용·은행 유동성의 동시 악화 여부를 먼저 확인합니다.");
+  }
   if (/AI|버블|주식|밸류에이션/.test(text)) {
     advice.push("AI·주식 밸류에이션 리스크가 언급되면 실적 가시성과 현금흐름으로 가격을 방어할 수 있는 종목을 선별합니다.");
   }
@@ -152,7 +200,7 @@ async function main() {
     const report = findLatestReport(listHtml, target);
     try {
       const detailHtml = await fetchText(report.url);
-      report.focus = extractFocus(detailHtml);
+      report.focus = extractFocus(detailHtml, report.kind);
     } catch (error) {
       report.error = String(error.message || error);
     }

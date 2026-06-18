@@ -457,14 +457,28 @@ function chartKeyMarkup(chart) {
       ${chart.ids.split(",").map((id, index) => {
         const entry = get(id);
         return `
-          <span>
+          <span class="legend-item" tabindex="0">
             <i style="background:${chartColors[index % chartColors.length]}"></i>
             ${escapeHtml(entry.name)}
             <small>${escapeHtml(id)}</small>
+            ${legendTooltipMarkup(id)}
           </span>
         `;
       }).join("")}
     </div>
+  `;
+}
+
+function legendTooltipMarkup(id) {
+  const help = indicatorHelp[id];
+  if (!help) return "";
+  return `
+    <span class="legend-tooltip">
+      <strong>${escapeHtml(help.title)}</strong>
+      <span>${escapeHtml(help.what)}</span>
+      <span><b>상승:</b> ${escapeHtml(help.up)}</span>
+      <span><b>하락:</b> ${escapeHtml(help.down)}</span>
+    </span>
   `;
 }
 
@@ -585,7 +599,7 @@ function escapeHtml(value) {
 }
 
 function reportFocusMarkup(report) {
-  const focus = Array.isArray(report.focus) && report.focus.length ? report.focus : ["원문 보고서에서 최신 리스크 포커스를 확인하세요."];
+  const focus = Array.isArray(report.focus) && report.focus.length ? report.focus : ["공개 상세 페이지에는 요약 목차만 제공됩니다. 원문 PDF를 함께 확인하세요."];
   return `<ul class="kcif-focus">${focus.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
 }
 
@@ -593,10 +607,21 @@ function kcifPlaybookText() {
   const focusText = kcifData.reports.flatMap((report) => report.focus || []).join(" ");
   const latest = kcifData.reports.map((report) => report.title).filter(Boolean).join(", ");
   const prefix = latest ? `최신 KCIF 월간보고서(${latest}) 기준으로 ` : "최신 KCIF 월간보고서 기준으로 ";
-  if (/금리|장기금리|국채/.test(focusText)) return `${prefix}장기금리 리스크가 확인됩니다. 성장주, 리츠, 장기채처럼 금리 민감도가 큰 자산은 FRED 금리 지표가 꺾이는지 확인하며 접근하는 편이 좋습니다.`;
-  if (/유가|중동|스태그플레이션|물가/.test(focusText)) return `${prefix}유가와 물가 충격을 함께 봐야 합니다. 에너지와 현금흐름 방어력이 있는 기업은 상대적으로 유리하고, 운송·재량소비는 비용 압박을 점검해야 합니다.`;
-  if (/신흥국|달러|외환|자본유출/.test(focusText)) return `${prefix}달러와 신흥국 스트레스 여부를 확인해야 합니다. 위험자산 비중 확대 전 달러와 미국 국채의 방어력을 함께 봅니다.`;
-  return `${prefix}FRED가 보여주는 계량 신호에 글로벌 이벤트 리스크를 더해 투자 비중을 보정합니다. 원문 보고서의 월간 포커스를 함께 확인하세요.`;
+  const points = [];
+  if (/세계경제|국제ㆍ국내금융시장|글로벌 은행산업|은행산업/.test(focusText)) {
+    points.push("INSIGHT가 세계경제, 금융시장, 은행산업을 점검축으로 제시하므로 지수 방향보다 금리·신용·은행 유동성의 동시 악화 여부를 먼저 확인합니다.");
+  }
+  if (/금리|장기금리|국채/.test(focusText)) {
+    points.push("장기금리 리스크가 확인되어 성장주, 리츠, 장기채처럼 금리 민감도가 큰 자산은 FRED 금리 지표가 꺾이는지 확인하며 접근합니다.");
+  }
+  if (/유가|중동|스태그플레이션|물가/.test(focusText)) {
+    points.push("유가와 물가 충격이 함께 언급되므로 에너지와 현금흐름 방어력이 있는 기업은 상대적으로 유리하고 운송·재량소비는 비용 압박을 점검합니다.");
+  }
+  if (/신흥국|달러|외환|자본유출/.test(focusText)) {
+    points.push("신흥국과 달러 스트레스가 커질 때는 위험자산 비중 확대 전 달러와 미국 국채의 방어력을 함께 봅니다.");
+  }
+  const body = unique(points).slice(0, 3).join(" ");
+  return body ? `${prefix}${body}` : `${prefix}FRED가 보여주는 계량 신호에 글로벌 이벤트 리스크를 더해 투자 비중을 보정합니다. 원문 보고서의 월간 포커스를 함께 확인하세요.`;
 }
 
 function assetListMarkup(list) {
@@ -656,7 +681,7 @@ function sparkline(list) {
 function macroChart(chart) {
   const width = 720;
   const height = 320;
-  const margin = { top: 20, right: 28, bottom: 42, left: 54 };
+  const margin = { top: 28, right: 28, bottom: 42, left: 58 };
   const plotWidth = width - margin.left - margin.right;
   const plotHeight = height - margin.top - margin.bottom;
   const ids = chart.ids.split(",");
@@ -685,8 +710,8 @@ function macroChart(chart) {
       <line class="axis" x1="${margin.left}" y1="${height - margin.bottom}" x2="${width - margin.right}" y2="${height - margin.bottom}"></line>
       <line class="grid-line" x1="${margin.left}" y1="${margin.top}" x2="${width - margin.right}" y2="${margin.top}"></line>
       <line class="grid-line" x1="${margin.left}" y1="${margin.top + plotHeight / 2}" x2="${width - margin.right}" y2="${margin.top + plotHeight / 2}"></line>
-      <text class="axis-label" x="14" y="${margin.top + 4}">상대 높음</text>
-      <text class="axis-label" x="14" y="${height - margin.bottom + 4}">상대 낮음</text>
+      <text class="axis-label y-label" x="12" y="${margin.top - 9}">높음</text>
+      <text class="axis-label y-label" x="12" y="${height - margin.bottom - 7}">낮음</text>
       <text class="axis-label" x="${margin.left}" y="${height - 14}">${escapeHtml(shortDate(firstDate))}</text>
       <text class="axis-label end" x="${width - margin.right}" y="${height - 14}">${escapeHtml(shortDate(lastDate))}</text>
       ${series.map((line) => `
