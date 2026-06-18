@@ -26,6 +26,12 @@ https://Eddie7-great.github.io/maco_adviser/
 
 GitHub Actions가 6시간마다 `data/fred-data.json`을 갱신합니다. 바로 갱신하려면 Actions 탭에서 `Update FRED data` 워크플로를 수동 실행하세요.
 
+페이지는 열릴 때마다 캐시를 우회해서 `data/fred-data.json`을 다시 읽습니다. 다만 GitHub Pages 정적 사이트이므로 페이지를 여는 행위가 FRED 원본 수집을 즉시 실행하지는 않습니다. FRED 원본 수집은 GitHub Actions가 담당합니다.
+
+## 바로가기
+
+Windows에서 바로 열 수 있도록 `Maco Adviser.url` 바로가기 파일을 포함했습니다.
+
 ## 로컬 확인
 
 Node.js가 있다면 초기 스냅샷 JSON을 다시 만들 수 있습니다.

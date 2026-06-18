@@ -194,7 +194,7 @@ async function loadData() {
     const json = await response.json();
     macroData = normalizeData(json);
     indicators = Object.values(macroData.series);
-    setText("dataFreshness", `FRED JSON 갱신: ${formatDateTime(new Date(macroData.generatedAt))}`);
+    setText("dataFreshness", `페이지 로드 시 JSON 재확인 · FRED 갱신본: ${formatDateTime(new Date(macroData.generatedAt))}`);
   } catch {
     macroData = fallbackData;
     indicators = Object.values(fallbackData.series);
@@ -279,25 +279,26 @@ function renderPlaybook() {
   const view = buildMacroView();
   const assets = buildAssetPreference(view);
   const stance = view.total >= 3
-    ? ["주식 비중: 점진 확대", "성장과 고용이 받쳐주고 신용 스트레스가 낮은 조합입니다. 금리와 물가 부담이 남아 있으면 분할 접근이 낫습니다."]
+    ? ["투자 비중: 점진 확대", "성장과 고용이 받쳐주고 신용 스트레스가 낮은 조합입니다. 금리와 물가 부담이 남아 있으면 한 번에 비중을 올리기보다 분할 접근이 더 적합합니다.", "wide"]
     : view.total <= -3
-      ? ["주식 비중: 방어 우선", "여러 축이 동시에 부담입니다. 현금, 단기채, 방어주 비중을 점검하는 구간입니다."]
-      : ["주식 비중: 선별 유지", "상승과 둔화 신호가 섞여 있습니다. 지수 전체보다 실적 가시성과 현금흐름이 강한 종목이 유리합니다."];
+      ? ["투자 비중: 방어 우선", "여러 축이 동시에 부담입니다. 현금, 단기채, 방어주 비중을 점검하고, 레버리지와 경기민감 노출은 보수적으로 관리하는 구간입니다.", "wide"]
+      : ["투자 비중: 선별 유지", "상승과 둔화 신호가 섞여 있습니다. 지수 전체보다 실적 가시성, 가격 결정력, 현금흐름이 강한 자산을 선별하는 쪽이 유리합니다.", "wide"];
   const growthStyle = view.buckets.rates.score <= -2 || view.buckets.inflation.score <= -1
-    ? ["성장주: 금리 확인 필요", "장기금리와 물가가 부담이면 멀티플 확장이 제한됩니다. 금리 하락 전환이 확인될 때 비중 확대 명분이 강해집니다."]
-    : ["성장주: 조건부 우호", "금리 부담이 완화되면 장기 현금흐름 가치가 개선됩니다. 실적 성장률이 유지되는 기업을 우선 봅니다."];
+    ? ["성장 자산", "장기금리와 물가가 부담이면 멀티플 확장이 제한됩니다. 금리 하락 전환이 확인될 때 성장주와 장기채 비중 확대 명분이 강해집니다.", "compact"]
+    : ["성장 자산", "금리 부담이 완화되면 장기 현금흐름 가치가 개선됩니다. 실적 성장률이 유지되는 기업과 장기채가 상대적으로 유리합니다.", "compact"];
   const cyclicals = view.buckets.growth.score + view.buckets.consumer.score >= 2
-    ? ["경기민감주: 긍정", "산업생산, GDP, 소비가 받쳐주면 경기민감 업종의 이익 회복을 기대할 수 있습니다."]
-    : ["경기민감주: 보수적", "성장 또는 소비 지표가 약하면 경기민감주는 실적 추정 하향에 취약합니다."];
+    ? ["경기민감 자산", "산업생산, GDP, 소비가 받쳐주면 산업재, 소재, 반도체, 소비재의 이익 회복을 기대할 수 있습니다.", "compact"]
+    : ["경기민감 자산", "성장 또는 소비 지표가 약하면 경기민감 업종은 실적 추정 하향에 취약합니다. 필수소비재와 헬스케어가 상대적으로 안정적입니다.", "compact"];
   const dataTrust = view.freshRatio >= 0.5
-    ? ["데이터 신뢰도: 양호", "대부분 또는 절반 이상의 지표가 Actions로 갱신되었습니다. 다음 갱신 시각은 GitHub Actions 실행 주기에 따릅니다."]
-    : ["데이터 신뢰도: 보조 판단", "Actions가 아직 충분히 갱신하지 못했거나 초기 스냅샷입니다. 워크플로 첫 실행 후 다시 확인하세요."];
+    ? ["데이터 신뢰도", "절반 이상의 지표가 Actions로 갱신되었습니다. 다음 갱신 시각은 GitHub Actions 실행 주기에 따릅니다.", "compact muted-card"]
+    : ["데이터 신뢰도", "Actions가 아직 충분히 갱신하지 못했거나 초기 스냅샷입니다. 워크플로 첫 실행 후 다시 확인하세요.", "compact muted-card"];
   const assetCard = [
     "자산군 유리/불리",
     `<b>유리:</b> ${assets.favorable.join(", ")}<br><b>불리:</b> ${assets.unfavorable.join(", ")}<br><b>관찰:</b> ${assets.watch}`,
+    "wide asset-card",
   ];
-  document.querySelector("#playbookGrid").innerHTML = [stance, growthStyle, cyclicals, assetCard, dataTrust].map(([title, text]) => `
-    <article><h3>${title}</h3><p>${text}</p></article>
+  document.querySelector("#playbookGrid").innerHTML = [stance, assetCard, growthStyle, cyclicals, dataTrust].map(([title, text, className]) => `
+    <article class="playbook-card ${className}"><h3>${title}</h3><p>${text}</p></article>
   `).join("");
 }
 
