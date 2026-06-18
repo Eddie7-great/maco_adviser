@@ -294,7 +294,7 @@ function renderPlaybook() {
     : ["데이터 신뢰도", "Actions가 아직 충분히 갱신하지 못했거나 초기 스냅샷입니다. 워크플로 첫 실행 후 다시 확인하세요.", "compact muted-card"];
   const assetCard = [
     "자산군 유리/불리",
-    `<b>유리:</b> ${assets.favorable.join(", ")}<br><b>불리:</b> ${assets.unfavorable.join(", ")}<br><b>관찰:</b> ${assets.watch}`,
+    `<b>유리:</b>${assetListMarkup(assets.favorable)}<b>불리:</b>${assetListMarkup(assets.unfavorable)}<b>관찰:</b> ${assets.watch}`,
     "wide asset-card",
   ];
   document.querySelector("#playbookGrid").innerHTML = [stance, assetCard, growthStyle, cyclicals, dataTrust].map(([title, text, className]) => `
@@ -382,9 +382,10 @@ function renderCharts() {
     <article class="chart-card">
       <header>
         <div class="chart-title"><strong>${chart.title}</strong>${helpMarkup(chart.help)}</div>
-        <span class="chart-label">${chart.label}</span>
+        <a class="chart-open-link" href="${fredGraphUrl(chart.ids)}" target="_blank" rel="noreferrer">FRED에서 열기</a>
       </header>
-      <img src="${fredImage(chart.ids)}" alt="${chart.title} FRED 차트" loading="lazy" />
+      <iframe class="fred-frame" title="${chart.title} FRED 인터랙티브 차트" src="${fredGraphUrl(chart.ids)}" loading="lazy"></iframe>
+      <a class="chart-fallback-link" href="${fredGraphUrl(chart.ids)}" target="_blank" rel="noreferrer">${chart.label}</a>
     </article>
   `).join("");
 }
@@ -433,7 +434,7 @@ function trend(id) { const list = values(id); return list.at(-1) - list[0]; }
 function setText(id, value) { const target = document.querySelector(`#${id}`); if (target) target.textContent = value; }
 function unique(list) { return [...new Set(list)]; }
 function fredUrl(id) { return `https://fred.stlouisfed.org/series/${id}`; }
-function fredImage(ids) { return `https://fred.stlouisfed.org/graph/fredgraph.png?id=${ids}&cosd=2019-01-01`; }
+function fredGraphUrl(ids) { return `https://fred.stlouisfed.org/graph/?id=${ids.split(",").map(encodeURIComponent).join(",")}`; }
 function formatDateTime(date) { return Number.isNaN(date.valueOf()) ? "-" : new Intl.DateTimeFormat("ko-KR", { dateStyle: "medium", timeStyle: "short" }).format(date); }
 function fmt(value, unit) { return unit === "%" ? `${value.toFixed(2)}%` : value.toLocaleString("ko-KR", { maximumFractionDigits: 1 }); }
 function directionText(list) { const diff = list.at(-1) - list[0]; return Math.abs(diff) < 0.01 ? "변화 작음" : diff > 0 ? "최근 상승" : "최근 하락"; }
@@ -460,6 +461,37 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function assetListMarkup(list) {
+  return `<span class="asset-list">${list.map((name) => `<span class="asset-pill">${escapeHtml(name)}<small>${escapeHtml(assetReason(name))}</small></span>`).join("")}</span>`;
+}
+
+function assetReason(name) {
+  const reasons = {
+    "현금성 자산": "금리·물가 부담이 클 때 변동성을 낮춥니다.",
+    "단기채": "금리 변동에 덜 민감하고 이자수익 방어가 됩니다.",
+    "퀄리티·배당주": "현금흐름과 배당이 약한 경기에서 버팀목입니다.",
+    "장기 성장주": "금리 하락 시 장기 현금흐름 가치가 커집니다.",
+    "리츠": "금리 부담 완화와 배당 매력이 함께 작동합니다.",
+    "장기채": "금리 하락 구간에서 가격 상승 여지가 큽니다.",
+    "산업재": "생산과 투자 회복의 직접 수혜를 받습니다.",
+    "소비재": "소비 지표 개선 시 매출 기대가 살아납니다.",
+    "소재·반도체": "경기 회복과 재고 사이클 개선에 민감합니다.",
+    "필수소비재": "소비 둔화에도 수요가 비교적 안정적입니다.",
+    "헬스케어": "경기 민감도가 낮아 방어력이 있습니다.",
+    "미국 국채": "신용위험이 커질 때 안전자산 선호를 받습니다.",
+    "달러 방어 포지션": "위험 회피 국면에서 방어 수단이 됩니다.",
+    "우량 크레딧": "스프레드가 안정적일 때 이자수익과 방어를 겸합니다.",
+    "위험자산 분할 매수": "신용 스트레스가 낮으면 단계적 진입이 가능합니다.",
+    "과도한 현금 비중": "위험 선호가 회복될 때 기회비용이 커집니다.",
+    "경기민감주": "성장·소비 둔화 시 이익 추정이 빠르게 낮아질 수 있습니다.",
+    "소형주": "신용여건과 경기 둔화에 취약합니다.",
+    "하이일드 채권": "스프레드 확대 시 가격 하락 위험이 큽니다.",
+    "레버리지 높은 기업": "차입비용과 만기 재조달 부담이 커집니다.",
+    "주택 관련주": "모기지 금리 상승과 착공 둔화에 눌릴 수 있습니다.",
+  };
+  return reasons[name] || "현재 매크로 조합에 민감하게 반응합니다.";
 }
 
 function formatValue(entry, value) {
