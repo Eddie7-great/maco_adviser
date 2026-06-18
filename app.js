@@ -438,6 +438,19 @@ function unique(list) { return [...new Set(list)]; }
 function fredUrl(id) { return `https://fred.stlouisfed.org/series/${id}`; }
 function fredGraphUrl(ids) { return `https://fred.stlouisfed.org/graph/?id=${ids.split(",").map(encodeURIComponent).join(",")}`; }
 function formatDateTime(date) { return Number.isNaN(date.valueOf()) ? "-" : new Intl.DateTimeFormat("ko-KR", { dateStyle: "medium", timeStyle: "short" }).format(date); }
+function shortDate(value) {
+  const text = String(value || "");
+  if (/^\d{4}-Q\d$/.test(text)) return text.replace("-Q", " Q");
+  if (/^\d{4}-\d{2}-\d{2}$/.test(text)) {
+    const [year, month, day] = text.split("-");
+    return `${year.slice(2)}.${Number(month)}.${Number(day)}`;
+  }
+  if (/^\d{4}-\d{2}$/.test(text)) {
+    const [year, month] = text.split("-");
+    return `${year.slice(2)}.${Number(month)}`;
+  }
+  return text;
+}
 function fmt(value, unit) { return unit === "%" ? `${value.toFixed(2)}%` : value.toLocaleString("ko-KR", { maximumFractionDigits: 1 }); }
 function directionText(list) { const diff = list.at(-1) - list[0]; return Math.abs(diff) < 0.01 ? "변화 작음" : diff > 0 ? "최근 상승" : "최근 하락"; }
 
