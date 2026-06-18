@@ -1,14 +1,15 @@
 # Maco Adviser
 
-FRED 자료를 기반으로 미국 거시경제 상황을 추적하고, 주식 투자 관점의 해석을 제공하는 정적 대시보드입니다.
+FRED 자료와 KCIF 월간보고서를 기반으로 미국 거시경제 상황과 글로벌 리스크를 추적하고, 투자 관점의 해석을 제공하는 정적 대시보드입니다.
 
 ## 구조
 
 - `index.html`: GitHub Pages에서 열리는 대시보드
 - `styles.css`: 화면 스타일
-- `app.js`: `data/fred-data.json`을 읽어 지표 카드, 매크로 판단, 투자 해석을 렌더링
+- `app.js`: `data/fred-data.json`과 `data/kcif-reports.json`을 읽어 지표 카드, 매크로 판단, KCIF 리스크, 투자 해석을 렌더링
 - `scripts/fetch-fred-data.mjs`: FRED CSV를 내려받아 `data/fred-data.json`을 생성
-- `.github/workflows/update-fred-data.yml`: 6시간마다 FRED 데이터를 자동 갱신
+- `scripts/fetch-kcif-reports.mjs`: KCIF 월간보고서 목록에서 최신 국제금융 INSIGHT와 글로벌 리스크 워치를 수집
+- `.github/workflows/update-fred-data.yml`: 6시간마다 FRED와 KCIF 데이터를 자동 갱신
 
 ## GitHub Pages 설정
 
@@ -24,9 +25,9 @@ https://Eddie7-great.github.io/maco_adviser/
 
 ## 데이터 갱신
 
-GitHub Actions가 6시간마다 `data/fred-data.json`을 갱신합니다. 바로 갱신하려면 Actions 탭에서 `Update FRED data` 워크플로를 수동 실행하세요.
+GitHub Actions가 6시간마다 `data/fred-data.json`과 `data/kcif-reports.json`을 갱신합니다. 바로 갱신하려면 Actions 탭에서 `Update macro data` 워크플로를 수동 실행하세요.
 
-페이지는 열릴 때마다 캐시를 우회해서 `data/fred-data.json`을 다시 읽습니다. 다만 GitHub Pages 정적 사이트이므로 페이지를 여는 행위가 FRED 원본 수집을 즉시 실행하지는 않습니다. FRED 원본 수집은 GitHub Actions가 담당합니다.
+페이지는 열릴 때마다 캐시를 우회해서 두 JSON 파일을 다시 읽습니다. 다만 GitHub Pages 정적 사이트이므로 페이지를 여는 행위가 FRED/KCIF 원본 수집을 즉시 실행하지는 않습니다. 원본 수집은 GitHub Actions가 담당합니다.
 
 ## 바로가기
 
@@ -44,6 +45,12 @@ node scripts/fetch-fred-data.mjs --snapshot-only
 
 ```powershell
 node scripts/fetch-fred-data.mjs
+```
+
+KCIF 최신 월간보고서를 가져오려면:
+
+```powershell
+node scripts/fetch-kcif-reports.mjs
 ```
 
 이 페이지는 투자 판단을 돕기 위한 경제 모니터링 도구이며 매수·매도 추천이 아닙니다.

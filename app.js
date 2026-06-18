@@ -20,6 +20,41 @@ const fallbackData = {
   },
 };
 
+const fallbackKcifData = {
+  generatedAt: "2026-06-18T00:00:00.000Z",
+  source: "KCIF",
+  listUrl: "https://www.kcif.or.kr/annual/monthlyList",
+  reports: [
+    {
+      kind: "insight",
+      label: "국제금융 INSIGHT",
+      title: "[26.6월] 국제금융 INSIGHT",
+      date: "2026.06.16",
+      url: "https://www.kcif.or.kr/annual/monthlyList",
+      source: "KCIF",
+      focus: ["국제금융시장 전반의 정책, 자금흐름, 주요 자산가격 변화를 FRED 지표와 함께 교차 점검합니다."],
+      implication: "미국 지표 중심의 FRED 판단에 글로벌 자금흐름과 정책 해석을 덧붙이는 보조 자료입니다.",
+    },
+    {
+      kind: "riskWatch",
+      label: "글로벌 리스크 워치",
+      title: "[26.6월] 글로벌 리스크 워치",
+      date: "2026.06.05",
+      url: "https://www.kcif.or.kr/annual/reportView?mn=001004&pe=004008&pg=1&pp=10&rpt_no=37160&skey=&sval=",
+      source: "KCIF",
+      focus: [
+        "선진국 장기금리의 높은 수준이 금융시장 부담 요인으로 부각되고 있습니다.",
+        "유가와 물가 압력이 성장 둔화와 함께 나타날 경우 일부 지역의 스태그플레이션 위험을 키울 수 있습니다.",
+      ],
+      implication: "FRED 지표가 포착하지 못하는 지정학, 유가, 글로벌 금리, 신용 이벤트를 보완합니다.",
+    },
+  ],
+  advice: [
+    "장기금리 리스크가 부각될 때는 성장주, 리츠, 장기채처럼 듀레이션이 긴 자산의 비중 확대를 서두르지 않는 편이 낫습니다.",
+    "유가와 물가 충격이 함께 언급되면 에너지, 원자재, 물가 방어력이 있는 현금흐름 기업을 우선 점검합니다.",
+  ],
+};
+
 const groupNames = {
   rates: "금리",
   inflation: "물가",
@@ -28,6 +63,8 @@ const groupNames = {
   consumer: "소비/주택",
   risk: "유동성/신용",
 };
+
+const chartColors = ["#2d6f8f", "#176f52", "#a66b1f", "#a94c45"];
 
 const indicatorHelp = {
   FEDFUNDS: {
@@ -171,6 +208,7 @@ const chartSets = [
 
 let macroData = fallbackData;
 let indicators = Object.values(fallbackData.series);
+let kcifData = fallbackKcifData;
 let activeFilter = "all";
 
 function item(id, group, name, unit, observations, note) {
@@ -188,19 +226,31 @@ function item(id, group, name, unit, observations, note) {
 }
 
 async function loadData() {
+  await Promise.all([loadFredData(), loadKcifData()]);
+  renderAll();
+}
+
+async function loadFredData() {
   try {
     const response = await fetch(`data/fred-data.json?ts=${Date.now()}`, { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const json = await response.json();
     macroData = normalizeData(json);
     indicators = Object.values(macroData.series);
-    setText("dataFreshness", `페이지 로드 시 JSON 재확인 · FRED 갱신본: ${formatDateTime(new Date(macroData.generatedAt))}`);
   } catch {
     macroData = fallbackData;
     indicators = Object.values(fallbackData.series);
-    setText("dataFreshness", "FRED JSON 로드 실패 · 내장 스냅샷 사용");
   }
-  renderAll();
+}
+
+async function loadKcifData() {
+  try {
+    const response = await fetch(`data/kcif-reports.json?ts=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    kcifData = normalizeKcifData(await response.json());
+  } catch {
+    kcifData = fallbackKcifData;
+  }
 }
 
 function normalizeData(data) {
@@ -221,6 +271,17 @@ function normalizeData(data) {
     };
   });
   return normalized;
+}
+
+function normalizeKcifData(data) {
+  const reports = Array.isArray(data?.reports) && data.reports.length ? data.reports : fallbackKcifData.reports;
+  const advice = Array.isArray(data?.advice) && data.advice.length ? data.advice : fallbackKcifData.advice;
+  return {
+    ...fallbackKcifData,
+    ...data,
+    reports,
+    advice,
+  };
 }
 
 function buildMacroView() {
@@ -254,12 +315,8 @@ function scoreBucket(scores) {
 
 function renderMacroJudgement() {
   const view = buildMacroView();
-  const freshIds = indicators.filter((entry) => entry.fresh).map((entry) => entry.id);
   setText("cycleLabel", `${view.regime} · ${view.confidenceText}`);
-  setText("cycleSummary", [
-    `금리 ${view.buckets.rates.label}, 물가 ${view.buckets.inflation.label}, 고용 ${view.buckets.labor.label}, 성장 ${view.buckets.growth.label}, 소비 ${view.buckets.consumer.label}, 신용 ${view.buckets.risk.label}로 평가됩니다.`,
-    freshIds.length ? `최신 갱신 지표: ${freshIds.join(", ")}.` : "아직 Actions 갱신 전이라 스냅샷 기준입니다.",
-  ].join(" "));
+  setText("cycleSummary", `금리 ${view.buckets.rates.label}, 물가 ${view.buckets.inflation.label}, 고용 ${view.buckets.labor.label}, 성장 ${view.buckets.growth.label}, 소비 ${view.buckets.consumer.label}, 신용 ${view.buckets.risk.label}로 평가됩니다.`);
 }
 
 function renderScores() {
@@ -290,14 +347,15 @@ function renderPlaybook() {
     ? ["경기민감 자산", "산업생산, GDP, 소비가 받쳐주면 산업재, 소재, 반도체, 소비재의 이익 회복을 기대할 수 있습니다.", "compact"]
     : ["경기민감 자산", "성장 또는 소비 지표가 약하면 경기민감 업종은 실적 추정 하향에 취약합니다. 필수소비재와 헬스케어가 상대적으로 안정적입니다.", "compact"];
   const dataTrust = view.freshRatio >= 0.5
-    ? ["데이터 신뢰도", "절반 이상의 지표가 Actions로 갱신되었습니다. 다음 갱신 시각은 GitHub Actions 실행 주기에 따릅니다.", "compact muted-card"]
-    : ["데이터 신뢰도", "Actions가 아직 충분히 갱신하지 못했거나 초기 스냅샷입니다. 워크플로 첫 실행 후 다시 확인하세요.", "compact muted-card"];
+    ? ["데이터 상태", "FRED 지표 대부분을 최신 JSON으로 불러왔습니다. KCIF 월간보고서도 별도 JSON으로 함께 반영됩니다.", "compact muted-card"]
+    : ["데이터 상태", "일부 지표는 내장 스냅샷으로 보조합니다. 원본 FRED와 KCIF 링크를 함께 확인하세요.", "compact muted-card"];
+  const kcifCard = ["KCIF 리스크 보정", kcifPlaybookText(), "compact muted-card"];
   const assetCard = [
     "자산군 유리/불리",
     `<b>유리:</b>${assetListMarkup(assets.favorable)}<b>불리:</b>${assetListMarkup(assets.unfavorable)}<b>관찰:</b> ${assets.watch}`,
     "wide asset-card",
   ];
-  document.querySelector("#playbookGrid").innerHTML = [stance, assetCard, growthStyle, cyclicals, dataTrust].map(([title, text, className]) => `
+  document.querySelector("#playbookGrid").innerHTML = [stance, assetCard, growthStyle, cyclicals, kcifCard, dataTrust].map(([title, text, className]) => `
     <article class="playbook-card ${className}"><h3>${title}</h3><p>${text}</p></article>
   `).join("");
 }
@@ -363,7 +421,7 @@ function renderIndicators(filter = activeFilter) {
       <a class="indicator-card" href="${fredUrl(entry.id)}" target="_blank" rel="noreferrer">
         <div class="indicator-head">
           <div class="indicator-title">
-            <span class="indicator-meta">${groupNames[entry.group]} · ${entry.id} · ${entry.fresh ? "Actions 갱신" : "스냅샷"}</span>
+            <span class="indicator-meta">${groupNames[entry.group]} · ${entry.id} · ${entry.fresh ? "지표 불러오기 성공" : "내장 스냅샷"}</span>
             <h3><span class="heading-label">${entry.name}</span>${helpMarkup(help)}</h3>
           </div>
           <span class="badge ${badge.cls}">${badge.text}</span>
@@ -384,18 +442,65 @@ function renderCharts() {
         <div class="chart-title"><strong>${chart.title}</strong>${helpMarkup(chart.help)}</div>
         <a class="chart-open-link" href="${fredGraphUrl(chart.ids)}" target="_blank" rel="noreferrer">FRED에서 열기</a>
       </header>
+      ${chartKeyMarkup(chart)}
       <a class="chart-canvas-link" href="${fredGraphUrl(chart.ids)}" target="_blank" rel="noreferrer" aria-label="${chart.title} FRED 원본 열기">
         ${macroChart(chart)}
       </a>
-      <a class="chart-fallback-link" href="${fredGraphUrl(chart.ids)}" target="_blank" rel="noreferrer">${chart.label} · 원본 FRED</a>
+      <a class="chart-fallback-link" href="${fredGraphUrl(chart.ids)}" target="_blank" rel="noreferrer">${chart.ids.split(",").map((id) => get(id).name).join(" · ")} · 원본 FRED</a>
     </article>
   `).join("");
 }
 
-function renderSources() {
-  document.querySelector("#sourceList").innerHTML = indicators.map((entry) => `
-    <a href="${fredUrl(entry.id)}" target="_blank" rel="noreferrer">${entry.name}<span>${entry.id}</span></a>
+function chartKeyMarkup(chart) {
+  return `
+    <div class="chart-key">
+      ${chart.ids.split(",").map((id, index) => {
+        const entry = get(id);
+        return `
+          <span>
+            <i style="background:${chartColors[index % chartColors.length]}"></i>
+            ${escapeHtml(entry.name)}
+            <small>${escapeHtml(id)}</small>
+          </span>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function renderKcifReports() {
+  const listUrl = kcifData.listUrl || "https://www.kcif.or.kr/annual/monthlyList";
+  const generated = formatDateTime(new Date(kcifData.generatedAt));
+  document.querySelector("#kcifGrid").innerHTML = kcifData.reports.map((report) => `
+    <article class="kcif-card">
+      <div class="kcif-card-head">
+        <span>${escapeHtml(report.label || report.source || "KCIF")}</span>
+        <a href="${escapeHtml(report.url || listUrl)}" target="_blank" rel="noreferrer">원문 보기</a>
+      </div>
+      <h3>${escapeHtml(report.title)}</h3>
+      <p class="kcif-meta">${escapeHtml(report.date || "-")} · ${escapeHtml(report.source || "KCIF")}</p>
+      ${reportFocusMarkup(report)}
+      <p class="kcif-implication">${escapeHtml(report.implication || "FRED 지표를 보완하는 정성 리스크 자료입니다.")}</p>
+    </article>
   `).join("");
+  document.querySelector("#kcifAdvice").innerHTML = `
+    <div>
+      <span>KCIF 기반 투자 체크</span>
+      <strong>${escapeHtml(kcifData.reports.map((report) => report.label).join(" · "))}</strong>
+      <p>데이터 생성: ${escapeHtml(generated)} · <a href="${escapeHtml(listUrl)}" target="_blank" rel="noreferrer">월간보고서 목록</a></p>
+    </div>
+    <ul>${kcifData.advice.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+  `;
+}
+
+function renderSources() {
+  const fredSources = indicators.map((entry) => `
+    <a href="${fredUrl(entry.id)}" target="_blank" rel="noreferrer">${entry.name}<span>${entry.id}</span></a>
+  `);
+  const kcifSources = kcifData.reports.map((report) => `
+    <a href="${escapeHtml(report.url || kcifData.listUrl)}" target="_blank" rel="noreferrer">${escapeHtml(report.label)}<span>KCIF</span></a>
+  `);
+  document.querySelector("#sourceList").innerHTML = [...fredSources, ...kcifSources].join("");
 }
 
 function bindFilters() {
@@ -426,6 +531,7 @@ function renderAll() {
   renderScores();
   renderIndicators(activeFilter);
   renderCharts();
+  renderKcifReports();
   renderSources();
   renderPlaybook();
 }
@@ -476,6 +582,21 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function reportFocusMarkup(report) {
+  const focus = Array.isArray(report.focus) && report.focus.length ? report.focus : ["원문 보고서에서 최신 리스크 포커스를 확인하세요."];
+  return `<ul class="kcif-focus">${focus.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+}
+
+function kcifPlaybookText() {
+  const focusText = kcifData.reports.flatMap((report) => report.focus || []).join(" ");
+  const latest = kcifData.reports.map((report) => report.title).filter(Boolean).join(", ");
+  const prefix = latest ? `최신 KCIF 월간보고서(${latest}) 기준으로 ` : "최신 KCIF 월간보고서 기준으로 ";
+  if (/금리|장기금리|국채/.test(focusText)) return `${prefix}장기금리 리스크가 확인됩니다. 성장주, 리츠, 장기채처럼 금리 민감도가 큰 자산은 FRED 금리 지표가 꺾이는지 확인하며 접근하는 편이 좋습니다.`;
+  if (/유가|중동|스태그플레이션|물가/.test(focusText)) return `${prefix}유가와 물가 충격을 함께 봐야 합니다. 에너지와 현금흐름 방어력이 있는 기업은 상대적으로 유리하고, 운송·재량소비는 비용 압박을 점검해야 합니다.`;
+  if (/신흥국|달러|외환|자본유출/.test(focusText)) return `${prefix}달러와 신흥국 스트레스 여부를 확인해야 합니다. 위험자산 비중 확대 전 달러와 미국 국채의 방어력을 함께 봅니다.`;
+  return `${prefix}FRED가 보여주는 계량 신호에 글로벌 이벤트 리스크를 더해 투자 비중을 보정합니다. 원문 보고서의 월간 포커스를 함께 확인하세요.`;
 }
 
 function assetListMarkup(list) {
@@ -535,11 +656,10 @@ function sparkline(list) {
 function macroChart(chart) {
   const width = 720;
   const height = 320;
-  const margin = { top: 28, right: 28, bottom: 42, left: 54 };
+  const margin = { top: 20, right: 28, bottom: 42, left: 54 };
   const plotWidth = width - margin.left - margin.right;
   const plotHeight = height - margin.top - margin.bottom;
   const ids = chart.ids.split(",");
-  const colors = ["#2d6f8f", "#176f52", "#a66b1f", "#a94c45"];
   const series = ids.map((id, index) => {
     const entry = get(id);
     const observations = entry.observations;
@@ -552,7 +672,7 @@ function macroChart(chart) {
       const y = margin.top + plotHeight - ((row.value - min) / range) * plotHeight;
       return { ...row, x, y };
     });
-    return { id, entry, points, color: colors[index % colors.length] };
+    return { id, entry, points, color: chartColors[index % chartColors.length] };
   });
   const allDates = series[0]?.points || [];
   const firstDate = allDates[0]?.date || "";
@@ -573,16 +693,10 @@ function macroChart(chart) {
         <path class="macro-line" d="${line.points.map((point, index) => `${index === 0 ? "M" : "L"} ${point.x.toFixed(1)} ${point.y.toFixed(1)}`).join(" ")}" style="stroke:${line.color}"></path>
         ${line.points.map((point) => `
           <circle class="macro-point" cx="${point.x.toFixed(1)}" cy="${point.y.toFixed(1)}" r="5" style="fill:${line.color}">
-            <title>${line.id} · ${point.date} · ${formatValue(line.entry, point.value)} ${line.entry.unit}</title>
+            <title>${line.entry.name} · ${point.date} · ${formatValue(line.entry, point.value)} ${line.entry.unit}</title>
           </circle>
         `).join("")}
       `).join("")}
-      <g class="chart-legend">
-        ${series.map((line, index) => {
-          const x = margin.left + index * 148;
-          return `<g transform="translate(${x}, 12)"><circle r="5" style="fill:${line.color}"></circle><text x="10" y="4">${line.id}</text></g>`;
-        }).join("")}
-      </g>
     </svg>
   `;
 }

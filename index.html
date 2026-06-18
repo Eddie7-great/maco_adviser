@@ -4,13 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>FRED 매크로 투자 대시보드</title>
-    <link rel="stylesheet" href="styles.css?v=20260618-2" />
+    <link rel="stylesheet" href="styles.css?v=20260618-3" />
   </head>
   <body>
     <header class="site-header">
       <nav class="top-nav" aria-label="주요 섹션">
         <a href="#overview">요약</a>
         <a href="#indicators">지표</a>
+        <a href="#kcif">KCIF 리스크</a>
         <a href="#playbook">투자 해석</a>
         <a href="#sources">출처</a>
       </nav>
@@ -29,9 +30,8 @@
           </div>
         </div>
         <div class="hero-panel" aria-label="현재 매크로 요약">
-          <span class="panel-kicker" id="dataFreshness">데이터 확인 중</span>
           <strong id="cycleLabel">초기화 중</strong>
-          <p id="cycleSummary">GitHub Actions가 갱신한 FRED JSON을 불러와 판단합니다.</p>
+          <p id="cycleSummary">FRED 지표와 KCIF 월간보고서를 불러와 판단합니다.</p>
           <div class="score-grid" id="scoreGrid"></div>
         </div>
       </section>
@@ -87,11 +87,21 @@
 
       <section class="chart-wall">
         <div class="section-heading">
-          <p class="eyebrow">Live FRED Charts</p>
+          <p class="eyebrow">FRED Trend Bundles</p>
           <h2>장기 차트 묶음</h2>
-          <p>차트 이미지는 FRED 그래프 엔드포인트를 사용하므로 온라인 상태에서는 최신 차트로 표시됩니다.</p>
+          <p>FRED 최신 JSON을 같은 상대축으로 정규화해 묶어 봅니다. 차트를 누르면 원본 FRED 그래프가 열립니다.</p>
         </div>
         <div class="chart-grid" id="chartGrid"></div>
+      </section>
+
+      <section class="kcif-section" id="kcif">
+        <div class="section-heading">
+          <p class="eyebrow">KCIF Monthly Risk</p>
+          <h2>국제금융센터 월간보고서</h2>
+          <p>월간보고서 목록에서 최신 국제금융 INSIGHT와 글로벌 리스크 워치를 자동 수집해 FRED 지표 해석에 보조로 반영합니다.</p>
+        </div>
+        <div class="kcif-grid" id="kcifGrid"></div>
+        <div class="kcif-advice" id="kcifAdvice"></div>
       </section>
 
       <section class="playbook" id="playbook">
@@ -106,7 +116,7 @@
       <section class="source-section" id="sources">
         <div class="section-heading">
           <p class="eyebrow">Sources</p>
-          <h2>사용한 FRED 지표</h2>
+          <h2>사용한 주요 출처</h2>
         </div>
         <div class="source-list" id="sourceList"></div>
         <p class="disclaimer">
@@ -116,6 +126,6 @@
       </section>
     </main>
 
-    <script src="app.js?v=20260618-2"></script>
+    <script src="app.js?v=20260618-3"></script>
   </body>
 </html>
