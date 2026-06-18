@@ -492,7 +492,7 @@ function renderKcifReports() {
         <a href="${escapeHtml(report.url || listUrl)}" target="_blank" rel="noreferrer">원문 보기</a>
       </div>
       <h3>${escapeHtml(report.title)}</h3>
-      <p class="kcif-meta">${escapeHtml(report.date || "-")} · ${escapeHtml(report.source || "KCIF")}</p>
+      <p class="kcif-meta">${escapeHtml(report.date || "-")} · ${escapeHtml(report.source || "KCIF")}${report.summarySource ? ` · ${escapeHtml(report.summarySource)}` : ""}</p>
       ${reportFocusMarkup(report)}
       <p class="kcif-implication">${escapeHtml(report.implication || "FRED 지표를 보완하는 정성 리스크 자료입니다.")}</p>
     </article>

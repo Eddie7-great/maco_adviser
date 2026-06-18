@@ -39,7 +39,7 @@ button { font: inherit; }
 }
 
 .top-nav {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1440px, calc(100% - 48px));
   min-height: 58px;
   margin: 0 auto;
   display: flex;
@@ -58,12 +58,12 @@ button { font: inherit; }
 .top-nav a:hover { background: rgba(255,255,255,0.12); color: white; }
 
 .hero {
-  width: min(1280px, calc(100% - 32px));
+  width: min(1440px, calc(100% - 48px));
   min-height: 500px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(520px, 0.9fr);
-  gap: 32px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(600px, 0.75fr);
+  gap: 28px;
   align-items: center;
   padding: 28px 0 58px;
 }
@@ -79,12 +79,12 @@ button { font: inherit; }
 }
 .site-header .eyebrow { color: #9ed0c2; }
 h1, h2, h3, p { margin: 0; letter-spacing: 0; }
-h1 { max-width: 860px; font-size: clamp(34px, 4.2vw, 54px); line-height: 1.1; }
+h1 { max-width: 1000px; font-size: clamp(34px, 3.3vw, 46px); line-height: 1.08; }
 h2 { font-size: 28px; }
 h3 { font-size: 17px; }
 
 .lede {
-  max-width: 820px;
+  max-width: 900px;
   margin-top: 22px;
   color: rgba(255,255,255,0.86);
   font-size: 18px;
@@ -123,18 +123,25 @@ h3 { font-size: 17px; }
 .score-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 9px;
+  gap: 8px;
   margin-top: 18px;
 }
 .score {
-  min-height: 86px;
-  padding: 12px;
+  min-height: 84px;
+  padding: 10px;
   border-radius: 7px;
   border: 1px solid rgba(255,255,255,0.1);
   background: rgba(255,255,255,0.08);
 }
 .score span { display: block; color: rgba(255,255,255,0.66); font-size: 12px; font-weight: 700; }
-.score b { display: block; margin-top: 5px; font-size: 19px; }
+.score span:last-child {
+  margin-top: 5px;
+  white-space: nowrap;
+  color: rgba(255,255,255,0.72);
+  font-size: 11px;
+  line-height: 1.25;
+}
+.score b { display: block; margin-top: 5px; font-size: 20px; }
 
 .section-band, .dashboard, .chart-wall, .kcif-section, .playbook, .source-section {
   width: min(1280px, calc(100% - 32px));
@@ -710,7 +717,7 @@ h3 { font-size: 17px; }
   .hero { min-height: auto; padding-top: 52px; }
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 1180px) {
   .hero {
     grid-template-columns: 1fr;
   }
@@ -718,7 +725,7 @@ h3 { font-size: 17px; }
 
 @media (max-width: 620px) {
   .top-nav { justify-content: flex-start; overflow-x: auto; }
-  .hero, .section-band, .dashboard, .chart-wall, .kcif-section, .playbook, .source-section { width: min(100% - 20px, 1280px); }
+  .hero, .section-band, .dashboard, .chart-wall, .kcif-section, .playbook, .source-section { width: min(100% - 20px, 1440px); }
   h1 { font-size: 34px; }
   .lede { font-size: 16px; }
   .hero-panel { padding: 16px; }
