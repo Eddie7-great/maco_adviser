@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T20:43:39.469Z",
+  "generatedAt": "2026-06-19T05:32:15.810Z",
   "source": "KCIF",
   "listUrl": "https://www.kcif.or.kr/annual/monthlyList",
   "reports": [
@@ -8,7 +8,7 @@
       "label": "국제금융 INSIGHT",
       "title": "[26.6월] 국제금융 INSIGHT",
       "date": "2026.06.16",
-      "views": "809",
+      "views": "1,407",
       "attachment": "국제금융 인사이트 `26.6월호.pdf",
       "url": "https://www.kcif.or.kr/annual/reportView?rpt_no=37201&mn=001004&pe=004001&skey=&sval=&pg=1&pp=10",
       "source": "KCIF",
@@ -28,19 +28,13 @@
       "label": "글로벌 리스크 워치",
       "title": "[26.6월] 글로벌 리스크 워치",
       "date": "2026.06.05",
-      "views": "646",
+      "views": "670",
       "attachment": "260605-글로벌 리스크 워치.pdf",
       "url": "https://www.kcif.or.kr/annual/reportView?rpt_no=37160&mn=001004&pe=004008&skey=&sval=&pg=1&pp=10",
       "source": "KCIF",
-      "focus": [
-        "글로벌 금리: 선진국 장기금리 고수준은 주식 밸류에이션과 장기채 가격에 동시에 부담을 줄 수 있습니다.",
-        "유가·물가: 중동 리스크와 원유 가격 충격은 물가 재가속과 성장 둔화가 겹치는 시나리오를 키웁니다.",
-        "위험자산: AI·반도체 기대가 높은 구간에서는 실적 확인 전 밸류에이션 과열 여부를 함께 봅니다."
-      ],
+      "focus": [],
       "implication": "KCIF의 리스크 워치는 FRED 지표가 포착하지 못하는 지정학, 유가, 글로벌 금리, 신용 이벤트를 보완합니다.",
-      "previewUrl": "https://www.kcif.or.kr/flexer/view.jsp?SDir=dNcgOBDfpvjUtlqDHLJg2FDQYic54OvICuQqcL2DEkg%3D&SName=7E%2BgdsWnugnh%2FoHAYCfy23C%2Bsl89m358TlYWrdkau6LLqP2x2dcbRdGTcj33PCCN&ftype=pdf&FileName=260605-%EA%B8%80%EB%A1%9C%EB%B2%8C%20%EB%A6%AC%EC%8A%A4%ED%81%AC%20%EC%9B%8C%EC%B9%98.pdf",
-      "summarySource": "PDF 미리보기 전문",
-      "pdfTextLength": 1762
+      "error": "fetch failed"
     }
   ],
   "advice": [
