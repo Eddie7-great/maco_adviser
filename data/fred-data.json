@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-23T15:29:11.161Z",
+  "generatedAt": "2026-06-23T20:29:06.214Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -45,14 +45,6 @@
       "note": "장기금리는 성장주와 주택 관련주의 밸류에이션에 직접 영향을 줍니다.",
       "observations": [
         {
-          "date": "2026-06-12",
-          "value": 4.48
-        },
-        {
-          "date": "2026-06-15",
-          "value": 4.47
-        },
-        {
           "date": "2026-06-16",
           "value": 4.43
         },
@@ -63,10 +55,18 @@
         {
           "date": "2026-06-18",
           "value": 4.46
+        },
+        {
+          "date": "2026-06-19",
+          "value": 0
+        },
+        {
+          "date": "2026-06-22",
+          "value": 4.51
         }
       ],
-      "latestDate": "2026-06-18",
-      "latestValue": 4.46,
+      "latestDate": "2026-06-22",
+      "latestValue": 4.51,
       "fresh": true,
       "error": null
     },
@@ -408,28 +408,28 @@
       "note": "유동성 총량이 늘면 위험자산에 완충 역할을 할 수 있습니다.",
       "observations": [
         {
-          "date": "2025-12-01",
-          "value": 22353.5
-        },
-        {
           "date": "2026-01-01",
           "value": 22429.3
         },
         {
           "date": "2026-02-01",
-          "value": 22627
+          "value": 22626.9
         },
         {
           "date": "2026-03-01",
-          "value": 22686.4
+          "value": 22686.2
         },
         {
           "date": "2026-04-01",
           "value": 22804.5
+        },
+        {
+          "date": "2026-05-01",
+          "value": 23052.3
         }
       ],
-      "latestDate": "2026-04-01",
-      "latestValue": 22804.5,
+      "latestDate": "2026-05-01",
+      "latestValue": 23052.3,
       "fresh": true,
       "error": null
     },
