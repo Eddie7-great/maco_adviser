@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T12:29:55.647Z",
+  "generatedAt": "2026-06-23T04:36:45.387Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -45,10 +45,6 @@
       "note": "장기금리는 성장주와 주택 관련주의 밸류에이션에 직접 영향을 줍니다.",
       "observations": [
         {
-          "date": "2026-06-11",
-          "value": 4.45
-        },
-        {
           "date": "2026-06-12",
           "value": 4.48
         },
@@ -63,10 +59,14 @@
         {
           "date": "2026-06-17",
           "value": 4.49
+        },
+        {
+          "date": "2026-06-18",
+          "value": 4.46
         }
       ],
-      "latestDate": "2026-06-17",
-      "latestValue": 4.49,
+      "latestDate": "2026-06-18",
+      "latestValue": 4.46,
       "fresh": true,
       "error": null
     },
@@ -78,14 +78,6 @@
       "note": "금리차가 낮거나 재역전되면 경기 둔화 우려가 커집니다.",
       "observations": [
         {
-          "date": "2026-06-12",
-          "value": 0.39
-        },
-        {
-          "date": "2026-06-15",
-          "value": 0.4
-        },
-        {
           "date": "2026-06-16",
           "value": 0.38
         },
@@ -96,9 +88,17 @@
         {
           "date": "2026-06-18",
           "value": 0.27
+        },
+        {
+          "date": "2026-06-19",
+          "value": 0
+        },
+        {
+          "date": "2026-06-22",
+          "value": 0.27
         }
       ],
-      "latestDate": "2026-06-18",
+      "latestDate": "2026-06-22",
       "latestValue": 0.27,
       "fresh": true,
       "error": null
@@ -474,14 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-06-11",
-          "value": 2.78
-        },
-        {
-          "date": "2026-06-12",
-          "value": 2.71
-        },
-        {
           "date": "2026-06-15",
           "value": 2.66
         },
@@ -492,10 +484,18 @@
         {
           "date": "2026-06-17",
           "value": 2.63
+        },
+        {
+          "date": "2026-06-18",
+          "value": 2.66
+        },
+        {
+          "date": "2026-06-19",
+          "value": 2.66
         }
       ],
-      "latestDate": "2026-06-17",
-      "latestValue": 2.63,
+      "latestDate": "2026-06-19",
+      "latestValue": 2.66,
       "fresh": true,
       "error": null
     }
