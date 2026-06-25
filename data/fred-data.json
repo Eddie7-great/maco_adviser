@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-25T15:21:45.179Z",
+  "generatedAt": "2026-06-25T20:27:32.470Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -45,10 +45,6 @@
       "note": "장기금리는 성장주와 주택 관련주의 밸류에이션에 직접 영향을 줍니다.",
       "observations": [
         {
-          "date": "2026-06-17",
-          "value": 4.49
-        },
-        {
           "date": "2026-06-18",
           "value": 4.46
         },
@@ -63,10 +59,14 @@
         {
           "date": "2026-06-23",
           "value": 4.5
+        },
+        {
+          "date": "2026-06-24",
+          "value": 4.41
         }
       ],
-      "latestDate": "2026-06-23",
-      "latestValue": 4.5,
+      "latestDate": "2026-06-24",
+      "latestValue": 4.41,
       "fresh": true,
       "error": null
     },
@@ -441,10 +441,6 @@
       "note": "모기지 금리는 주택 수요와 건설 관련주를 압박하거나 완화합니다.",
       "observations": [
         {
-          "date": "2026-05-21",
-          "value": 6.51
-        },
-        {
           "date": "2026-05-28",
           "value": 6.53
         },
@@ -459,10 +455,14 @@
         {
           "date": "2026-06-18",
           "value": 6.47
+        },
+        {
+          "date": "2026-06-25",
+          "value": 6.49
         }
       ],
-      "latestDate": "2026-06-18",
-      "latestValue": 6.47,
+      "latestDate": "2026-06-25",
+      "latestValue": 6.49,
       "fresh": true,
       "error": null
     },
@@ -473,10 +473,6 @@
       "unit": "%",
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
-        {
-          "date": "2026-06-17",
-          "value": 2.63
-        },
         {
           "date": "2026-06-18",
           "value": 2.66
@@ -492,10 +488,14 @@
         {
           "date": "2026-06-23",
           "value": 2.71
+        },
+        {
+          "date": "2026-06-24",
+          "value": 2.76
         }
       ],
-      "latestDate": "2026-06-23",
-      "latestValue": 2.71,
+      "latestDate": "2026-06-24",
+      "latestValue": 2.76,
       "fresh": true,
       "error": null
     }
