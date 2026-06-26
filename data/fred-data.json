@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T15:07:38.634Z",
+  "generatedAt": "2026-06-26T20:15:18.539Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -342,10 +342,6 @@
       "note": "소비심리는 재량소비주와 경기 체감에 민감한 경고등입니다.",
       "observations": [
         {
-          "date": "2025-12-01",
-          "value": 52.9
-        },
-        {
           "date": "2026-01-01",
           "value": 56.4
         },
@@ -360,10 +356,14 @@
         {
           "date": "2026-04-01",
           "value": 49.8
+        },
+        {
+          "date": "2026-05-01",
+          "value": 44.8
         }
       ],
-      "latestDate": "2026-04-01",
-      "latestValue": 49.8,
+      "latestDate": "2026-05-01",
+      "latestValue": 44.8,
       "fresh": true,
       "error": null
     },
