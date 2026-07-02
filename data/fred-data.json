@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T09:40:01.183Z",
+  "generatedAt": "2026-07-02T14:34:29.786Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -177,10 +177,6 @@
       "note": "급격한 상승은 침체 위험 신호이고, 안정은 소비와 이익 전망에 우호적입니다.",
       "observations": [
         {
-          "date": "2026-01-01",
-          "value": 4.3
-        },
-        {
           "date": "2026-02-01",
           "value": 4.4
         },
@@ -195,10 +191,14 @@
         {
           "date": "2026-05-01",
           "value": 4.3
+        },
+        {
+          "date": "2026-06-01",
+          "value": 4.2
         }
       ],
-      "latestDate": "2026-05-01",
-      "latestValue": 4.3,
+      "latestDate": "2026-06-01",
+      "latestValue": 4.2,
       "fresh": true,
       "error": null
     },
@@ -210,10 +210,6 @@
       "note": "고용 총량이 늘면 소비 여력이 유지됩니다. 둔화 속도가 핵심입니다.",
       "observations": [
         {
-          "date": "2026-01-01",
-          "value": 158592
-        },
-        {
           "date": "2026-02-01",
           "value": 158436
         },
@@ -223,15 +219,19 @@
         },
         {
           "date": "2026-04-01",
-          "value": 158829
+          "value": 158798
         },
         {
           "date": "2026-05-01",
-          "value": 159001
+          "value": 158927
+        },
+        {
+          "date": "2026-06-01",
+          "value": 158984
         }
       ],
-      "latestDate": "2026-05-01",
-      "latestValue": 159001,
+      "latestDate": "2026-06-01",
+      "latestValue": 158984,
       "fresh": true,
       "error": null
     },
@@ -474,10 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-06-24",
-          "value": 2.76
-        },
-        {
           "date": "2026-06-25",
           "value": 2.78
         },
@@ -492,10 +488,14 @@
         {
           "date": "2026-06-30",
           "value": 2.75
+        },
+        {
+          "date": "2026-07-01",
+          "value": 2.74
         }
       ],
-      "latestDate": "2026-06-30",
-      "latestValue": 2.75,
+      "latestDate": "2026-07-01",
+      "latestValue": 2.74,
       "fresh": true,
       "error": null
     }
