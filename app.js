@@ -378,16 +378,16 @@ function scoreBucket(scores) {
 function renderMacroJudgement() {
   const view = buildMacroView();
   setText("cycleLabel", `${view.regime} · ${view.confidenceText}`);
-  setText("cycleSummary", `금리 ${view.buckets.rates.label}, 물가 ${view.buckets.inflation.label}, 고용 ${view.buckets.labor.label}, 성장 ${view.buckets.growth.label}, 소비 ${view.buckets.consumer.label}, 신용 ${view.buckets.risk.label}로 평가됩니다.`);
+  setText("cycleSummary", `금리 ${view.buckets.rates.label}, 물가 ${view.buckets.inflation.label}, 고용 ${view.buckets.labor.label}, 성장 ${view.buckets.growth.label}, 신용 ${view.buckets.risk.label} 조합입니다.`);
 }
 
 function renderScores() {
   const view = buildMacroView();
   const scoreItems = [
-    ["금리", view.buckets.rates.label, `10년물 ${fmt(view.latest.DGS10, "%")}, 모기지 ${fmt(view.latest.MORTGAGE30US, "%")}`],
-    ["물가", view.buckets.inflation.label, `CPI ${directionText(values("CPIAUCSL"))}, PCE ${directionText(values("PCEPI"))}`],
-    ["고용", view.buckets.labor.label, `실업률 ${fmt(view.latest.UNRATE, "%")}, 고용 ${directionText(values("PAYEMS"))}`],
-    ["신용/유동성", view.buckets.risk.label, `HY OAS ${fmt(view.latest.BAMLH0A0HYM2, "%")}, M2 ${directionText(values("M2SL"))}`],
+    ["금리", view.buckets.rates.label, `10Y ${fmt(view.latest.DGS10, "%")} · 모기지 ${fmt(view.latest.MORTGAGE30US, "%")}`],
+    ["물가", view.buckets.inflation.label, `CPI ${directionText(values("CPIAUCSL"))} · PCE ${directionText(values("PCEPI"))}`],
+    ["고용", view.buckets.labor.label, `실업률 ${fmt(view.latest.UNRATE, "%")} · 고용 ${directionText(values("PAYEMS"))}`],
+    ["신용/유동성", view.buckets.risk.label, `HY ${fmt(view.latest.BAMLH0A0HYM2, "%")} · M2 ${directionText(values("M2SL"))}`],
   ];
   document.querySelector("#scoreGrid").innerHTML = scoreItems.map(([label, value, note]) => `
     <div class="score"><span>${label}</span><b>${value}</b><span>${note}</span></div>
@@ -398,19 +398,19 @@ function renderPlaybook() {
   const view = buildMacroView();
   const assets = buildAssetPreference(view);
   const stance = view.total >= 3
-    ? ["투자 비중: 점진 확대", "성장과 고용이 받쳐주고 신용 스트레스가 낮은 조합입니다. 금리와 물가 부담이 남아 있으면 한 번에 비중을 올리기보다 분할 접근이 더 적합합니다.", "wide"]
+    ? ["투자 비중: 점진 확대", "성장·고용은 버티고 신용 스트레스는 낮습니다. 금리와 물가를 보며 분할 접근합니다.", "wide"]
     : view.total <= -3
-      ? ["투자 비중: 방어 우선", "여러 축이 동시에 부담입니다. 현금, 단기채, 방어주 비중을 점검하고, 레버리지와 경기민감 노출은 보수적으로 관리하는 구간입니다.", "wide"]
-      : ["투자 비중: 선별 유지", "상승과 둔화 신호가 섞여 있습니다. 지수 전체보다 실적 가시성, 가격 결정력, 현금흐름이 강한 자산을 선별하는 쪽이 유리합니다.", "wide"];
+      ? ["투자 비중: 방어 우선", "부담 신호가 많습니다. 현금, 단기채, 방어주를 우선 점검하고 레버리지는 줄입니다.", "wide"]
+      : ["투자 비중: 선별 유지", "상승과 둔화 신호가 섞였습니다. 지수보다 실적·현금흐름이 뚜렷한 자산을 고릅니다.", "wide"];
   const growthStyle = view.buckets.rates.score <= -2 || view.buckets.inflation.score <= -1
-    ? ["성장 자산", "장기금리와 물가가 부담이면 멀티플 확장이 제한됩니다. 금리 하락 전환이 확인될 때 성장주와 장기채 비중 확대 명분이 강해집니다.", "compact"]
-    : ["성장 자산", "금리 부담이 완화되면 장기 현금흐름 가치가 개선됩니다. 실적 성장률이 유지되는 기업과 장기채가 상대적으로 유리합니다.", "compact"];
+    ? ["성장 자산", "금리와 물가가 높으면 멀티플 확장이 어렵습니다. 금리 하락 확인 전까지 선별합니다.", "compact"]
+    : ["성장 자산", "금리 부담이 낮아지면 성장주와 장기채의 매력이 살아납니다.", "compact"];
   const cyclicals = view.buckets.growth.score + view.buckets.consumer.score >= 2
-    ? ["경기민감 자산", "산업생산, GDP, 소비가 받쳐주면 산업재, 소재, 반도체, 소비재의 이익 회복을 기대할 수 있습니다.", "compact"]
-    : ["경기민감 자산", "성장 또는 소비 지표가 약하면 경기민감 업종은 실적 추정 하향에 취약합니다. 필수소비재와 헬스케어가 상대적으로 안정적입니다.", "compact"];
+    ? ["경기민감 자산", "생산·GDP·소비가 받쳐주면 산업재, 소재, 반도체가 유리합니다.", "compact"]
+    : ["경기민감 자산", "성장·소비가 약하면 경기민감주는 줄이고 필수소비·헬스케어를 봅니다.", "compact"];
   const dataTrust = view.freshRatio >= 0.5
-    ? ["데이터 상태", "FRED 지표 대부분을 최신 JSON으로 불러왔습니다. KCIF 월간보고서와 연준 공식 발언도 별도 JSON으로 함께 반영됩니다.", "compact muted-card"]
-    : ["데이터 상태", "일부 지표는 내장 스냅샷으로 보조합니다. 원본 FRED, KCIF, Fed 링크를 함께 확인하세요.", "compact muted-card"];
+    ? ["데이터 상태", "최신 FRED, KCIF, Fed JSON을 반영했습니다.", "compact muted-card"]
+    : ["데이터 상태", "일부 지표는 스냅샷으로 보조합니다. 원본 링크도 함께 확인하세요.", "compact muted-card"];
   const kcifCard = ["KCIF 리스크 보정", kcifPlaybookText(), "compact muted-card"];
   const fedCard = ["Fed 발언 보정", fedPlaybookText(), "compact muted-card"];
   const assetCard = [
@@ -431,11 +431,11 @@ function buildAssetPreference(view) {
   if (view.buckets.rates.score <= -2 || view.buckets.inflation.score <= -1) {
     favorable.push("현금성 자산", "단기채", "퀄리티·배당주");
     unfavorable.push("장기 성장주", "리츠", "주택 관련주");
-    watch.push("10년물 금리와 CPI/PCE 둔화 여부");
+    watch.push("10Y·CPI/PCE 둔화");
   } else {
     favorable.push("성장주", "장기채", "리츠");
     unfavorable.push("과도한 현금 비중");
-    watch.push("금리 하락이 경기침체 신호인지 여부");
+    watch.push("금리 하락의 성격");
   }
 
   if (view.buckets.growth.score + view.buckets.consumer.score >= 2) {
@@ -443,13 +443,13 @@ function buildAssetPreference(view) {
   } else {
     favorable.push("필수소비재", "헬스케어");
     unfavorable.push("경기민감주", "소형주");
-    watch.push("소매판매와 산업생산 회복 여부");
+    watch.push("소매판매·산업생산");
   }
 
   if (view.buckets.risk.score <= -1) {
     favorable.push("미국 국채", "달러 방어 포지션");
     unfavorable.push("하이일드 채권", "레버리지 높은 기업");
-    watch.push("하이일드 OAS 급등 여부");
+    watch.push("HY OAS 급등");
   } else {
     favorable.push("우량 크레딧", "위험자산 분할 매수");
   }
@@ -557,7 +557,7 @@ function renderKcifReports() {
       <h3>${escapeHtml(report.title)}</h3>
       <p class="kcif-meta">${escapeHtml(report.date || "-")} · ${escapeHtml(report.source || "KCIF")}${report.summarySource ? ` · ${escapeHtml(report.summarySource)}` : ""}</p>
       ${reportFocusMarkup(report)}
-      <p class="kcif-implication">${escapeHtml(report.implication || "FRED 지표를 보완하는 정성 리스크 자료입니다.")}</p>
+      <p class="kcif-implication">${escapeHtml(compactText(report.implication || "FRED 지표를 보완하는 정성 리스크 자료입니다.", 74))}</p>
     </article>
   `).join("");
   document.querySelector("#kcifAdvice").innerHTML = `
@@ -566,7 +566,7 @@ function renderKcifReports() {
       <strong>${escapeHtml(kcifData.reports.map((report) => report.label).join(" · "))}</strong>
       <p>데이터 생성: ${escapeHtml(generated)} · <a href="${escapeHtml(listUrl)}" target="_blank" rel="noreferrer">월간보고서 목록</a></p>
     </div>
-    <ul>${kcifData.advice.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+    <ul>${kcifData.advice.slice(0, 4).map((item) => `<li>${escapeHtml(compactText(item, 74))}</li>`).join("")}</ul>
   `;
 }
 
@@ -583,17 +583,19 @@ function renderFedSpeeches() {
         <a href="${escapeHtml(speech.sourceUrl || speech.url || fedSpeechData.feedUrl)}" target="_blank" rel="noreferrer">원문 보기</a>
       </div>
       <h3>${escapeHtml(speech.speakerFullName || speech.speaker || "Federal Reserve")}</h3>
-      <p class="fed-title">${escapeHtml(speech.title || "Speech")}</p>
-      <p class="fed-meta">${escapeHtml(speech.date || shortIsoDate(speech.publishedAt) || "-")} · ${escapeHtml(speech.venue || "Federal Reserve")}</p>
-      <p class="fed-summary">${escapeHtml(speech.summary || "최신 연준 발언을 시장 관점에서 점검합니다.")}</p>
+      <p class="fed-title">${escapeHtml(compactSpeechTitle(speech.title || "Speech"))}</p>
+      <p class="fed-meta">${escapeHtml(speech.date || shortIsoDate(speech.publishedAt) || "-")} · Federal Reserve</p>
+      <p class="fed-summary">${escapeHtml(compactText(speech.summary || "최신 연준 발언을 시장 관점에서 점검합니다.", 92))}</p>
       <div class="fed-tags">${(speech.themes || ["Fed"]).map((theme) => `<span>${escapeHtml(theme)}</span>`).join("")}</div>
-      <div class="fed-impact">
-        <b>시장 영향</b>
-        <span>${escapeHtml(speech.marketImpact || "FRED 지표와 함께 보조적으로 확인")}</span>
-      </div>
-      <div class="fed-watch">
-        <b>같이 볼 것</b>
-        <span>${escapeHtml(speech.watch || "금리·물가·신용 지표")}</span>
+      <div class="fed-checks">
+        <div class="fed-impact">
+          <b>시장 영향</b>
+          <span>${escapeHtml(compactText(speech.marketImpact || "FRED 지표와 함께 보조적으로 확인", 44))}</span>
+        </div>
+        <div class="fed-watch">
+          <b>같이 볼 것</b>
+          <span>${escapeHtml(compactList(speech.watch || "금리·물가·신용 지표", 2))}</span>
+        </div>
       </div>
     </article>
   `).join("");
@@ -603,7 +605,7 @@ function renderFedSpeeches() {
       <strong>${escapeHtml(speeches[0]?.speakerFullName || speeches[0]?.speaker || "Federal Reserve")}</strong>
       <p>데이터 생성: ${escapeHtml(generated)} · <a href="${escapeHtml(fedSpeechData.feedUrl)}" target="_blank" rel="noreferrer">연설 RSS</a></p>
     </div>
-    <ul>${(fedSpeechData.advice || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+    <ul>${(fedSpeechData.advice || []).slice(0, 3).map((item) => `<li>${escapeHtml(compactText(item, 76))}</li>`).join("")}</ul>
   `;
 }
 
@@ -706,9 +708,41 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+function compactText(value, maxLength = 90) {
+  const text = String(value || "").replace(/\s+/g, " ").trim();
+  if (text.length <= maxLength) return text;
+  const sentenceEnd = ["다. ", ". ", "? ", "! "]
+    .map((marker) => text.indexOf(marker))
+    .filter((index) => index > 0)
+    .sort((a, b) => a - b)[0];
+  const firstSentence = sentenceEnd ? text.slice(0, sentenceEnd + 2).trim() : "";
+  if (firstSentence && firstSentence.length <= maxLength) return firstSentence;
+  const clipped = text.slice(0, maxLength + 1);
+  const cut = Math.max(clipped.lastIndexOf(" "), clipped.lastIndexOf(","), clipped.lastIndexOf("·"));
+  return `${clipped.slice(0, cut > maxLength * 0.55 ? cut : maxLength).trim()}...`;
+}
+
+function compactList(value, limit = 2) {
+  return String(value || "")
+    .split(/[,，]/)
+    .map((item) => item.trim())
+    .filter(Boolean)
+    .slice(0, limit)
+    .join(" · ");
+}
+
+function compactSpeechTitle(value) {
+  return String(value || "")
+    .replace("Welcoming Remarks on the International Role of the U.S. Dollar", "U.S. Dollar 국제 역할")
+    .replace("A Framework for Practical Monetary Policy Decision Making", "통화정책 판단 프레임")
+    .replace("Global Economic Developments and the U.S. Economy", "글로벌 경제와 미국 경기")
+    .replace("The Opportunities and Risks AI Presents for the Economy and Financial System", "AI의 기회와 금융 리스크")
+    .replace("When Regulation Reshapes Markets: The Migration of Corporate Lending", "기업대출 이동과 규제");
+}
+
 function reportFocusMarkup(report) {
   const focus = Array.isArray(report.focus) && report.focus.length ? report.focus : ["공개 상세 페이지에는 요약 목차만 제공됩니다. 원문 PDF를 함께 확인하세요."];
-  return `<ul class="kcif-focus">${focus.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+  return `<ul class="kcif-focus">${focus.slice(0, 4).map((item) => `<li>${escapeHtml(compactText(item, 96))}</li>`).join("")}</ul>`;
 }
 
 function kcifPlaybookText() {
@@ -717,19 +751,19 @@ function kcifPlaybookText() {
   const prefix = latest ? `최신 KCIF 월간보고서(${latest}) 기준으로 ` : "최신 KCIF 월간보고서 기준으로 ";
   const points = [];
   if (/세계경제|국제ㆍ국내금융시장|글로벌 은행산업|은행산업/.test(focusText)) {
-    points.push("INSIGHT가 세계경제, 금융시장, 은행산업을 점검축으로 제시하므로 지수 방향보다 금리·신용·은행 유동성의 동시 악화 여부를 먼저 확인합니다.");
+    points.push("세계경제·금융시장·은행 유동성을 함께 점검합니다.");
   }
   if (/금리|장기금리|국채/.test(focusText)) {
-    points.push("장기금리 리스크가 확인되어 성장주, 리츠, 장기채처럼 금리 민감도가 큰 자산은 FRED 금리 지표가 꺾이는지 확인하며 접근합니다.");
+    points.push("장기금리 부담은 성장주·리츠·장기채에 불리합니다.");
   }
   if (/유가|중동|스태그플레이션|물가/.test(focusText)) {
-    points.push("유가와 물가 충격이 함께 언급되므로 에너지와 현금흐름 방어력이 있는 기업은 상대적으로 유리하고 운송·재량소비는 비용 압박을 점검합니다.");
+    points.push("유가·물가 충격은 에너지에 우호, 운송·재량소비에는 부담입니다.");
   }
   if (/신흥국|달러|외환|자본유출/.test(focusText)) {
-    points.push("신흥국과 달러 스트레스가 커질 때는 위험자산 비중 확대 전 달러와 미국 국채의 방어력을 함께 봅니다.");
+    points.push("달러 스트레스가 커지면 달러·미국 국채 방어력을 봅니다.");
   }
   const body = unique(points).slice(0, 3).join(" ");
-  return body ? `${prefix}${body}` : `${prefix}FRED가 보여주는 계량 신호에 글로벌 이벤트 리스크를 더해 투자 비중을 보정합니다. 원문 보고서의 월간 포커스를 함께 확인하세요.`;
+  return body ? `${prefix}${body}` : `${prefix}글로벌 이벤트 리스크로 투자 비중을 보정합니다.`;
 }
 
 function fedPlaybookText() {
@@ -740,18 +774,18 @@ function fedPlaybookText() {
   const prefix = latest ? `최신 연준 발언(${latest.speakerFullName || latest.speaker}, ${latest.date || shortIsoDate(latest.publishedAt)}) 기준으로 ` : "최신 연준 발언 기준으로 ";
   const points = [];
   if (/금리·통화정책|policy|inflation|금리|물가/.test(`${themeText} ${impactText}`)) {
-    points.push("금리·물가 언급이 강하면 성장주, 리츠, 장기채 비중 확대는 10년물 금리와 CPI/PCE 둔화가 같이 확인될 때가 더 안전합니다.");
+    points.push("금리·물가 발언이 강하면 성장주·리츠·장기채는 선별합니다.");
   }
   if (/달러·유동성|달러|유동성|국채/.test(`${themeText} ${impactText}`)) {
-    points.push("달러·유동성 발언이 부각되면 신흥국, 원자재, 고베타 자산보다 달러와 미국 국채의 방어력을 함께 비교합니다.");
+    points.push("달러·유동성 발언은 달러·미국 국채 방어력 점검 신호입니다.");
   }
   if (/신용·은행|은행|신용|하이일드|레버리지/.test(`${themeText} ${impactText}`)) {
-    points.push("신용·은행 주제가 반복되면 하이일드 OAS, 은행주, 소형주의 자금조달 리스크를 먼저 점검합니다.");
+    points.push("신용·은행 주제는 HY OAS, 은행주, 소형주 리스크로 연결됩니다.");
   }
   if (/AI·생산성|AI|생산성|소프트웨어|반도체/.test(`${themeText} ${impactText}`)) {
-    points.push("AI·생산성 신호는 성장 테마에 우호적이지만 고금리 구간에서는 실적이 확인되는 기업 중심으로 압축합니다.");
+    points.push("AI·생산성 신호는 우호적이나 실적 확인 기업으로 압축합니다.");
   }
-  return points.length ? `${prefix}${unique(points).slice(0, 2).join(" ")}` : `${prefix}시장 직접성은 제한적입니다. FRED 금리·물가·신용 지표를 우선하고 발언은 정책 의제 확인용으로 봅니다.`;
+  return points.length ? `${prefix}${unique(points).slice(0, 2).join(" ")}` : `${prefix}FRED 금리·물가·신용 지표를 우선합니다.`;
 }
 
 function assetListMarkup(list) {
@@ -760,29 +794,29 @@ function assetListMarkup(list) {
 
 function assetReason(name) {
   const reasons = {
-    "현금성 자산": "금리·물가 부담이 클 때 변동성을 낮춥니다.",
-    "단기채": "금리 변동에 덜 민감하고 이자수익 방어가 됩니다.",
-    "퀄리티·배당주": "현금흐름과 배당이 약한 경기에서 버팀목입니다.",
-    "장기 성장주": "금리 하락 시 장기 현금흐름 가치가 커집니다.",
-    "리츠": "금리 부담 완화와 배당 매력이 함께 작동합니다.",
-    "장기채": "금리 하락 구간에서 가격 상승 여지가 큽니다.",
-    "산업재": "생산과 투자 회복의 직접 수혜를 받습니다.",
-    "소비재": "소비 지표 개선 시 매출 기대가 살아납니다.",
-    "소재·반도체": "경기 회복과 재고 사이클 개선에 민감합니다.",
-    "필수소비재": "소비 둔화에도 수요가 비교적 안정적입니다.",
-    "헬스케어": "경기 민감도가 낮아 방어력이 있습니다.",
-    "미국 국채": "신용위험이 커질 때 안전자산 선호를 받습니다.",
-    "달러 방어 포지션": "위험 회피 국면에서 방어 수단이 됩니다.",
-    "우량 크레딧": "스프레드가 안정적일 때 이자수익과 방어를 겸합니다.",
-    "위험자산 분할 매수": "신용 스트레스가 낮으면 단계적 진입이 가능합니다.",
-    "과도한 현금 비중": "위험 선호가 회복될 때 기회비용이 커집니다.",
-    "경기민감주": "성장·소비 둔화 시 이익 추정이 빠르게 낮아질 수 있습니다.",
-    "소형주": "신용여건과 경기 둔화에 취약합니다.",
-    "하이일드 채권": "스프레드 확대 시 가격 하락 위험이 큽니다.",
-    "레버리지 높은 기업": "차입비용과 만기 재조달 부담이 커집니다.",
-    "주택 관련주": "모기지 금리 상승과 착공 둔화에 눌릴 수 있습니다.",
+    "현금성 자산": "변동성 완충",
+    "단기채": "금리 민감도 낮음",
+    "퀄리티·배당주": "현금흐름 방어",
+    "장기 성장주": "금리 하락 수혜",
+    "리츠": "금리 완화 수혜",
+    "장기채": "금리 하락 수혜",
+    "산업재": "투자 회복 수혜",
+    "소비재": "소비 회복 수혜",
+    "소재·반도체": "경기 회복 민감",
+    "필수소비재": "수요 안정",
+    "헬스케어": "방어 성격",
+    "미국 국채": "안전자산 선호",
+    "달러 방어 포지션": "위험회피 방어",
+    "우량 크레딧": "이자수익+방어",
+    "위험자산 분할 매수": "단계적 진입",
+    "과도한 현금 비중": "기회비용 확대",
+    "경기민감주": "이익 하향 취약",
+    "소형주": "신용여건 민감",
+    "하이일드 채권": "스프레드 위험",
+    "레버리지 높은 기업": "차입비용 부담",
+    "주택 관련주": "모기지 부담",
   };
-  return reasons[name] || "현재 매크로 조합에 민감하게 반응합니다.";
+  return reasons[name] || "매크로 민감";
 }
 
 function formatValue(entry, value) {
