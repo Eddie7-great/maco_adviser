@@ -1,0 +1,150 @@
+{
+  "generatedAt": "2026-07-03T04:50:51.094Z",
+  "source": "Federal Reserve",
+  "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
+  "speeches": [
+    {
+      "speaker": "Cook",
+      "speakerFullName": "Lisa D. Cook",
+      "title": "Welcome Remarks",
+      "rawTitle": "Cook, Welcome Remarks",
+      "url": "https://www.federalreserve.gov/newsevents/speech/cook20260624a.htm",
+      "description": "Speech At the State of Small Business Symposium hosted by the Federal Reserve Bank of Cleveland (via pre-recorded video)",
+      "publishedAt": "2026-06-24T18:00:00.000Z",
+      "date": "2026-06-24",
+      "source": "Federal Reserve",
+      "venue": "the State of Small Business Symposium hosted by the Federal Reserve Bank of Cleveland (via pre-recorded video)",
+      "themes": [
+        "신용·은행",
+        "성장·소비"
+      ],
+      "stance": "신용 여건 점검",
+      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
+      "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
+      "watch": "하이일드 OAS와 은행 대출태도, 소매판매·고용·소기업 신용",
+      "relevanceScore": 9,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/cook20260624a.htm",
+      "readError": null
+    },
+    {
+      "speaker": "Waller",
+      "speakerFullName": "Christopher J. Waller",
+      "title": "Welcoming Remarks on the International Role of the U.S. Dollar",
+      "rawTitle": "Waller, Welcoming Remarks on the International Role of the U.S. Dollar",
+      "url": "https://www.federalreserve.gov/newsevents/speech/waller20260622a.htm",
+      "description": "Speech At the Fifth Conference on the International Roles of the Dollar, Board of Governors of the Federal Reserve System, Washington, D.C.",
+      "publishedAt": "2026-06-22T13:00:00.000Z",
+      "date": "2026-06-22",
+      "source": "Federal Reserve",
+      "venue": "the Fifth Conference on the International Roles of the Dollar, Board of Governors of the Federal Reserve System, Washington, D.C.",
+      "themes": [
+        "달러·유동성"
+      ],
+      "stance": "달러·유동성 점검",
+      "marketImpact": "달러, 미국 국채, 신흥국·원자재 자산의 위험회피 흐름 점검",
+      "summary": "달러의 국제적 역할과 결제·유동성 기반을 다룬 발언입니다. 달러 강세, 미국 국채 수요, 글로벌 위험회피를 함께 볼 필요가 있습니다.",
+      "watch": "달러지수와 미국 국채 수요",
+      "relevanceScore": 7,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/waller20260622a.htm",
+      "readError": null
+    },
+    {
+      "speaker": "Bowman",
+      "speakerFullName": "Michelle W. Bowman",
+      "title": "A Framework for Practical Monetary Policy Decision Making",
+      "rawTitle": "Bowman, A Framework for Practical Monetary Policy Decision Making",
+      "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260529a.htm",
+      "description": "Speech At the Reykjavík Economic Conference 2026, Central Bank of Iceland, Reykjavík, Iceland",
+      "publishedAt": "2026-05-29T13:10:00.000Z",
+      "date": "2026-05-29",
+      "source": "Federal Reserve",
+      "venue": "the Reykjavík Economic Conference 2026, Central Bank of Iceland, Reykjavík, Iceland",
+      "themes": [
+        "금리·통화정책",
+        "신용·은행"
+      ],
+      "stance": "정책 경계",
+      "marketImpact": "금리 민감 성장주·장기채·리츠의 할인율을 재점검",
+      "summary": "정책금리, 물가, 고용 균형에 관한 발언입니다. 성장주 밸류에이션과 장기채·리츠 같은 금리 민감 자산의 방향성 판단에 직접적입니다.",
+      "watch": "CPI·PCE와 10년물 금리, 하이일드 OAS와 은행 대출태도",
+      "relevanceScore": 10,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20260529a.htm",
+      "readError": null
+    },
+    {
+      "speaker": "Jefferson",
+      "speakerFullName": "Philip N. Jefferson",
+      "title": "Global Economic Developments and the U.S. Economy",
+      "rawTitle": "Jefferson, Global Economic Developments and the U.S. Economy",
+      "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260527a.htm",
+      "description": "Speech At the 2026 Bank of Japan-Institute for Monetary and Economic Studies Conference, Tokyo, Japan",
+      "publishedAt": "2026-05-28T00:00:00.000Z",
+      "date": "2026-05-28",
+      "source": "Federal Reserve",
+      "venue": "the 2026 Bank of Japan-Institute for Monetary and Economic Studies Conference, Tokyo, Japan",
+      "themes": [
+        "신용·은행",
+        "성장·소비"
+      ],
+      "stance": "글로벌 경기 점검",
+      "marketImpact": "달러, 수출주, 경기민감 업종의 글로벌 수요와 금리 충격 점검",
+      "summary": "글로벌 경제 흐름과 미국 경기의 연결고리를 다룬 발언입니다. 달러, 수출주, 경기민감 업종의 외부 수요 리스크를 점검할 단서입니다.",
+      "watch": "하이일드 OAS와 은행 대출태도, 소매판매·고용·소기업 신용",
+      "relevanceScore": 8,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/jefferson20260527a.htm",
+      "readError": null
+    },
+    {
+      "speaker": "Cook",
+      "speakerFullName": "Lisa D. Cook",
+      "title": "The Opportunities and Risks AI Presents for the Economy and Financial System",
+      "rawTitle": "Cook, The Opportunities and Risks AI Presents for the Economy and Financial System",
+      "url": "https://www.federalreserve.gov/newsevents/speech/cook20260527a.htm",
+      "description": "Speech At the Stanford Institute for Economic Policy Research, Stanford University, Stanford, California",
+      "publishedAt": "2026-05-27T19:55:00.000Z",
+      "date": "2026-05-27",
+      "source": "Federal Reserve",
+      "venue": "the Stanford Institute for Economic Policy Research, Stanford University, Stanford, California",
+      "themes": [
+        "성장·소비",
+        "AI·생산성"
+      ],
+      "stance": "구조 성장",
+      "marketImpact": "AI 인프라·소프트웨어 성장성은 우호, 고평가 구간은 선별",
+      "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
+      "watch": "AI 투자 사이클과 생산성 지표, 소매판매·고용·소기업 신용",
+      "relevanceScore": 7,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/cook20260527a.htm",
+      "readError": null
+    },
+    {
+      "speaker": "Bowman",
+      "speakerFullName": "Michelle W. Bowman",
+      "title": "When Regulation Reshapes Markets: The Migration of Corporate Lending",
+      "rawTitle": "Bowman, When Regulation Reshapes Markets: The Migration of Corporate Lending",
+      "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260508a.htm",
+      "description": "Speech At the Hoover Institution Annual Monetary Policy Conference, Stanford, California",
+      "publishedAt": "2026-05-08T23:30:00.000Z",
+      "date": "2026-05-08",
+      "source": "Federal Reserve",
+      "venue": "the Hoover Institution Annual Monetary Policy Conference, Stanford, California",
+      "themes": [
+        "금리·통화정책",
+        "신용·은행"
+      ],
+      "stance": "신용 여건 점검",
+      "marketImpact": "은행·사모신용·하이일드·레버리지 기업의 신용 여건 점검",
+      "summary": "기업대출이 은행권 밖으로 이동하는 문제를 다룬 발언입니다. 은행주, 사모신용, 하이일드·레버리지 기업의 신용 여건을 점검합니다.",
+      "watch": "CPI·PCE와 10년물 금리, 하이일드 OAS와 은행 대출태도",
+      "relevanceScore": 10,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20260508a.htm",
+      "readError": null
+    }
+  ],
+  "advice": [
+    "연준 발언에서 금리·물가가 반복되면 성장주 비중 확대는 CPI/PCE 둔화와 10년물 금리 하락이 같이 확인될 때가 더 안전합니다.",
+    "달러·유동성 언급이 늘면 신흥국, 원자재, 고베타 자산보다 달러와 미국 국채의 방어력을 함께 비교합니다.",
+    "신용·은행 관련 발언은 하이일드 OAS, 은행주, 소형주의 자금조달 리스크를 재점검하라는 신호로 봅니다.",
+    "AI·생산성 발언은 장기 성장 테마에 우호적이지만, 금리가 높을 때는 실적이 확인되는 기업 중심으로 압축하는 편이 낫습니다."
+  ]
+}

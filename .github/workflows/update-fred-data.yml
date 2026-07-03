@@ -32,10 +32,13 @@ jobs:
       - name: Fetch KCIF monthly reports
         run: node scripts/fetch-kcif-reports.mjs
 
+      - name: Fetch Federal Reserve speeches
+        run: node scripts/fetch-fed-speeches.mjs
+
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/fred-data.json data/kcif-reports.json
+          git add data/fred-data.json data/kcif-reports.json data/fed-speeches.json
           git diff --cached --quiet || git commit -m "Update macro data"
           git push

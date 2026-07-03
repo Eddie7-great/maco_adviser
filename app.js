@@ -55,6 +55,46 @@ const fallbackKcifData = {
   ],
 };
 
+const fallbackFedSpeechData = {
+  generatedAt: "2026-06-24T18:00:00.000Z",
+  source: "Federal Reserve",
+  feedUrl: "https://www.federalreserve.gov/feeds/speeches.xml",
+  speeches: [
+    {
+      speaker: "Cook",
+      speakerFullName: "Lisa D. Cook",
+      title: "Welcome Remarks",
+      date: "2026-06-24",
+      publishedAt: "2026-06-24T18:00:00.000Z",
+      venue: "State of Small Business Symposium hosted by the Federal Reserve Bank of Cleveland",
+      themes: ["신용·은행", "성장·소비", "AI·생산성"],
+      stance: "신용 여건 점검",
+      marketImpact: "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
+      summary: "소기업의 신용 접근, 고용 창출, AI 활용을 함께 다룬 발언입니다. 내수·소형주·AI 생산성 테마를 교차 점검할 단서입니다.",
+      watch: "소매판매·고용·소기업 신용, AI 투자 사이클과 생산성 지표",
+      sourceUrl: "https://www.federalreserve.gov/newsevents/speech/cook20260624a.htm",
+    },
+    {
+      speaker: "Waller",
+      speakerFullName: "Christopher J. Waller",
+      title: "Welcoming Remarks on the International Role of the U.S. Dollar",
+      date: "2026-06-22",
+      publishedAt: "2026-06-22T13:00:00.000Z",
+      venue: "Fifth Conference on the International Roles of the Dollar",
+      themes: ["달러·유동성"],
+      stance: "달러·유동성 점검",
+      marketImpact: "달러, 미국 국채, 신흥국·원자재 자산의 위험회피 흐름 점검",
+      summary: "달러의 국제적 역할과 결제·유동성 기반을 다룬 발언입니다. 달러 강세, 미국 국채 수요, 글로벌 위험회피를 함께 볼 필요가 있습니다.",
+      watch: "달러지수와 미국 국채 수요",
+      sourceUrl: "https://www.federalreserve.gov/newsevents/speech/waller20260622a.htm",
+    },
+  ],
+  advice: [
+    "연준 발언에서 신용·은행 관련 주제가 늘면 하이일드 OAS, 은행주, 소형주의 자금조달 리스크를 먼저 재점검합니다.",
+    "달러·유동성 언급이 늘면 신흥국, 원자재, 고베타 자산보다 달러와 미국 국채의 방어력을 함께 비교합니다.",
+  ],
+};
+
 const groupNames = {
   rates: "금리",
   inflation: "물가",
@@ -209,6 +249,7 @@ const chartSets = [
 let macroData = fallbackData;
 let indicators = Object.values(fallbackData.series);
 let kcifData = fallbackKcifData;
+let fedSpeechData = fallbackFedSpeechData;
 let activeFilter = "all";
 
 function item(id, group, name, unit, observations, note) {
@@ -226,7 +267,7 @@ function item(id, group, name, unit, observations, note) {
 }
 
 async function loadData() {
-  await Promise.all([loadFredData(), loadKcifData()]);
+  await Promise.all([loadFredData(), loadKcifData(), loadFedSpeechData()]);
   renderAll();
 }
 
@@ -250,6 +291,16 @@ async function loadKcifData() {
     kcifData = normalizeKcifData(await response.json());
   } catch {
     kcifData = fallbackKcifData;
+  }
+}
+
+async function loadFedSpeechData() {
+  try {
+    const response = await fetch(`data/fed-speeches.json?ts=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    fedSpeechData = normalizeFedSpeechData(await response.json());
+  } catch {
+    fedSpeechData = fallbackFedSpeechData;
   }
 }
 
@@ -280,6 +331,17 @@ function normalizeKcifData(data) {
     ...fallbackKcifData,
     ...data,
     reports,
+    advice,
+  };
+}
+
+function normalizeFedSpeechData(data) {
+  const speeches = Array.isArray(data?.speeches) && data.speeches.length ? data.speeches : fallbackFedSpeechData.speeches;
+  const advice = Array.isArray(data?.advice) && data.advice.length ? data.advice : fallbackFedSpeechData.advice;
+  return {
+    ...fallbackFedSpeechData,
+    ...data,
+    speeches,
     advice,
   };
 }
@@ -347,15 +409,16 @@ function renderPlaybook() {
     ? ["경기민감 자산", "산업생산, GDP, 소비가 받쳐주면 산업재, 소재, 반도체, 소비재의 이익 회복을 기대할 수 있습니다.", "compact"]
     : ["경기민감 자산", "성장 또는 소비 지표가 약하면 경기민감 업종은 실적 추정 하향에 취약합니다. 필수소비재와 헬스케어가 상대적으로 안정적입니다.", "compact"];
   const dataTrust = view.freshRatio >= 0.5
-    ? ["데이터 상태", "FRED 지표 대부분을 최신 JSON으로 불러왔습니다. KCIF 월간보고서도 별도 JSON으로 함께 반영됩니다.", "compact muted-card"]
-    : ["데이터 상태", "일부 지표는 내장 스냅샷으로 보조합니다. 원본 FRED와 KCIF 링크를 함께 확인하세요.", "compact muted-card"];
+    ? ["데이터 상태", "FRED 지표 대부분을 최신 JSON으로 불러왔습니다. KCIF 월간보고서와 연준 공식 발언도 별도 JSON으로 함께 반영됩니다.", "compact muted-card"]
+    : ["데이터 상태", "일부 지표는 내장 스냅샷으로 보조합니다. 원본 FRED, KCIF, Fed 링크를 함께 확인하세요.", "compact muted-card"];
   const kcifCard = ["KCIF 리스크 보정", kcifPlaybookText(), "compact muted-card"];
+  const fedCard = ["Fed 발언 보정", fedPlaybookText(), "compact muted-card"];
   const assetCard = [
     "자산군 유리/불리",
     `<b>유리:</b>${assetListMarkup(assets.favorable)}<b>불리:</b>${assetListMarkup(assets.unfavorable)}<b>관찰:</b> ${assets.watch}`,
     "wide asset-card",
   ];
-  document.querySelector("#playbookGrid").innerHTML = [stance, assetCard, growthStyle, cyclicals, kcifCard, dataTrust].map(([title, text, className]) => `
+  document.querySelector("#playbookGrid").innerHTML = [stance, assetCard, growthStyle, cyclicals, kcifCard, fedCard, dataTrust].map(([title, text, className]) => `
     <article class="playbook-card ${className}"><h3>${title}</h3><p>${text}</p></article>
   `).join("");
 }
@@ -507,6 +570,43 @@ function renderKcifReports() {
   `;
 }
 
+function renderFedSpeeches() {
+  const grid = document.querySelector("#fedGrid");
+  const advice = document.querySelector("#fedAdvice");
+  if (!grid || !advice) return;
+  const speeches = fedSpeechData.speeches || [];
+  const generated = formatDateTime(new Date(fedSpeechData.generatedAt));
+  grid.innerHTML = speeches.map((speech) => `
+    <article class="fed-card">
+      <div class="fed-card-head">
+        <span>${escapeHtml(speech.stance || "Fed 발언")}</span>
+        <a href="${escapeHtml(speech.sourceUrl || speech.url || fedSpeechData.feedUrl)}" target="_blank" rel="noreferrer">원문 보기</a>
+      </div>
+      <h3>${escapeHtml(speech.speakerFullName || speech.speaker || "Federal Reserve")}</h3>
+      <p class="fed-title">${escapeHtml(speech.title || "Speech")}</p>
+      <p class="fed-meta">${escapeHtml(speech.date || shortIsoDate(speech.publishedAt) || "-")} · ${escapeHtml(speech.venue || "Federal Reserve")}</p>
+      <p class="fed-summary">${escapeHtml(speech.summary || "최신 연준 발언을 시장 관점에서 점검합니다.")}</p>
+      <div class="fed-tags">${(speech.themes || ["Fed"]).map((theme) => `<span>${escapeHtml(theme)}</span>`).join("")}</div>
+      <div class="fed-impact">
+        <b>시장 영향</b>
+        <span>${escapeHtml(speech.marketImpact || "FRED 지표와 함께 보조적으로 확인")}</span>
+      </div>
+      <div class="fed-watch">
+        <b>같이 볼 것</b>
+        <span>${escapeHtml(speech.watch || "금리·물가·신용 지표")}</span>
+      </div>
+    </article>
+  `).join("");
+  advice.innerHTML = `
+    <div>
+      <span>Fed 공식 발언 체크</span>
+      <strong>${escapeHtml(speeches[0]?.speakerFullName || speeches[0]?.speaker || "Federal Reserve")}</strong>
+      <p>데이터 생성: ${escapeHtml(generated)} · <a href="${escapeHtml(fedSpeechData.feedUrl)}" target="_blank" rel="noreferrer">연설 RSS</a></p>
+    </div>
+    <ul>${(fedSpeechData.advice || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+  `;
+}
+
 function renderSources() {
   const fredSources = indicators.map((entry) => `
     <a href="${fredUrl(entry.id)}" target="_blank" rel="noreferrer">${entry.name}<span>${entry.id}</span></a>
@@ -514,7 +614,10 @@ function renderSources() {
   const kcifSources = kcifData.reports.map((report) => `
     <a href="${escapeHtml(report.url || kcifData.listUrl)}" target="_blank" rel="noreferrer">${escapeHtml(report.label)}<span>KCIF</span></a>
   `);
-  document.querySelector("#sourceList").innerHTML = [...fredSources, ...kcifSources].join("");
+  const fedSources = (fedSpeechData.speeches || []).slice(0, 4).map((speech) => `
+    <a href="${escapeHtml(speech.sourceUrl || speech.url || fedSpeechData.feedUrl)}" target="_blank" rel="noreferrer">${escapeHtml(speech.speaker || "Fed")} 발언<span>Fed</span></a>
+  `);
+  document.querySelector("#sourceList").innerHTML = [...fredSources, ...kcifSources, ...fedSources].join("");
 }
 
 function bindFilters() {
@@ -546,6 +649,7 @@ function renderAll() {
   renderIndicators(activeFilter);
   renderCharts();
   renderKcifReports();
+  renderFedSpeeches();
   renderSources();
   renderPlaybook();
 }
@@ -558,6 +662,10 @@ function unique(list) { return [...new Set(list)]; }
 function fredUrl(id) { return `https://fred.stlouisfed.org/series/${id}`; }
 function fredGraphUrl(ids) { return `https://fred.stlouisfed.org/graph/?id=${ids.split(",").map(encodeURIComponent).join(",")}`; }
 function formatDateTime(date) { return Number.isNaN(date.valueOf()) ? "-" : new Intl.DateTimeFormat("ko-KR", { dateStyle: "medium", timeStyle: "short" }).format(date); }
+function shortIsoDate(value) {
+  const date = new Date(value);
+  return Number.isNaN(date.valueOf()) ? "" : date.toISOString().slice(0, 10);
+}
 function shortDate(value) {
   const text = String(value || "");
   if (/^\d{4}-Q\d$/.test(text)) return text.replace("-Q", " Q");
@@ -622,6 +730,28 @@ function kcifPlaybookText() {
   }
   const body = unique(points).slice(0, 3).join(" ");
   return body ? `${prefix}${body}` : `${prefix}FRED가 보여주는 계량 신호에 글로벌 이벤트 리스크를 더해 투자 비중을 보정합니다. 원문 보고서의 월간 포커스를 함께 확인하세요.`;
+}
+
+function fedPlaybookText() {
+  const speeches = fedSpeechData.speeches || [];
+  const themeText = speeches.flatMap((speech) => speech.themes || []).join(" ");
+  const impactText = speeches.map((speech) => `${speech.title || ""} ${speech.marketImpact || ""} ${speech.summary || ""}`).join(" ");
+  const latest = speeches[0];
+  const prefix = latest ? `최신 연준 발언(${latest.speakerFullName || latest.speaker}, ${latest.date || shortIsoDate(latest.publishedAt)}) 기준으로 ` : "최신 연준 발언 기준으로 ";
+  const points = [];
+  if (/금리·통화정책|policy|inflation|금리|물가/.test(`${themeText} ${impactText}`)) {
+    points.push("금리·물가 언급이 강하면 성장주, 리츠, 장기채 비중 확대는 10년물 금리와 CPI/PCE 둔화가 같이 확인될 때가 더 안전합니다.");
+  }
+  if (/달러·유동성|달러|유동성|국채/.test(`${themeText} ${impactText}`)) {
+    points.push("달러·유동성 발언이 부각되면 신흥국, 원자재, 고베타 자산보다 달러와 미국 국채의 방어력을 함께 비교합니다.");
+  }
+  if (/신용·은행|은행|신용|하이일드|레버리지/.test(`${themeText} ${impactText}`)) {
+    points.push("신용·은행 주제가 반복되면 하이일드 OAS, 은행주, 소형주의 자금조달 리스크를 먼저 점검합니다.");
+  }
+  if (/AI·생산성|AI|생산성|소프트웨어|반도체/.test(`${themeText} ${impactText}`)) {
+    points.push("AI·생산성 신호는 성장 테마에 우호적이지만 고금리 구간에서는 실적이 확인되는 기업 중심으로 압축합니다.");
+  }
+  return points.length ? `${prefix}${unique(points).slice(0, 2).join(" ")}` : `${prefix}시장 직접성은 제한적입니다. FRED 금리·물가·신용 지표를 우선하고 발언은 정책 의제 확인용으로 봅니다.`;
 }
 
 function assetListMarkup(list) {
