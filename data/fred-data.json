@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T15:57:48.955Z",
+  "generatedAt": "2026-07-06T20:19:09.050Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -45,10 +45,6 @@
       "note": "장기금리는 성장주와 주택 관련주의 밸류에이션에 직접 영향을 줍니다.",
       "observations": [
         {
-          "date": "2026-06-25",
-          "value": 4.4
-        },
-        {
           "date": "2026-06-26",
           "value": 4.38
         },
@@ -63,10 +59,14 @@
         {
           "date": "2026-07-01",
           "value": 4.48
+        },
+        {
+          "date": "2026-07-02",
+          "value": 4.49
         }
       ],
-      "latestDate": "2026-07-01",
-      "latestValue": 4.48,
+      "latestDate": "2026-07-02",
+      "latestValue": 4.49,
       "fresh": true,
       "error": null
     },
@@ -474,10 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-06-26",
-          "value": 2.83
-        },
-        {
           "date": "2026-06-29",
           "value": 2.8
         },
@@ -492,10 +488,14 @@
         {
           "date": "2026-07-02",
           "value": 2.75
+        },
+        {
+          "date": "2026-07-03",
+          "value": 2.74
         }
       ],
-      "latestDate": "2026-07-02",
-      "latestValue": 2.75,
+      "latestDate": "2026-07-03",
+      "latestValue": 2.74,
       "fresh": true,
       "error": null
     }
