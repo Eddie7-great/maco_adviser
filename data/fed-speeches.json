@@ -1,8 +1,31 @@
 {
-  "generatedAt": "2026-07-06T11:11:07.827Z",
+  "generatedAt": "2026-07-06T15:58:28.308Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
+    {
+      "speaker": "Waller",
+      "speakerFullName": "Christopher J. Waller",
+      "title": "Two Thoughts on the Transmission of Monetary Policy",
+      "rawTitle": "Waller, Two Thoughts on the Transmission of Monetary Policy",
+      "url": "https://www.federalreserve.gov/newsevents/speech/waller20260706a.htm",
+      "description": "Speech At \"Challenges for Monetary Policy Transmission in a Changing World,\" a conference sponsored by the Bank of Italy for the research network initiated by the European System of Central Banks, Rome, Italy",
+      "publishedAt": "2026-07-06T15:00:00.000Z",
+      "date": "2026-07-06",
+      "source": "Federal Reserve",
+      "venue": "\"Challenges for Monetary Policy Transmission in a Changing World,\" a conference sponsored by the Bank of Italy for the research network initiated by the European System of Central Banks, Rome, Italy",
+      "themes": [
+        "금리·통화정책",
+        "신용·은행"
+      ],
+      "stance": "정책 경계",
+      "marketImpact": "금리 민감 성장주·장기채·리츠의 할인율을 재점검",
+      "summary": "정책금리, 물가, 고용 균형에 관한 발언입니다. 성장주 밸류에이션과 장기채·리츠 같은 금리 민감 자산의 방향성 판단에 직접적입니다.",
+      "watch": "CPI·PCE와 10년물 금리, 하이일드 OAS와 은행 대출태도",
+      "relevanceScore": 12,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/waller20260706a.htm",
+      "readError": null
+    },
     {
       "speaker": "Cook",
       "speakerFullName": "Lisa D. Cook",
@@ -115,29 +138,6 @@
       "watch": "AI 투자 사이클과 생산성 지표, 소매판매·고용·소기업 신용",
       "relevanceScore": 7,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/cook20260527a.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Bowman",
-      "speakerFullName": "Michelle W. Bowman",
-      "title": "When Regulation Reshapes Markets: The Migration of Corporate Lending",
-      "rawTitle": "Bowman, When Regulation Reshapes Markets: The Migration of Corporate Lending",
-      "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260508a.htm",
-      "description": "Speech At the Hoover Institution Annual Monetary Policy Conference, Stanford, California",
-      "publishedAt": "2026-05-08T23:30:00.000Z",
-      "date": "2026-05-08",
-      "source": "Federal Reserve",
-      "venue": "the Hoover Institution Annual Monetary Policy Conference, Stanford, California",
-      "themes": [
-        "금리·통화정책",
-        "신용·은행"
-      ],
-      "stance": "신용 여건 점검",
-      "marketImpact": "은행·사모신용·하이일드·레버리지 기업의 신용 여건 점검",
-      "summary": "기업대출이 은행권 밖으로 이동하는 문제를 다룬 발언입니다. 은행주, 사모신용, 하이일드·레버리지 기업의 신용 여건을 점검합니다.",
-      "watch": "CPI·PCE와 10년물 금리, 하이일드 OAS와 은행 대출태도",
-      "relevanceScore": 10,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20260508a.htm",
       "readError": null
     }
   ],
