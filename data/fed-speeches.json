@@ -1,8 +1,31 @@
 {
-  "generatedAt": "2026-07-07T10:05:14.628Z",
+  "generatedAt": "2026-07-07T20:21:09.803Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
+    {
+      "speaker": "Bowman",
+      "speakerFullName": "Michelle W. Bowman",
+      "title": "Opening Remarks on Sound Practices for Artificial Intelligence",
+      "rawTitle": "Bowman, Opening Remarks on Sound Practices for Artificial Intelligence",
+      "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260707a.htm",
+      "description": "Speech At the Financial Stability Board Virtual Outreach Event",
+      "publishedAt": "2026-07-07T11:00:00.000Z",
+      "date": "2026-07-07",
+      "source": "Federal Reserve",
+      "venue": "the Financial Stability Board Virtual Outreach Event",
+      "themes": [
+        "신용·은행",
+        "AI·생산성"
+      ],
+      "stance": "구조 성장",
+      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
+      "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
+      "watch": "하이일드 OAS와 은행 대출태도, AI 투자 사이클과 생산성 지표",
+      "relevanceScore": 10,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20260707a.htm",
+      "readError": null
+    },
     {
       "speaker": "Waller",
       "speakerFullName": "Christopher J. Waller",
@@ -115,29 +138,6 @@
       "watch": "하이일드 OAS와 은행 대출태도, 소매판매·고용·소기업 신용",
       "relevanceScore": 8,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/jefferson20260527a.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Cook",
-      "speakerFullName": "Lisa D. Cook",
-      "title": "The Opportunities and Risks AI Presents for the Economy and Financial System",
-      "rawTitle": "Cook, The Opportunities and Risks AI Presents for the Economy and Financial System",
-      "url": "https://www.federalreserve.gov/newsevents/speech/cook20260527a.htm",
-      "description": "Speech At the Stanford Institute for Economic Policy Research, Stanford University, Stanford, California",
-      "publishedAt": "2026-05-27T19:55:00.000Z",
-      "date": "2026-05-27",
-      "source": "Federal Reserve",
-      "venue": "the Stanford Institute for Economic Policy Research, Stanford University, Stanford, California",
-      "themes": [
-        "성장·소비",
-        "AI·생산성"
-      ],
-      "stance": "구조 성장",
-      "marketImpact": "AI 인프라·소프트웨어 성장성은 우호, 고평가 구간은 선별",
-      "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
-      "watch": "AI 투자 사이클과 생산성 지표, 소매판매·고용·소기업 신용",
-      "relevanceScore": 7,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/cook20260527a.htm",
       "readError": null
     }
   ],
