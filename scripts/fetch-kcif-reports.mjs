@@ -29,7 +29,7 @@ async function fetchBuffer(url) {
 
 async function fetchWithRetry(url, options = {}) {
   let lastError;
-  for (let attempt = 1; attempt <= 3; attempt += 1) {
+  for (let attempt = 1; attempt <= 5; attempt += 1) {
     try {
       const response = await fetch(url, {
         headers: {
@@ -41,7 +41,7 @@ async function fetchWithRetry(url, options = {}) {
       return response;
     } catch (error) {
       lastError = error;
-      await wait(750 * attempt);
+      await wait(1500 * attempt);
     }
   }
   throw lastError;
