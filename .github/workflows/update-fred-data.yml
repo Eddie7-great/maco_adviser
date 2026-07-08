@@ -31,11 +31,14 @@ jobs:
 
       - name: Fetch KCIF monthly reports
         run: node scripts/fetch-kcif-reports.mjs
+        continue-on-error: true
 
       - name: Fetch Federal Reserve speeches
         run: node scripts/fetch-fed-speeches.mjs
+        continue-on-error: true
 
       - name: Commit updated data
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
