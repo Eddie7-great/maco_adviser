@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T15:39:10.850Z",
+  "generatedAt": "2026-07-09T20:13:44.298Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -441,10 +441,6 @@
       "note": "모기지 금리는 주택 수요와 건설 관련주를 압박하거나 완화합니다.",
       "observations": [
         {
-          "date": "2026-06-04",
-          "value": 6.48
-        },
-        {
           "date": "2026-06-11",
           "value": 6.52
         },
@@ -459,10 +455,14 @@
         {
           "date": "2026-07-02",
           "value": 6.43
+        },
+        {
+          "date": "2026-07-09",
+          "value": 6.49
         }
       ],
-      "latestDate": "2026-07-02",
-      "latestValue": 6.43,
+      "latestDate": "2026-07-09",
+      "latestValue": 6.49,
       "fresh": true,
       "error": null
     },
@@ -473,10 +473,6 @@
       "unit": "%",
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
-        {
-          "date": "2026-07-01",
-          "value": 2.74
-        },
         {
           "date": "2026-07-02",
           "value": 2.75
@@ -492,10 +488,14 @@
         {
           "date": "2026-07-07",
           "value": 2.67
+        },
+        {
+          "date": "2026-07-08",
+          "value": 2.7
         }
       ],
-      "latestDate": "2026-07-07",
-      "latestValue": 2.67,
+      "latestDate": "2026-07-08",
+      "latestValue": 2.7,
       "fresh": true,
       "error": null
     }
