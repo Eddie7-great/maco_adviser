@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-13T19:56:06.640Z",
+  "generatedAt": "2026-07-14T03:42:53.918Z",
   "source": "KCIF",
   "listUrl": "https://www.kcif.or.kr/annual/monthlyList",
   "reports": [
     {
       "kind": "insight",
       "label": "국제금융 INSIGHT",
-      "title": "[26.6월] 국제금융 INSIGHT",
-      "date": "2026.06.16",
-      "views": "3,035",
-      "attachment": "국제금융 인사이트 `26.6월호.pdf",
-      "url": "https://www.kcif.or.kr/annual/reportView?rpt_no=37201&mn=001004&pe=004001&skey=&sval=&pg=1&pp=10",
+      "title": "[26.7월] 국제금융 INSIGHT",
+      "date": "2026.07.14",
+      "views": "73",
+      "attachment": "국제금융 인사이트 `26.7월호.pdf",
+      "url": "https://www.kcif.or.kr/annual/reportView?rpt_no=37306&mn=001004&pe=004001&skey=&sval=&pg=1&pp=10",
       "source": "KCIF",
       "focus": [
         "세계경제: AI·반도체 수요와 재정 확대가 성장 하방을 일부 완충, 중동 리스크와 공급 충격은 물가 경계를 높임, 중국은 내수 부진과 수출 방어를 함께 점검하는 흐름으로 해석됩니다.",
@@ -19,16 +19,16 @@
         "투자 체크: 유가·물가 충격이 성장 둔화와 결합하는지, AI·주식 밸류에이션이 실적 개선으로 정당화되는지, 신흥국·달러 스트레스가 커지는지를 FRED 지표와 교차 확인합니다."
       ],
       "implication": "국제금융 INSIGHT는 미국 지표 중심의 FRED 판단에 글로벌 자금흐름과 정책 해석을 덧붙이는 보조 자료입니다.",
-      "previewUrl": "https://www.kcif.or.kr/flexer/view.jsp?SDir=dNcgOBDfpvjUtlqDHLJg2DBAz26%2B%2FLJ7rGsqp5w3Bi4%3D&SName=bJoOq6eiWC77niYq94Gq%2B6T0ILa7rjuX4%2B%2FBIQ9k6XYbzkPG5ceXHOkO%2BsyXMM1X&ftype=pdf&FileName=%EA%B5%AD%EC%A0%9C%EA%B8%88%EC%9C%B5%20%EC%9D%B8%EC%82%AC%EC%9D%B4%ED%8A%B8%20%6026.6%EC%9B%94%ED%98%B8.pdf",
+      "previewUrl": "https://www.kcif.or.kr/flexer/view.jsp?SDir=q8sKw%2FP2FmzcSf3mJxv5WzuUslXVGtgGVQoNTjTkokk%3D&SName=ApgwIdbiJMDuOZgbW6zBLFPjqi9SMhOhbtI4RHcCnoYUIxjxkHjIQcdZdIV4iwvM&ftype=pdf&FileName=%EA%B5%AD%EC%A0%9C%EA%B8%88%EC%9C%B5%20%EC%9D%B8%EC%82%AC%EC%9D%B4%ED%8A%B8%20%6026.7%EC%9B%94%ED%98%B8.pdf",
       "summarySource": "PDF 미리보기 전문",
-      "pdfTextLength": 70292
+      "pdfTextLength": 65598
     },
     {
       "kind": "riskWatch",
       "label": "글로벌 리스크 워치",
       "title": "[26.7월] 글로벌 리스크 워치",
       "date": "2026.07.07",
-      "views": "730",
+      "views": "743",
       "attachment": "260707-글로벌 리스크 워치.pdf",
       "url": "https://www.kcif.or.kr/annual/reportView?rpt_no=37279&mn=001004&pe=004008&skey=&sval=&pg=1&pp=10",
       "source": "KCIF",
