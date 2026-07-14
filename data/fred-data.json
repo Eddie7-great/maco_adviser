@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T08:31:59.646Z",
+  "generatedAt": "2026-07-14T14:20:23.271Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -111,10 +111,6 @@
       "note": "물가가 다시 빨라지면 금리 인하 기대와 밸류에이션에 부담입니다.",
       "observations": [
         {
-          "date": "2026-01-01",
-          "value": 326.588
-        },
-        {
           "date": "2026-02-01",
           "value": 327.46
         },
@@ -129,10 +125,14 @@
         {
           "date": "2026-05-01",
           "value": 333.979
+        },
+        {
+          "date": "2026-06-01",
+          "value": 332.568
         }
       ],
-      "latestDate": "2026-05-01",
-      "latestValue": 333.979,
+      "latestDate": "2026-06-01",
+      "latestValue": 332.568,
       "fresh": true,
       "error": null
     },
@@ -474,10 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-07-06",
-          "value": 2.72
-        },
-        {
           "date": "2026-07-07",
           "value": 2.67
         },
@@ -492,9 +488,13 @@
         {
           "date": "2026-07-10",
           "value": 2.69
+        },
+        {
+          "date": "2026-07-13",
+          "value": 2.69
         }
       ],
-      "latestDate": "2026-07-10",
+      "latestDate": "2026-07-13",
       "latestValue": 2.69,
       "fresh": true,
       "error": null
