@@ -1,8 +1,31 @@
 {
-  "generatedAt": "2026-07-14T14:21:09.650Z",
+  "generatedAt": "2026-07-14T19:50:04.301Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
+    {
+      "speaker": "Bowman",
+      "speakerFullName": "Michelle W. Bowman",
+      "title": "Responsible Innovation and Financial Inclusion",
+      "rawTitle": "Bowman, Responsible Innovation and Financial Inclusion",
+      "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260714a.htm",
+      "description": "Speech At “Next-Gen Financial Inclusion,” the third annual Financial Inclusion Conference hosted by the Federal Reserve Board, Washington, D.C. (via pre-recorded video)",
+      "publishedAt": "2026-07-14T18:55:00.000Z",
+      "date": "2026-07-14",
+      "source": "Federal Reserve",
+      "venue": "“Next-Gen Financial Inclusion,” the third annual Financial Inclusion Conference hosted by the Federal Reserve Board, Washington, D.C. (via pre-recorded video)",
+      "themes": [
+        "신용·은행",
+        "AI·생산성"
+      ],
+      "stance": "구조 성장",
+      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
+      "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
+      "watch": "하이일드 OAS와 은행 대출태도, AI 투자 사이클과 생산성 지표",
+      "relevanceScore": 10,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20260714a.htm",
+      "readError": null
+    },
     {
       "speaker": "Waller",
       "speakerFullName": "Christopher J. Waller",
@@ -115,29 +138,6 @@
       "watch": "CPI·PCE와 10년물 금리, 하이일드 OAS와 은행 대출태도",
       "relevanceScore": 10,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20260529a.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Jefferson",
-      "speakerFullName": "Philip N. Jefferson",
-      "title": "Global Economic Developments and the U.S. Economy",
-      "rawTitle": "Jefferson, Global Economic Developments and the U.S. Economy",
-      "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260527a.htm",
-      "description": "Speech At the 2026 Bank of Japan-Institute for Monetary and Economic Studies Conference, Tokyo, Japan",
-      "publishedAt": "2026-05-28T00:00:00.000Z",
-      "date": "2026-05-28",
-      "source": "Federal Reserve",
-      "venue": "the 2026 Bank of Japan-Institute for Monetary and Economic Studies Conference, Tokyo, Japan",
-      "themes": [
-        "신용·은행",
-        "성장·소비"
-      ],
-      "stance": "글로벌 경기 점검",
-      "marketImpact": "달러, 수출주, 경기민감 업종의 글로벌 수요와 금리 충격 점검",
-      "summary": "글로벌 경제 흐름과 미국 경기의 연결고리를 다룬 발언입니다. 달러, 수출주, 경기민감 업종의 외부 수요 리스크를 점검할 단서입니다.",
-      "watch": "하이일드 OAS와 은행 대출태도, 소매판매·고용·소기업 신용",
-      "relevanceScore": 8,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/jefferson20260527a.htm",
       "readError": null
     }
   ],
