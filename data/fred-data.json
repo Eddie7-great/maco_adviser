@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T14:29:06.914Z",
+  "generatedAt": "2026-07-16T19:37:37.257Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -441,10 +441,6 @@
       "note": "모기지 금리는 주택 수요와 건설 관련주를 압박하거나 완화합니다.",
       "observations": [
         {
-          "date": "2026-06-11",
-          "value": 6.52
-        },
-        {
           "date": "2026-06-18",
           "value": 6.47
         },
@@ -459,10 +455,14 @@
         {
           "date": "2026-07-09",
           "value": 6.49
+        },
+        {
+          "date": "2026-07-16",
+          "value": 6.55
         }
       ],
-      "latestDate": "2026-07-09",
-      "latestValue": 6.49,
+      "latestDate": "2026-07-16",
+      "latestValue": 6.55,
       "fresh": true,
       "error": null
     },
