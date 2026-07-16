@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T08:37:34.636Z",
+  "generatedAt": "2026-07-16T14:29:06.914Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -309,10 +309,6 @@
       "note": "명목 소비 흐름입니다. 물가 영향을 빼고 실질 구매력도 함께 봐야 합니다.",
       "observations": [
         {
-          "date": "2026-01-01",
-          "value": 734503
-        },
-        {
           "date": "2026-02-01",
           "value": 741278
         },
@@ -322,15 +318,19 @@
         },
         {
           "date": "2026-04-01",
-          "value": 757036
+          "value": 759097
         },
         {
           "date": "2026-05-01",
-          "value": 763705
+          "value": 766876
+        },
+        {
+          "date": "2026-06-01",
+          "value": 768553
         }
       ],
-      "latestDate": "2026-05-01",
-      "latestValue": 763705,
+      "latestDate": "2026-06-01",
+      "latestValue": 768553,
       "fresh": true,
       "error": null
     },
@@ -474,10 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-07-08",
-          "value": 2.7
-        },
-        {
           "date": "2026-07-09",
           "value": 2.7
         },
@@ -492,10 +488,14 @@
         {
           "date": "2026-07-14",
           "value": 2.72
+        },
+        {
+          "date": "2026-07-15",
+          "value": 2.71
         }
       ],
-      "latestDate": "2026-07-14",
-      "latestValue": 2.72,
+      "latestDate": "2026-07-15",
+      "latestValue": 2.71,
       "fresh": true,
       "error": null
     }
