@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T08:31:57.215Z",
+  "generatedAt": "2026-07-17T14:09:44.827Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -276,28 +276,28 @@
       "note": "제조와 광공업 활동은 경기민감 업종을 볼 때 중요한 선행 단서입니다.",
       "observations": [
         {
-          "date": "2026-01-01",
-          "value": 101.1235
-        },
-        {
           "date": "2026-02-01",
-          "value": 101.9493
+          "value": 101.9263
         },
         {
           "date": "2026-03-01",
-          "value": 101.6273
+          "value": 101.6172
         },
         {
           "date": "2026-04-01",
-          "value": 102.509
+          "value": 102.4196
         },
         {
           "date": "2026-05-01",
-          "value": 102.6475
+          "value": 102.5606
+        },
+        {
+          "date": "2026-06-01",
+          "value": 102.6395
         }
       ],
-      "latestDate": "2026-05-01",
-      "latestValue": 102.6475,
+      "latestDate": "2026-06-01",
+      "latestValue": 102.6395,
       "fresh": true,
       "error": null
     },
@@ -375,10 +375,6 @@
       "note": "금리 부담과 건설 경기 변화를 빠르게 보여주는 민감 지표입니다.",
       "observations": [
         {
-          "date": "2026-01-01",
-          "value": 1385
-        },
-        {
           "date": "2026-02-01",
           "value": 1346
         },
@@ -388,15 +384,19 @@
         },
         {
           "date": "2026-04-01",
-          "value": 1392
+          "value": 1414
         },
         {
           "date": "2026-05-01",
-          "value": 1177
+          "value": 1199
+        },
+        {
+          "date": "2026-06-01",
+          "value": 1427
         }
       ],
-      "latestDate": "2026-05-01",
-      "latestValue": 1177,
+      "latestDate": "2026-06-01",
+      "latestValue": 1427,
       "fresh": true,
       "error": null
     },
