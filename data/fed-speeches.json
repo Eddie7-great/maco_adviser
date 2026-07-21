@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T14:31:29.185Z",
+  "generatedAt": "2026-07-21T19:58:10.654Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
@@ -22,7 +22,7 @@
       "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
       "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
       "watch": "하이일드 OAS와 은행 대출태도, AI 투자 사이클과 생산성 지표",
-      "relevanceScore": 10,
+      "relevanceScore": 9,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20260714a.htm",
       "readError": null
     },
