@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T09:05:46.206Z",
+  "generatedAt": "2026-07-22T14:31:40.824Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
@@ -46,6 +46,28 @@
       "watch": "CPI·PCE와 10년물 금리",
       "relevanceScore": 7,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/waller20260713a.htm",
+      "readError": null
+    },
+    {
+      "speaker": "Bowman",
+      "speakerFullName": "Michelle W. Bowman",
+      "title": "Modernizing Financial Regulation",
+      "rawTitle": "Bowman, Modernizing Financial Regulation",
+      "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260713a.htm",
+      "description": "Speech At a Bank Policy Institute London Conference, London, United Kingdom",
+      "publishedAt": "2026-07-13T09:25:00.000Z",
+      "date": "2026-07-13",
+      "source": "Federal Reserve",
+      "venue": "a Bank Policy Institute London Conference, London, United Kingdom",
+      "themes": [
+        "신용·은행"
+      ],
+      "stance": "신용 여건 점검",
+      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
+      "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
+      "watch": "하이일드 OAS와 은행 대출태도",
+      "relevanceScore": 6,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20260713a.htm",
       "readError": null
     },
     {
@@ -116,33 +138,10 @@
       "relevanceScore": 9,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/cook20260624a.htm",
       "readError": null
-    },
-    {
-      "speaker": "Waller",
-      "speakerFullName": "Christopher J. Waller",
-      "title": "Welcoming Remarks on the International Role of the U.S. Dollar",
-      "rawTitle": "Waller, Welcoming Remarks on the International Role of the U.S. Dollar",
-      "url": "https://www.federalreserve.gov/newsevents/speech/waller20260622a.htm",
-      "description": "Speech At the Fifth Conference on the International Roles of the Dollar, Board of Governors of the Federal Reserve System, Washington, D.C.",
-      "publishedAt": "2026-06-22T13:00:00.000Z",
-      "date": "2026-06-22",
-      "source": "Federal Reserve",
-      "venue": "the Fifth Conference on the International Roles of the Dollar, Board of Governors of the Federal Reserve System, Washington, D.C.",
-      "themes": [
-        "달러·유동성"
-      ],
-      "stance": "달러·유동성 점검",
-      "marketImpact": "달러, 미국 국채, 신흥국·원자재 자산의 위험회피 흐름 점검",
-      "summary": "달러의 국제적 역할과 결제·유동성 기반을 다룬 발언입니다. 달러 강세, 미국 국채 수요, 글로벌 위험회피를 함께 볼 필요가 있습니다.",
-      "watch": "달러지수와 미국 국채 수요",
-      "relevanceScore": 7,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/waller20260622a.htm",
-      "readError": null
     }
   ],
   "advice": [
     "연준 발언에서 금리·물가가 반복되면 성장주 비중 확대는 CPI/PCE 둔화와 10년물 금리 하락이 같이 확인될 때가 더 안전합니다.",
-    "달러·유동성 언급이 늘면 신흥국, 원자재, 고베타 자산보다 달러와 미국 국채의 방어력을 함께 비교합니다.",
     "신용·은행 관련 발언은 하이일드 OAS, 은행주, 소형주의 자금조달 리스크를 재점검하라는 신호로 봅니다.",
     "AI·생산성 발언은 장기 성장 테마에 우호적이지만, 금리가 높을 때는 실적이 확인되는 기업 중심으로 압축하는 편이 낫습니다."
   ]
