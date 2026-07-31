@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T19:58:13.556Z",
+  "generatedAt": "2026-07-31T03:58:08.621Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -45,10 +45,6 @@
       "note": "장기금리는 성장주와 주택 관련주의 밸류에이션에 직접 영향을 줍니다.",
       "observations": [
         {
-          "date": "2026-07-22",
-          "value": 4.67
-        },
-        {
           "date": "2026-07-23",
           "value": 4.71
         },
@@ -63,10 +59,14 @@
         {
           "date": "2026-07-28",
           "value": 4.61
+        },
+        {
+          "date": "2026-07-29",
+          "value": 4.67
         }
       ],
-      "latestDate": "2026-07-28",
-      "latestValue": 4.61,
+      "latestDate": "2026-07-29",
+      "latestValue": 4.67,
       "fresh": true,
       "error": null
     },
@@ -77,10 +77,6 @@
       "unit": "%p",
       "note": "금리차가 낮거나 재역전되면 경기 둔화 우려가 커집니다.",
       "observations": [
-        {
-          "date": "2026-07-23",
-          "value": 0.34
-        },
         {
           "date": "2026-07-24",
           "value": 0.36
@@ -96,9 +92,13 @@
         {
           "date": "2026-07-29",
           "value": 0.45
+        },
+        {
+          "date": "2026-07-30",
+          "value": 0.45
         }
       ],
-      "latestDate": "2026-07-29",
+      "latestDate": "2026-07-30",
       "latestValue": 0.45,
       "fresh": true,
       "error": null
@@ -441,10 +441,6 @@
       "note": "모기지 금리는 주택 수요와 건설 관련주를 압박하거나 완화합니다.",
       "observations": [
         {
-          "date": "2026-06-25",
-          "value": 6.49
-        },
-        {
           "date": "2026-07-02",
           "value": 6.43
         },
@@ -459,10 +455,14 @@
         {
           "date": "2026-07-23",
           "value": 6.58
+        },
+        {
+          "date": "2026-07-30",
+          "value": 6.66
         }
       ],
-      "latestDate": "2026-07-23",
-      "latestValue": 6.58,
+      "latestDate": "2026-07-30",
+      "latestValue": 6.66,
       "fresh": true,
       "error": null
     },
