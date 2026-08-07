@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T07:49:26.983Z",
+  "generatedAt": "2026-08-07T13:46:11.868Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -177,10 +177,6 @@
       "note": "급격한 상승은 침체 위험 신호이고, 안정은 소비와 이익 전망에 우호적입니다.",
       "observations": [
         {
-          "date": "2026-02-01",
-          "value": 4.4
-        },
-        {
           "date": "2026-03-01",
           "value": 4.3
         },
@@ -195,10 +191,14 @@
         {
           "date": "2026-06-01",
           "value": 4.2
+        },
+        {
+          "date": "2026-07-01",
+          "value": 4.1
         }
       ],
-      "latestDate": "2026-06-01",
-      "latestValue": 4.2,
+      "latestDate": "2026-07-01",
+      "latestValue": 4.1,
       "fresh": true,
       "error": null
     },
@@ -210,10 +210,6 @@
       "note": "고용 총량이 늘면 소비 여력이 유지됩니다. 둔화 속도가 핵심입니다.",
       "observations": [
         {
-          "date": "2026-02-01",
-          "value": 158436
-        },
-        {
           "date": "2026-03-01",
           "value": 158650
         },
@@ -223,15 +219,19 @@
         },
         {
           "date": "2026-05-01",
-          "value": 158927
+          "value": 158861
         },
         {
           "date": "2026-06-01",
-          "value": 158984
+          "value": 158881
+        },
+        {
+          "date": "2026-07-01",
+          "value": 158858
         }
       ],
-      "latestDate": "2026-06-01",
-      "latestValue": 158984,
+      "latestDate": "2026-07-01",
+      "latestValue": 158858,
       "fresh": true,
       "error": null
     },
