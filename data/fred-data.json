@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T07:55:29.326Z",
+  "generatedAt": "2026-08-14T13:50:12.739Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -309,10 +309,6 @@
       "note": "명목 소비 흐름입니다. 물가 영향을 빼고 실질 구매력도 함께 봐야 합니다.",
       "observations": [
         {
-          "date": "2026-02-01",
-          "value": 741278
-        },
-        {
           "date": "2026-03-01",
           "value": 754013
         },
@@ -322,15 +318,19 @@
         },
         {
           "date": "2026-05-01",
-          "value": 766876
+          "value": 766192
         },
         {
           "date": "2026-06-01",
-          "value": 768553
+          "value": 768072
+        },
+        {
+          "date": "2026-07-01",
+          "value": 763602
         }
       ],
-      "latestDate": "2026-06-01",
-      "latestValue": 768553,
+      "latestDate": "2026-07-01",
+      "latestValue": 763602,
       "fresh": true,
       "error": null
     },
