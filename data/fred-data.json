@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T07:11:01.201Z",
+  "generatedAt": "2026-08-18T13:14:57.471Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -375,10 +375,6 @@
       "note": "금리 부담과 건설 경기 변화를 빠르게 보여주는 민감 지표입니다.",
       "observations": [
         {
-          "date": "2026-02-01",
-          "value": 1346
-        },
-        {
           "date": "2026-03-01",
           "value": 1522
         },
@@ -388,15 +384,19 @@
         },
         {
           "date": "2026-05-01",
-          "value": 1199
+          "value": 1182
         },
         {
           "date": "2026-06-01",
-          "value": 1427
+          "value": 1415
+        },
+        {
+          "date": "2026-07-01",
+          "value": 1239
         }
       ],
-      "latestDate": "2026-06-01",
-      "latestValue": 1427,
+      "latestDate": "2026-07-01",
+      "latestValue": 1239,
       "fresh": true,
       "error": null
     },
