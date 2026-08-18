@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T13:14:57.471Z",
+  "generatedAt": "2026-08-18T19:04:18.390Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -276,28 +276,28 @@
       "note": "제조와 광공업 활동은 경기민감 업종을 볼 때 중요한 선행 단서입니다.",
       "observations": [
         {
-          "date": "2026-02-01",
-          "value": 101.9263
-        },
-        {
           "date": "2026-03-01",
-          "value": 101.6172
+          "value": 101.7543
         },
         {
           "date": "2026-04-01",
-          "value": 102.4196
+          "value": 102.5198
         },
         {
           "date": "2026-05-01",
-          "value": 102.5606
+          "value": 102.5099
         },
         {
           "date": "2026-06-01",
-          "value": 102.6395
+          "value": 102.7868
+        },
+        {
+          "date": "2026-07-01",
+          "value": 102.9939
         }
       ],
-      "latestDate": "2026-06-01",
-      "latestValue": 102.6395,
+      "latestDate": "2026-07-01",
+      "latestValue": 102.9939,
       "fresh": true,
       "error": null
     },
@@ -474,10 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-08-10",
-          "value": 2.7
-        },
-        {
           "date": "2026-08-11",
           "value": 2.72
         },
@@ -492,10 +488,14 @@
         {
           "date": "2026-08-14",
           "value": 2.67
+        },
+        {
+          "date": "2026-08-17",
+          "value": 2.7
         }
       ],
-      "latestDate": "2026-08-14",
-      "latestValue": 2.67,
+      "latestDate": "2026-08-17",
+      "latestValue": 2.7,
       "fresh": true,
       "error": null
     }
