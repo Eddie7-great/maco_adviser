@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T13:08:10.531Z",
+  "generatedAt": "2026-08-23T18:54:57.391Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
@@ -135,7 +135,7 @@
       "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
       "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
       "watch": "하이일드 OAS와 은행 대출태도, 소매판매·고용·소기업 신용",
-      "relevanceScore": 8,
+      "relevanceScore": 7,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/cook20260624a.htm",
       "readError": null
     }
