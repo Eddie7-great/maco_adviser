@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T13:25:00.464Z",
+  "generatedAt": "2026-08-25T19:05:30.970Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -408,28 +408,28 @@
       "note": "유동성 총량이 늘면 위험자산에 완충 역할을 할 수 있습니다.",
       "observations": [
         {
-          "date": "2026-02-01",
-          "value": 22620.3
-        },
-        {
           "date": "2026-03-01",
-          "value": 22676.1
+          "value": 22640.4
         },
         {
           "date": "2026-04-01",
-          "value": 22799.9
+          "value": 22756.7
         },
         {
           "date": "2026-05-01",
-          "value": 23055.6
+          "value": 23013.9
         },
         {
           "date": "2026-06-01",
-          "value": 23155.2
+          "value": 23115.2
+        },
+        {
+          "date": "2026-07-01",
+          "value": 23218
         }
       ],
-      "latestDate": "2026-06-01",
-      "latestValue": 23155.2,
+      "latestDate": "2026-07-01",
+      "latestValue": 23218,
       "fresh": true,
       "error": null
     },
@@ -474,10 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-08-17",
-          "value": 2.7
-        },
-        {
           "date": "2026-08-18",
           "value": 2.75
         },
@@ -492,10 +488,14 @@
         {
           "date": "2026-08-21",
           "value": 2.7
+        },
+        {
+          "date": "2026-08-24",
+          "value": 2.69
         }
       ],
-      "latestDate": "2026-08-21",
-      "latestValue": 2.7,
+      "latestDate": "2026-08-24",
+      "latestValue": 2.69,
       "fresh": true,
       "error": null
     }
