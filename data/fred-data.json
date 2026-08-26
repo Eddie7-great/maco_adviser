@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T07:15:24.823Z",
+  "generatedAt": "2026-08-26T13:31:04.136Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -144,28 +144,28 @@
       "note": "연준이 선호하는 물가지표라 통화정책 기대에 민감합니다.",
       "observations": [
         {
-          "date": "2026-02-01",
-          "value": 129.539
-        },
-        {
           "date": "2026-03-01",
           "value": 130.403
         },
         {
           "date": "2026-04-01",
-          "value": 130.932
+          "value": 130.946
         },
         {
           "date": "2026-05-01",
-          "value": 131.535
+          "value": 131.576
         },
         {
           "date": "2026-06-01",
-          "value": 131.392
+          "value": 131.454
+        },
+        {
+          "date": "2026-07-01",
+          "value": 131.659
         }
       ],
-      "latestDate": "2026-06-01",
-      "latestValue": 131.392,
+      "latestDate": "2026-07-01",
+      "latestValue": 131.659,
       "fresh": true,
       "error": null
     },
@@ -260,11 +260,11 @@
         },
         {
           "date": "2026-04-01",
-          "value": 24270.599
+          "value": 24269.613
         }
       ],
       "latestDate": "2026-04-01",
-      "latestValue": 24270.599,
+      "latestValue": 24269.613,
       "fresh": true,
       "error": null
     },
