@@ -1,8 +1,31 @@
 {
-  "generatedAt": "2026-08-28T11:34:13.109Z",
+  "generatedAt": "2026-08-28T22:30:06.776Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
+    {
+      "speaker": "Warsh",
+      "speakerFullName": "Warsh",
+      "title": "In Our Time",
+      "rawTitle": "Warsh, In Our Time",
+      "url": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
+      "description": "Speech At “Financial Innovation: Implications for Payments and Policy,” an economic policy symposium sponsored by the Federal Reserve Bank of Kansas City, Jackson Hole, Wyoming",
+      "publishedAt": "2026-08-28T14:00:00.000Z",
+      "date": "2026-08-28",
+      "source": "Federal Reserve",
+      "venue": "“Financial Innovation: Implications for Payments and Policy,” an economic policy symposium sponsored by the Federal Reserve Bank of Kansas City, Jackson Hole, Wyoming",
+      "themes": [
+        "신용·은행",
+        "AI·생산성"
+      ],
+      "stance": "구조 성장",
+      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
+      "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
+      "watch": "하이일드 OAS와 은행 대출태도, AI 투자 사이클과 생산성 지표",
+      "relevanceScore": 10,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
+      "readError": null
+    },
     {
       "speaker": "Bowman",
       "speakerFullName": "Michelle W. Bowman",
@@ -46,28 +69,6 @@
       "watch": "CPI·PCE와 10년물 금리",
       "relevanceScore": 6,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/waller20260713a.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Bowman",
-      "speakerFullName": "Michelle W. Bowman",
-      "title": "Modernizing Financial Regulation",
-      "rawTitle": "Bowman, Modernizing Financial Regulation",
-      "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260713a.htm",
-      "description": "Speech At a Bank Policy Institute London Conference, London, United Kingdom",
-      "publishedAt": "2026-07-13T09:25:00.000Z",
-      "date": "2026-07-13",
-      "source": "Federal Reserve",
-      "venue": "a Bank Policy Institute London Conference, London, United Kingdom",
-      "themes": [
-        "신용·은행"
-      ],
-      "stance": "신용 여건 점검",
-      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
-      "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
-      "watch": "하이일드 OAS와 은행 대출태도",
-      "relevanceScore": 5,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20260713a.htm",
       "readError": null
     },
     {
