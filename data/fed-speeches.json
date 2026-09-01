@@ -1,8 +1,30 @@
 {
-  "generatedAt": "2026-09-01T11:50:45.494Z",
+  "generatedAt": "2026-09-01T16:47:13.002Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
+    {
+      "speaker": "Barr",
+      "speakerFullName": "Michael S. Barr",
+      "title": "Unlocking Opportunities for Workers and Entrepreneurs with a Criminal Record",
+      "rawTitle": "Barr, Unlocking Opportunities for Workers and Entrepreneurs with a Criminal Record",
+      "url": "https://www.federalreserve.gov/newsevents/speech/barr20260901a.htm",
+      "description": "Speech At the Second-Chance Lending Forum, Developing Evidence-Based Policy on Creditworthiness and Criminal History, Washington, D.C.",
+      "publishedAt": "2026-09-01T13:05:00.000Z",
+      "date": "2026-09-01",
+      "source": "Federal Reserve",
+      "venue": "the Second-Chance Lending Forum, Developing Evidence-Based Policy on Creditworthiness and Criminal History, Washington, D.C.",
+      "themes": [
+        "신용·은행"
+      ],
+      "stance": "신용 여건 점검",
+      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
+      "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
+      "watch": "하이일드 OAS와 은행 대출태도",
+      "relevanceScore": 7,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/barr20260901a.htm",
+      "readError": null
+    },
     {
       "speaker": "Warsh",
       "speakerFullName": "Warsh",
@@ -47,28 +69,6 @@
       "watch": "하이일드 OAS와 은행 대출태도, AI 투자 사이클과 생산성 지표",
       "relevanceScore": 8,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20260714a.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Waller",
-      "speakerFullName": "Christopher J. Waller",
-      "title": "Monetary Policy at a Crossroads",
-      "rawTitle": "Waller, Monetary Policy at a Crossroads",
-      "url": "https://www.federalreserve.gov/newsevents/speech/waller20260713a.htm",
-      "description": "Speech At the New York Association for Business Economics, New York, New York",
-      "publishedAt": "2026-07-13T16:30:00.000Z",
-      "date": "2026-07-13",
-      "source": "Federal Reserve",
-      "venue": "the New York Association for Business Economics, New York, New York",
-      "themes": [
-        "금리·통화정책"
-      ],
-      "stance": "정책 경계",
-      "marketImpact": "금리 민감 성장주·장기채·리츠의 할인율을 재점검",
-      "summary": "정책금리, 물가, 고용 균형에 관한 발언입니다. 성장주 밸류에이션과 장기채·리츠 같은 금리 민감 자산의 방향성 판단에 직접적입니다.",
-      "watch": "CPI·PCE와 10년물 금리",
-      "relevanceScore": 6,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/waller20260713a.htm",
       "readError": null
     },
     {
