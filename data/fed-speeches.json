@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T11:31:34.794Z",
+  "generatedAt": "2026-09-04T16:30:37.635Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
@@ -44,7 +44,7 @@
       "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
       "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
       "watch": "하이일드 OAS와 은행 대출태도, AI 투자 사이클과 생산성 지표",
-      "relevanceScore": 10,
+      "relevanceScore": 9,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
       "readError": null
     },
@@ -135,7 +135,7 @@
       "marketImpact": "금리 민감 성장주·장기채·리츠의 할인율을 재점검",
       "summary": "정책금리, 물가, 고용 균형에 관한 발언입니다. 성장주 밸류에이션과 장기채·리츠 같은 금리 민감 자산의 방향성 판단에 직접적입니다.",
       "watch": "CPI·PCE와 10년물 금리, 하이일드 OAS와 은행 대출태도",
-      "relevanceScore": 10,
+      "relevanceScore": 9,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/waller20260706a.htm",
       "readError": null
     }
