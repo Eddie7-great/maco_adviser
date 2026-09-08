@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T11:31:47.231Z",
+  "generatedAt": "2026-09-08T16:48:34.779Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
@@ -21,7 +21,7 @@
       "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
       "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
       "watch": "하이일드 OAS와 은행 대출태도",
-      "relevanceScore": 7,
+      "relevanceScore": 6,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/barr20260901a.htm",
       "readError": null
     },
