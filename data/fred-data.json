@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T11:53:44.827Z",
+  "generatedAt": "2026-09-17T17:09:58.627Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -375,10 +375,6 @@
       "note": "금리 부담과 건설 경기 변화를 빠르게 보여주는 민감 지표입니다.",
       "observations": [
         {
-          "date": "2026-03-01",
-          "value": 1522
-        },
-        {
           "date": "2026-04-01",
           "value": 1414
         },
@@ -388,15 +384,19 @@
         },
         {
           "date": "2026-06-01",
-          "value": 1415
+          "value": 1439
         },
         {
           "date": "2026-07-01",
-          "value": 1239
+          "value": 1309
+        },
+        {
+          "date": "2026-08-01",
+          "value": 1275
         }
       ],
-      "latestDate": "2026-07-01",
-      "latestValue": 1239,
+      "latestDate": "2026-08-01",
+      "latestValue": 1275,
       "fresh": true,
       "error": null
     },
@@ -441,10 +441,6 @@
       "note": "모기지 금리는 주택 수요와 건설 관련주를 압박하거나 완화합니다.",
       "observations": [
         {
-          "date": "2026-08-13",
-          "value": 6.67
-        },
-        {
           "date": "2026-08-20",
           "value": 6.65
         },
@@ -459,10 +455,14 @@
         {
           "date": "2026-09-10",
           "value": 6.76
+        },
+        {
+          "date": "2026-09-17",
+          "value": 6.95
         }
       ],
-      "latestDate": "2026-09-10",
-      "latestValue": 6.76,
+      "latestDate": "2026-09-17",
+      "latestValue": 6.95,
       "fresh": true,
       "error": null
     },
@@ -473,10 +473,6 @@
       "unit": "%",
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
-        {
-          "date": "2026-09-09",
-          "value": 2.71
-        },
         {
           "date": "2026-09-10",
           "value": 2.7
@@ -492,10 +488,14 @@
         {
           "date": "2026-09-15",
           "value": 2.76
+        },
+        {
+          "date": "2026-09-16",
+          "value": 2.7
         }
       ],
-      "latestDate": "2026-09-15",
-      "latestValue": 2.76,
+      "latestDate": "2026-09-16",
+      "latestValue": 2.7,
       "fresh": true,
       "error": null
     }
