@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T13:03:26.909Z",
+  "generatedAt": "2026-09-21T22:04:22.637Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -45,10 +45,6 @@
       "note": "장기금리는 성장주와 주택 관련주의 밸류에이션에 직접 영향을 줍니다.",
       "observations": [
         {
-          "date": "2026-09-11",
-          "value": 4.96
-        },
-        {
           "date": "2026-09-14",
           "value": 4.97
         },
@@ -63,10 +59,14 @@
         {
           "date": "2026-09-17",
           "value": 4.94
+        },
+        {
+          "date": "2026-09-18",
+          "value": 5.01
         }
       ],
-      "latestDate": "2026-09-17",
-      "latestValue": 4.94,
+      "latestDate": "2026-09-18",
+      "latestValue": 5.01,
       "fresh": true,
       "error": null
     },
@@ -77,10 +77,6 @@
       "unit": "%p",
       "note": "금리차가 낮거나 재역전되면 경기 둔화 우려가 커집니다.",
       "observations": [
-        {
-          "date": "2026-09-14",
-          "value": 0.32
-        },
         {
           "date": "2026-09-15",
           "value": 0.33
@@ -96,10 +92,14 @@
         {
           "date": "2026-09-18",
           "value": 0.25
+        },
+        {
+          "date": "2026-09-21",
+          "value": 0.2
         }
       ],
-      "latestDate": "2026-09-18",
-      "latestValue": 0.25,
+      "latestDate": "2026-09-21",
+      "latestValue": 0.2,
       "fresh": true,
       "error": null
     },
@@ -474,10 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-09-11",
-          "value": 2.65
-        },
-        {
           "date": "2026-09-14",
           "value": 2.71
         },
@@ -492,10 +488,14 @@
         {
           "date": "2026-09-17",
           "value": 2.7
+        },
+        {
+          "date": "2026-09-18",
+          "value": 2.68
         }
       ],
-      "latestDate": "2026-09-17",
-      "latestValue": 2.7,
+      "latestDate": "2026-09-18",
+      "latestValue": 2.68,
       "fresh": true,
       "error": null
     }
