@@ -1,8 +1,30 @@
 {
-  "generatedAt": "2026-09-23T11:53:21.894Z",
+  "generatedAt": "2026-09-23T17:19:40.011Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
+    {
+      "speaker": "Barr",
+      "speakerFullName": "Michael S. Barr",
+      "title": "A Long-Term View on the Costs of Shelter",
+      "rawTitle": "Barr, A Long-Term View on the Costs of Shelter",
+      "url": "https://www.federalreserve.gov/newsevents/speech/barr20260923a.htm",
+      "description": "Speech At “Housing Affordability 2026: A Community Development Summit,” hosted by the Federal Reserve Bank of Chicago, Chicago, Illinois",
+      "publishedAt": "2026-09-23T14:05:00.000Z",
+      "date": "2026-09-23",
+      "source": "Federal Reserve",
+      "venue": "“Housing Affordability 2026: A Community Development Summit,” hosted by the Federal Reserve Bank of Chicago, Chicago, Illinois",
+      "themes": [
+        "신용·은행"
+      ],
+      "stance": "신용 여건 점검",
+      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
+      "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
+      "watch": "하이일드 OAS와 은행 대출태도",
+      "relevanceScore": 7,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/barr20260923a.htm",
+      "readError": null
+    },
     {
       "speaker": "Jefferson",
       "speakerFullName": "Philip N. Jefferson",
@@ -68,28 +90,6 @@
       "watch": "하이일드 OAS와 은행 대출태도",
       "relevanceScore": 7,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20260918b.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Barr",
-      "speakerFullName": "Michael S. Barr",
-      "title": "Unlocking Opportunities for Workers and Entrepreneurs with a Criminal Record",
-      "rawTitle": "Barr, Unlocking Opportunities for Workers and Entrepreneurs with a Criminal Record",
-      "url": "https://www.federalreserve.gov/newsevents/speech/barr20260901a.htm",
-      "description": "Speech At the Second-Chance Lending Forum, Developing Evidence-Based Policy on Creditworthiness and Criminal History, Washington, D.C.",
-      "publishedAt": "2026-09-01T13:05:00.000Z",
-      "date": "2026-09-01",
-      "source": "Federal Reserve",
-      "venue": "the Second-Chance Lending Forum, Developing Evidence-Based Policy on Creditworthiness and Criminal History, Washington, D.C.",
-      "themes": [
-        "신용·은행"
-      ],
-      "stance": "신용 여건 점검",
-      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
-      "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
-      "watch": "하이일드 OAS와 은행 대출태도",
-      "relevanceScore": 6,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/barr20260901a.htm",
       "readError": null
     },
     {
