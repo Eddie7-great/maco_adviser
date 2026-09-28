@@ -1,8 +1,31 @@
 {
-  "generatedAt": "2026-09-28T14:14:11.483Z",
+  "generatedAt": "2026-09-28T23:24:17.683Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
+    {
+      "speaker": "Cook",
+      "speakerFullName": "Lisa D. Cook",
+      "title": "An Update on AI and the Economy",
+      "rawTitle": "Cook, An Update on AI and the Economy",
+      "url": "https://www.federalreserve.gov/newsevents/speech/cook20260928a.htm",
+      "description": "Speech At the Oakland Tech Week Opening Keynote, cohosted by the Kapor Center, Oakland, California",
+      "publishedAt": "2026-09-28T17:25:00.000Z",
+      "date": "2026-09-28",
+      "source": "Federal Reserve",
+      "venue": "the Oakland Tech Week Opening Keynote, cohosted by the Kapor Center, Oakland, California",
+      "themes": [
+        "성장·소비",
+        "AI·생산성"
+      ],
+      "stance": "구조 성장",
+      "marketImpact": "AI 인프라·소프트웨어 성장성은 우호, 고평가 구간은 선별",
+      "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
+      "watch": "AI 투자 사이클과 생산성 지표, 소매판매·고용·소기업 신용",
+      "relevanceScore": 9,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/cook20260928a.htm",
+      "readError": null
+    },
     {
       "speaker": "Barr",
       "speakerFullName": "Michael S. Barr",
@@ -46,28 +69,6 @@
       "watch": "달러지수와 미국 국채 수요, 하이일드 OAS와 은행 대출태도",
       "relevanceScore": 12,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/jefferson20260922a.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Bowman",
-      "speakerFullName": "Michelle W. Bowman",
-      "title": "The Final Chapter on Modernizing Bank Regulatory Stress Testing",
-      "rawTitle": "Bowman, The Final Chapter on Modernizing Bank Regulatory Stress Testing",
-      "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260918a.htm",
-      "description": "Speech At the Luncheon of the Lord Mayor City of London at Mansion House, London, United Kingdom",
-      "publishedAt": "2026-09-18T13:30:00.000Z",
-      "date": "2026-09-18",
-      "source": "Federal Reserve",
-      "venue": "the Luncheon of the Lord Mayor City of London at Mansion House, London, United Kingdom",
-      "themes": [
-        "신용·은행"
-      ],
-      "stance": "금융안정 경계",
-      "marketImpact": "은행·하이일드·레버리지 기업에는 리스크 점검 신호",
-      "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
-      "watch": "하이일드 OAS와 은행 대출태도",
-      "relevanceScore": 6,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20260918a.htm",
       "readError": null
     },
     {
