@@ -1,8 +1,31 @@
 {
-  "generatedAt": "2026-09-30T12:50:08.867Z",
+  "generatedAt": "2026-09-30T22:26:06.952Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
+    {
+      "speaker": "Cook",
+      "speakerFullName": "Lisa D. Cook",
+      "title": "The Dual Mandate in Rural America",
+      "rawTitle": "Cook, The Dual Mandate in Rural America",
+      "url": "https://www.federalreserve.gov/newsevents/speech/cook20260930a.htm",
+      "description": "Speech At the 2026 Investing in Rural America Conference, Federal Reserve Bank of Richmond, Asheville, North Carolina",
+      "publishedAt": "2026-09-30T19:25:00.000Z",
+      "date": "2026-09-30",
+      "source": "Federal Reserve",
+      "venue": "the 2026 Investing in Rural America Conference, Federal Reserve Bank of Richmond, Asheville, North Carolina",
+      "themes": [
+        "금리·통화정책",
+        "신용·은행"
+      ],
+      "stance": "신용 여건 점검",
+      "marketImpact": "금리 민감 성장주·장기채·리츠의 할인율을 재점검",
+      "summary": "정책금리, 물가, 고용 균형에 관한 발언입니다. 성장주 밸류에이션과 장기채·리츠 같은 금리 민감 자산의 방향성 판단에 직접적입니다.",
+      "watch": "CPI·PCE와 10년물 금리, 하이일드 OAS와 은행 대출태도",
+      "relevanceScore": 12,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/cook20260930a.htm",
+      "readError": null
+    },
     {
       "speaker": "Barr",
       "speakerFullName": "Michael S. Barr",
@@ -68,28 +91,6 @@
       "watch": "AI 투자 사이클과 생산성 지표, 소매판매·고용·소기업 신용",
       "relevanceScore": 9,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/cook20260928a.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Barr",
-      "speakerFullName": "Michael S. Barr",
-      "title": "A Long-Term View on the Costs of Shelter",
-      "rawTitle": "Barr, A Long-Term View on the Costs of Shelter",
-      "url": "https://www.federalreserve.gov/newsevents/speech/barr20260923a.htm",
-      "description": "Speech At “Housing Affordability 2026: A Community Development Summit,” hosted by the Federal Reserve Bank of Chicago, Chicago, Illinois",
-      "publishedAt": "2026-09-23T14:05:00.000Z",
-      "date": "2026-09-23",
-      "source": "Federal Reserve",
-      "venue": "“Housing Affordability 2026: A Community Development Summit,” hosted by the Federal Reserve Bank of Chicago, Chicago, Illinois",
-      "themes": [
-        "신용·은행"
-      ],
-      "stance": "신용 여건 점검",
-      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
-      "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
-      "watch": "하이일드 OAS와 은행 대출태도",
-      "relevanceScore": 7,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/barr20260923a.htm",
       "readError": null
     },
     {
