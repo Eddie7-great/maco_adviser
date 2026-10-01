@@ -1,8 +1,54 @@
 {
-  "generatedAt": "2026-10-01T13:35:43.302Z",
+  "generatedAt": "2026-10-01T22:48:32.611Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
+    {
+      "speaker": "Jefferson",
+      "speakerFullName": "Philip N. Jefferson",
+      "title": "The U.S. Economy and Monetary Policy",
+      "rawTitle": "Jefferson, The U.S. Economy and Monetary Policy",
+      "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20261001a.htm",
+      "description": "Speech At the Darden School of Business, University of Virginia, Charlottesville, Virginia",
+      "publishedAt": "2026-10-01T17:30:00.000Z",
+      "date": "2026-10-01",
+      "source": "Federal Reserve",
+      "venue": "the Darden School of Business, University of Virginia, Charlottesville, Virginia",
+      "themes": [
+        "금리·통화정책",
+        "성장·소비"
+      ],
+      "stance": "정책 경계",
+      "marketImpact": "금리 민감 성장주·장기채·리츠의 할인율을 재점검",
+      "summary": "정책금리, 물가, 고용 균형에 관한 발언입니다. 성장주 밸류에이션과 장기채·리츠 같은 금리 민감 자산의 방향성 판단에 직접적입니다.",
+      "watch": "CPI·PCE와 10년물 금리, 소매판매·고용·소기업 신용",
+      "relevanceScore": 11,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/jefferson20261001a.htm",
+      "readError": null
+    },
+    {
+      "speaker": "Waller",
+      "speakerFullName": "Christopher J. Waller",
+      "title": "The Data Version of Godzilla versus Kong: FRED Takes on AI",
+      "rawTitle": "Waller, The Data Version of Godzilla versus Kong: FRED Takes on AI",
+      "url": "https://www.federalreserve.gov/newsevents/speech/waller20261001a.htm",
+      "description": "Speech At \"Navigating Trust, AI and Storytelling in a World of Data,\" FRED Con 2026, Federal Reserve Bank of St. Louis, St. Louis, Missouri",
+      "publishedAt": "2026-10-01T14:00:00.000Z",
+      "date": "2026-10-01",
+      "source": "Federal Reserve",
+      "venue": "\"Navigating Trust, AI and Storytelling in a World of Data,\" FRED Con 2026, Federal Reserve Bank of St. Louis, St. Louis, Missouri",
+      "themes": [
+        "신용·은행",
+        "AI·생산성"
+      ],
+      "stance": "구조 성장",
+      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
+      "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
+      "watch": "하이일드 OAS와 은행 대출태도, AI 투자 사이클과 생산성 지표",
+      "relevanceScore": 10,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/waller20261001a.htm",
+      "readError": null
+    },
     {
       "speaker": "Cook",
       "speakerFullName": "Lisa D. Cook",
@@ -49,28 +95,6 @@
       "readError": null
     },
     {
-      "speaker": "Bowman",
-      "speakerFullName": "Michelle W. Bowman",
-      "title": "Opening Remarks",
-      "rawTitle": "Bowman, Opening Remarks",
-      "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260929a.htm",
-      "description": "Speech At the Community Bank Cyber Workshop, Denver, Colorado (via pre-recorded video)",
-      "publishedAt": "2026-09-29T15:00:00.000Z",
-      "date": "2026-09-29",
-      "source": "Federal Reserve",
-      "venue": "the Community Bank Cyber Workshop, Denver, Colorado (via pre-recorded video)",
-      "themes": [
-        "신용·은행"
-      ],
-      "stance": "신용 여건 점검",
-      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
-      "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
-      "watch": "하이일드 OAS와 은행 대출태도",
-      "relevanceScore": 7,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20260929a.htm",
-      "readError": null
-    },
-    {
       "speaker": "Cook",
       "speakerFullName": "Lisa D. Cook",
       "title": "An Update on AI and the Economy",
@@ -114,29 +138,6 @@
       "watch": "달러지수와 미국 국채 수요, 하이일드 OAS와 은행 대출태도",
       "relevanceScore": 11,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/jefferson20260922a.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Warsh",
-      "speakerFullName": "Warsh",
-      "title": "In Our Time",
-      "rawTitle": "Warsh, In Our Time",
-      "url": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
-      "description": "Speech At “Financial Innovation: Implications for Payments and Policy,” an economic policy symposium sponsored by the Federal Reserve Bank of Kansas City, Jackson Hole, Wyoming",
-      "publishedAt": "2026-08-28T14:00:00.000Z",
-      "date": "2026-08-28",
-      "source": "Federal Reserve",
-      "venue": "“Financial Innovation: Implications for Payments and Policy,” an economic policy symposium sponsored by the Federal Reserve Bank of Kansas City, Jackson Hole, Wyoming",
-      "themes": [
-        "신용·은행",
-        "AI·생산성"
-      ],
-      "stance": "구조 성장",
-      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
-      "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
-      "watch": "하이일드 OAS와 은행 대출태도, AI 투자 사이클과 생산성 지표",
-      "relevanceScore": 8,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
       "readError": null
     }
   ],
