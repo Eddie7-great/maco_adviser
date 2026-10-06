@@ -1,8 +1,30 @@
 {
-  "generatedAt": "2026-10-06T06:35:56.097Z",
+  "generatedAt": "2026-10-06T18:30:35.822Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
+    {
+      "speaker": "Bowman",
+      "speakerFullName": "Michelle W. Bowman",
+      "title": "Modernizing the Regulatory and Supervisory Landscape",
+      "rawTitle": "Bowman, Modernizing the Regulatory and Supervisory Landscape",
+      "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261006a.htm",
+      "description": "Speech At the 2026 Community Banking Research Conference, sponsored by the Federal Reserve System, the Conference of State Bank Supervisors, and the Federal Deposit Insurance Corporation, St. Louis, Missouri",
+      "publishedAt": "2026-10-06T14:45:00.000Z",
+      "date": "2026-10-06",
+      "source": "Federal Reserve",
+      "venue": "the 2026 Community Banking Research Conference, sponsored by the Federal Reserve System, the Conference of State Bank Supervisors, and the Federal Deposit Insurance Corporation, St. Louis, Missouri",
+      "themes": [
+        "신용·은행"
+      ],
+      "stance": "신용 여건 점검",
+      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
+      "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
+      "watch": "하이일드 OAS와 은행 대출태도",
+      "relevanceScore": 7,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20261006a.htm",
+      "readError": null
+    },
     {
       "speaker": "Jefferson",
       "speakerFullName": "Philip N. Jefferson",
@@ -70,28 +92,6 @@
       "watch": "CPI·PCE와 10년물 금리, 하이일드 OAS와 은행 대출태도",
       "relevanceScore": 12,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/cook20260930a.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Barr",
-      "speakerFullName": "Michael S. Barr",
-      "title": "Economic Conditions and Monetary Policy",
-      "rawTitle": "Barr, Economic Conditions and Monetary Policy",
-      "url": "https://www.federalreserve.gov/newsevents/speech/barr20260929a.htm",
-      "description": "Speech At the Detroit Economic Club, Detroit, Michigan",
-      "publishedAt": "2026-09-29T16:40:00.000Z",
-      "date": "2026-09-29",
-      "source": "Federal Reserve",
-      "venue": "the Detroit Economic Club, Detroit, Michigan",
-      "themes": [
-        "금리·통화정책"
-      ],
-      "stance": "정책 경계",
-      "marketImpact": "금리 민감 성장주·장기채·리츠의 할인율을 재점검",
-      "summary": "정책금리, 물가, 고용 균형에 관한 발언입니다. 성장주 밸류에이션과 장기채·리츠 같은 금리 민감 자산의 방향성 판단에 직접적입니다.",
-      "watch": "CPI·PCE와 10년물 금리",
-      "relevanceScore": 8,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/barr20260929a.htm",
       "readError": null
     },
     {
