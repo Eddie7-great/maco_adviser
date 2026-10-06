@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T15:02:22.706Z",
+  "generatedAt": "2026-10-06T00:12:57.835Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
@@ -113,7 +113,7 @@
       "marketImpact": "AI 인프라·소프트웨어 성장성은 우호, 고평가 구간은 선별",
       "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
       "watch": "AI 투자 사이클과 생산성 지표, 소매판매·고용·소기업 신용",
-      "relevanceScore": 9,
+      "relevanceScore": 8,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/cook20260928a.htm",
       "readError": null
     },
