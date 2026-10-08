@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-10-08T06:21:44.556Z",
+  "generatedAt": "2026-10-08T13:50:40.706Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
     {
-      "speaker": "Bowman",
-      "speakerFullName": "Michelle W. Bowman",
-      "title": "Modernizing the Regulatory and Supervisory Landscape",
-      "rawTitle": "Bowman, Modernizing the Regulatory and Supervisory Landscape",
-      "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261006a.htm",
-      "description": "Speech At the 2026 Community Banking Research Conference, sponsored by the Federal Reserve System, the Conference of State Bank Supervisors, and the Federal Deposit Insurance Corporation, St. Louis, Missouri",
-      "publishedAt": "2026-10-06T14:45:00.000Z",
-      "date": "2026-10-06",
+      "speaker": "Waller",
+      "speakerFullName": "Christopher J. Waller",
+      "title": "The Signaling Value of the Summary of Economic Projections",
+      "rawTitle": "Waller, The Signaling Value of the Summary of Economic Projections",
+      "url": "https://www.federalreserve.gov/newsevents/speech/waller20261008a.htm",
+      "description": "Speech At the Istanbul Economic Forum, Central Bank of the Republic of T&uuml;rkiye, Istanbul, T&uuml;rkiye",
+      "publishedAt": "2026-10-08T08:30:00.000Z",
+      "date": "2026-10-08",
       "source": "Federal Reserve",
-      "venue": "the 2026 Community Banking Research Conference, sponsored by the Federal Reserve System, the Conference of State Bank Supervisors, and the Federal Deposit Insurance Corporation, St. Louis, Missouri",
+      "venue": "the Istanbul Economic Forum, Central Bank of the Republic of T&uuml;rkiye, Istanbul, T&uuml;rkiye",
       "themes": [
         "신용·은행"
       ],
@@ -22,7 +22,7 @@
       "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
       "watch": "하이일드 OAS와 은행 대출태도",
       "relevanceScore": 7,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20261006a.htm",
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/waller20261008a.htm",
       "readError": null
     },
     {
