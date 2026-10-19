@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T13:43:07.482Z",
+  "generatedAt": "2026-10-19T22:30:22.267Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -45,10 +45,6 @@
       "note": "장기금리는 성장주와 주택 관련주의 밸류에이션에 직접 영향을 줍니다.",
       "observations": [
         {
-          "date": "2026-10-09",
-          "value": 5.24
-        },
-        {
           "date": "2026-10-12",
           "value": 0
         },
@@ -63,10 +59,14 @@
         {
           "date": "2026-10-15",
           "value": 5.1
+        },
+        {
+          "date": "2026-10-16",
+          "value": 5.09
         }
       ],
-      "latestDate": "2026-10-15",
-      "latestValue": 5.1,
+      "latestDate": "2026-10-16",
+      "latestValue": 5.09,
       "fresh": true,
       "error": null
     },
@@ -77,10 +77,6 @@
       "unit": "%p",
       "note": "금리차가 낮거나 재역전되면 경기 둔화 우려가 커집니다.",
       "observations": [
-        {
-          "date": "2026-10-12",
-          "value": 0
-        },
         {
           "date": "2026-10-13",
           "value": 0.42
@@ -96,10 +92,14 @@
         {
           "date": "2026-10-16",
           "value": 0.35
+        },
+        {
+          "date": "2026-10-19",
+          "value": 0.38
         }
       ],
-      "latestDate": "2026-10-16",
-      "latestValue": 0.35,
+      "latestDate": "2026-10-19",
+      "latestValue": 0.38,
       "fresh": true,
       "error": null
     },
@@ -474,10 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-10-09",
-          "value": 3.11
-        },
-        {
           "date": "2026-10-12",
           "value": 3.11
         },
@@ -492,10 +488,14 @@
         {
           "date": "2026-10-15",
           "value": 3.23
+        },
+        {
+          "date": "2026-10-16",
+          "value": 3.31
         }
       ],
-      "latestDate": "2026-10-15",
-      "latestValue": 3.23,
+      "latestDate": "2026-10-16",
+      "latestValue": 3.31,
       "fresh": true,
       "error": null
     }
