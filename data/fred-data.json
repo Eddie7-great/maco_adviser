@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T11:53:08.042Z",
+  "generatedAt": "2026-10-20T17:22:36.868Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -375,10 +375,6 @@
       "note": "금리 부담과 건설 경기 변화를 빠르게 보여주는 민감 지표입니다.",
       "observations": [
         {
-          "date": "2026-04-01",
-          "value": 1414
-        },
-        {
           "date": "2026-05-01",
           "value": 1182
         },
@@ -388,15 +384,19 @@
         },
         {
           "date": "2026-07-01",
-          "value": 1309
+          "value": 1369
         },
         {
           "date": "2026-08-01",
-          "value": 1275
+          "value": 1288
+        },
+        {
+          "date": "2026-09-01",
+          "value": 1221
         }
       ],
-      "latestDate": "2026-08-01",
-      "latestValue": 1275,
+      "latestDate": "2026-09-01",
+      "latestValue": 1221,
       "fresh": true,
       "error": null
     },
@@ -474,10 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-10-12",
-          "value": 3.11
-        },
-        {
           "date": "2026-10-13",
           "value": 3.16
         },
@@ -492,10 +488,14 @@
         {
           "date": "2026-10-16",
           "value": 3.31
+        },
+        {
+          "date": "2026-10-19",
+          "value": 3.29
         }
       ],
-      "latestDate": "2026-10-16",
-      "latestValue": 3.31,
+      "latestDate": "2026-10-19",
+      "latestValue": 3.29,
       "fresh": true,
       "error": null
     }
