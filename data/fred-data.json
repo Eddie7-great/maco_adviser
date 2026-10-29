@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T06:04:31.401Z",
+  "generatedAt": "2026-10-29T13:23:51.547Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -144,10 +144,6 @@
       "note": "연준이 선호하는 물가지표라 통화정책 기대에 민감합니다.",
       "observations": [
         {
-          "date": "2026-04-01",
-          "value": 130.672
-        },
-        {
           "date": "2026-05-01",
           "value": 131.241
         },
@@ -157,15 +153,19 @@
         },
         {
           "date": "2026-07-01",
-          "value": 131.172
+          "value": 131.187
         },
         {
           "date": "2026-08-01",
-          "value": 131.579
+          "value": 131.611
+        },
+        {
+          "date": "2026-09-01",
+          "value": 132.257
         }
       ],
-      "latestDate": "2026-08-01",
-      "latestValue": 131.579,
+      "latestDate": "2026-09-01",
+      "latestValue": 132.257,
       "fresh": true,
       "error": null
     },
@@ -243,10 +243,6 @@
       "note": "실질 생산이 늘면 기업 이익 전망에 기본적으로 우호적입니다.",
       "observations": [
         {
-          "date": "2025-04-01",
-          "value": 23884.563
-        },
-        {
           "date": "2025-07-01",
           "value": 24112.966
         },
@@ -261,10 +257,14 @@
         {
           "date": "2026-04-01",
           "value": 24408.011
+        },
+        {
+          "date": "2026-07-01",
+          "value": 24611.077
         }
       ],
-      "latestDate": "2026-04-01",
-      "latestValue": 24408.011,
+      "latestDate": "2026-07-01",
+      "latestValue": 24611.077,
       "fresh": true,
       "error": null
     },
