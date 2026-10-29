@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T13:23:51.547Z",
+  "generatedAt": "2026-10-29T22:52:48.628Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -45,10 +45,6 @@
       "note": "장기금리는 성장주와 주택 관련주의 밸류에이션에 직접 영향을 줍니다.",
       "observations": [
         {
-          "date": "2026-10-21",
-          "value": 5.13
-        },
-        {
           "date": "2026-10-22",
           "value": 4.96
         },
@@ -63,10 +59,14 @@
         {
           "date": "2026-10-27",
           "value": 4.99
+        },
+        {
+          "date": "2026-10-28",
+          "value": 5.05
         }
       ],
-      "latestDate": "2026-10-27",
-      "latestValue": 4.99,
+      "latestDate": "2026-10-28",
+      "latestValue": 5.05,
       "fresh": true,
       "error": null
     },
@@ -77,10 +77,6 @@
       "unit": "%p",
       "note": "금리차가 낮거나 재역전되면 경기 둔화 우려가 커집니다.",
       "observations": [
-        {
-          "date": "2026-10-22",
-          "value": 0.31
-        },
         {
           "date": "2026-10-23",
           "value": 0.31
@@ -96,10 +92,14 @@
         {
           "date": "2026-10-28",
           "value": 0.38
+        },
+        {
+          "date": "2026-10-29",
+          "value": 0.37
         }
       ],
-      "latestDate": "2026-10-28",
-      "latestValue": 0.38,
+      "latestDate": "2026-10-29",
+      "latestValue": 0.37,
       "fresh": true,
       "error": null
     },
@@ -441,10 +441,6 @@
       "note": "모기지 금리는 주택 수요와 건설 관련주를 압박하거나 완화합니다.",
       "observations": [
         {
-          "date": "2026-09-24",
-          "value": 7.03
-        },
-        {
           "date": "2026-10-01",
           "value": 7.28
         },
@@ -459,10 +455,14 @@
         {
           "date": "2026-10-22",
           "value": 7.32
+        },
+        {
+          "date": "2026-10-29",
+          "value": 7.24
         }
       ],
-      "latestDate": "2026-10-22",
-      "latestValue": 7.32,
+      "latestDate": "2026-10-29",
+      "latestValue": 7.24,
       "fresh": true,
       "error": null
     },
@@ -473,10 +473,6 @@
       "unit": "%",
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
-        {
-          "date": "2026-10-21",
-          "value": 3.27
-        },
         {
           "date": "2026-10-22",
           "value": 3.4
@@ -492,10 +488,14 @@
         {
           "date": "2026-10-27",
           "value": 3.18
+        },
+        {
+          "date": "2026-10-28",
+          "value": 3.14
         }
       ],
-      "latestDate": "2026-10-27",
-      "latestValue": 3.18,
+      "latestDate": "2026-10-28",
+      "latestValue": 3.14,
       "fresh": true,
       "error": null
     }
