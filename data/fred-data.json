@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T06:29:45.630Z",
+  "generatedAt": "2026-11-02T21:49:51.844Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -11,10 +11,6 @@
       "unit": "%",
       "note": "기준금리 레벨이 높을수록 주식의 할인율 부담이 커집니다.",
       "observations": [
-        {
-          "date": "2026-05-01",
-          "value": 3.63
-        },
         {
           "date": "2026-06-01",
           "value": 3.63
@@ -30,10 +26,14 @@
         {
           "date": "2026-09-01",
           "value": 3.75
+        },
+        {
+          "date": "2026-10-01",
+          "value": 3.88
         }
       ],
-      "latestDate": "2026-09-01",
-      "latestValue": 3.75,
+      "latestDate": "2026-10-01",
+      "latestValue": 3.88,
       "fresh": true,
       "error": null
     },
@@ -44,10 +44,6 @@
       "unit": "%",
       "note": "장기금리는 성장주와 주택 관련주의 밸류에이션에 직접 영향을 줍니다.",
       "observations": [
-        {
-          "date": "2026-10-23",
-          "value": 5
-        },
         {
           "date": "2026-10-26",
           "value": 5
@@ -63,10 +59,14 @@
         {
           "date": "2026-10-29",
           "value": 4.98
+        },
+        {
+          "date": "2026-10-30",
+          "value": 4.94
         }
       ],
-      "latestDate": "2026-10-29",
-      "latestValue": 4.98,
+      "latestDate": "2026-10-30",
+      "latestValue": 4.94,
       "fresh": true,
       "error": null
     },
@@ -474,10 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-10-23",
-          "value": 3.38
-        },
-        {
           "date": "2026-10-26",
           "value": 3.3
         },
@@ -492,10 +488,14 @@
         {
           "date": "2026-10-29",
           "value": 3.26
+        },
+        {
+          "date": "2026-10-30",
+          "value": 3.44
         }
       ],
-      "latestDate": "2026-10-29",
-      "latestValue": 3.26,
+      "latestDate": "2026-10-30",
+      "latestValue": 3.44,
       "fresh": true,
       "error": null
     }
