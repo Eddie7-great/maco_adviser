@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T07:01:18.524Z",
+  "generatedAt": "2026-11-03T19:39:40.341Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -474,10 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-10-26",
-          "value": 3.3
-        },
-        {
           "date": "2026-10-27",
           "value": 3.18
         },
@@ -492,10 +488,14 @@
         {
           "date": "2026-10-30",
           "value": 3.44
+        },
+        {
+          "date": "2026-11-02",
+          "value": 3.43
         }
       ],
-      "latestDate": "2026-10-30",
-      "latestValue": 3.44,
+      "latestDate": "2026-11-02",
+      "latestValue": 3.43,
       "fresh": true,
       "error": null
     }
