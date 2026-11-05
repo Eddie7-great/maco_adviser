@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T07:04:20.801Z",
+  "generatedAt": "2026-11-05T20:08:44.023Z",
   "source": "KCIF",
   "listUrl": "https://www.kcif.or.kr/annual/monthlyList",
   "reports": [
@@ -8,7 +8,7 @@
       "label": "국제금융 INSIGHT",
       "title": "[26.10월] 국제금융 INSIGHT",
       "date": "2026.10.13",
-      "views": "929",
+      "views": "938",
       "attachment": "국제금융 인사이트 `26.10월호.pdf",
       "url": "https://www.kcif.or.kr/annual/reportView?rpt_no=37591&mn=001004&pe=004001&skey=&sval=&pg=1&pp=10",
       "source": "KCIF",
@@ -26,11 +26,11 @@
     {
       "kind": "riskWatch",
       "label": "글로벌 리스크 워치",
-      "title": "[26.10월] 글로벌 리스크 워치",
-      "date": "2026.10.08",
-      "views": "885",
-      "attachment": "261008-글로벌 리스크 워치.pdf",
-      "url": "https://www.kcif.or.kr/annual/reportView?rpt_no=37580&mn=001004&pe=004008&skey=&sval=&pg=1&pp=10",
+      "title": "[26.11월] 글로벌 리스크 워치",
+      "date": "2026.11.05",
+      "views": "213",
+      "attachment": "GRW2611.pdf",
+      "url": "https://www.kcif.or.kr/annual/reportView?rpt_no=37681&mn=001004&pe=004008&skey=&sval=&pg=1&pp=10",
       "source": "KCIF",
       "focus": [
         "글로벌 금리: 선진국 장기금리 고수준은 주식 밸류에이션과 장기채 가격에 동시에 부담을 줄 수 있습니다.",
@@ -38,9 +38,9 @@
         "위험자산: AI·반도체 기대가 높은 구간에서는 실적 확인 전 밸류에이션 과열 여부를 함께 봅니다."
       ],
       "implication": "KCIF의 리스크 워치는 FRED 지표가 포착하지 못하는 지정학, 유가, 글로벌 금리, 신용 이벤트를 보완합니다.",
-      "previewUrl": "https://www.kcif.or.kr/flexer/view.jsp?SDir=4oVPwLLDj9GlFB4vlA95KU2WD7cz5iPrpADq4b5NEJM%3D&SName=YF1n8Q76od0QjeTmcrtOf6GdI5EtDux0Z6k2zNGNBsV7n7qpzoT9x2ggncd%2F7lep&ftype=pdf&FileName=261008-%EA%B8%80%EB%A1%9C%EB%B2%8C%20%EB%A6%AC%EC%8A%A4%ED%81%AC%20%EC%9B%8C%EC%B9%98.pdf",
+      "previewUrl": "https://www.kcif.or.kr/flexer/view.jsp?SDir=DvQPLoKPO93Va9W2e8sTLrc3f3zxnXohJEoCBks2iIs%3D&SName=an4aCcF884ot%2BXwfuLoN17UOddrL3sR8aOwq98o2cD%2BbPG64NoihIYsPq4FyorQl&ftype=pdf&FileName=GRW2611.pdf",
       "summarySource": "PDF 미리보기 전문",
-      "pdfTextLength": 1936
+      "pdfTextLength": 2059
     }
   ],
   "advice": [
