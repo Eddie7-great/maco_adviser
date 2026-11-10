@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T07:32:44.675Z",
+  "generatedAt": "2026-11-10T19:53:08.863Z",
   "source": "KCIF",
   "listUrl": "https://www.kcif.or.kr/annual/monthlyList",
   "reports": [
@@ -8,7 +8,7 @@
       "label": "국제금융 INSIGHT",
       "title": "[26.10월] 국제금융 INSIGHT",
       "date": "2026.10.13",
-      "views": "987",
+      "views": "992",
       "attachment": "국제금융 인사이트 `26.10월호.pdf",
       "url": "https://www.kcif.or.kr/annual/reportView?rpt_no=37591&mn=001004&pe=004001&skey=&sval=&pg=1&pp=10",
       "source": "KCIF",
@@ -21,14 +21,14 @@
       "implication": "국제금융 INSIGHT는 미국 지표 중심의 FRED 판단에 글로벌 자금흐름과 정책 해석을 덧붙이는 보조 자료입니다.",
       "previewUrl": "https://www.kcif.or.kr/flexer/view.jsp?SDir=4oVPwLLDj9GlFB4vlA95Kc0djq%2BrXLyIlS%2Bz4qd%2BERU%3D&SName=mxT6AVLJ55DATujXxSfFD23%2B09XvLRwc4wnBKSyOVhDwXSalid%2Bq4yx9YGo2N4IB&ftype=pdf&FileName=%EA%B5%AD%EC%A0%9C%EA%B8%88%EC%9C%B5%20%EC%9D%B8%EC%82%AC%EC%9D%B4%ED%8A%B8%20%6026.10%EC%9B%94%ED%98%B8.pdf",
       "summarySource": "PDF 미리보기 전문",
-      "pdfTextLength": 76465
+      "pdfTextLength": 76401
     },
     {
       "kind": "riskWatch",
       "label": "글로벌 리스크 워치",
       "title": "[26.11월] 글로벌 리스크 워치",
       "date": "2026.11.05",
-      "views": "548",
+      "views": "559",
       "attachment": "GRW2611.pdf",
       "url": "https://www.kcif.or.kr/annual/reportView?rpt_no=37681&mn=001004&pe=004008&skey=&sval=&pg=1&pp=10",
       "source": "KCIF",
