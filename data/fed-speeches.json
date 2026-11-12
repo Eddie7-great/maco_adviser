@@ -1,8 +1,30 @@
 {
-  "generatedAt": "2026-11-12T07:27:59.920Z",
+  "generatedAt": "2026-11-12T20:11:00.597Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
+    {
+      "speaker": "Barr",
+      "speakerFullName": "Michael S. Barr",
+      "title": "American Inequality and the Future of AI",
+      "rawTitle": "Barr, American Inequality and the Future of AI",
+      "url": "https://www.federalreserve.gov/newsevents/speech/barr20261112a.htm",
+      "description": "Speech At Yale University, New Haven, Connecticut",
+      "publishedAt": "2026-11-12T15:00:00.000Z",
+      "date": "2026-11-12",
+      "source": "Federal Reserve",
+      "venue": "Yale University, New Haven, Connecticut",
+      "themes": [
+        "AI·생산성"
+      ],
+      "stance": "구조 성장",
+      "marketImpact": "AI 인프라·소프트웨어 성장성은 우호, 고평가 구간은 선별",
+      "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
+      "watch": "AI 투자 사이클과 생산성 지표",
+      "relevanceScore": 6,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/barr20261112a.htm",
+      "readError": null
+    },
     {
       "speaker": "Bowman",
       "speakerFullName": "Michelle W. Bowman",
@@ -48,28 +70,6 @@
       "watch": "CPI·PCE와 10년물 금리, 하이일드 OAS와 은행 대출태도",
       "relevanceScore": 12,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/waller20261110a.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Bowman",
-      "speakerFullName": "Michelle W. Bowman",
-      "title": "Supervisory Modernization After Silicon Valley Bank",
-      "rawTitle": "Bowman, Supervisory Modernization After Silicon Valley Bank",
-      "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261014a.htm",
-      "description": "Speech At the Bangkok Economic Festival, Reinventing Bretton Woods Committee, Bangkok, Thailand",
-      "publishedAt": "2026-10-15T02:55:00.000Z",
-      "date": "2026-10-15",
-      "source": "Federal Reserve",
-      "venue": "the Bangkok Economic Festival, Reinventing Bretton Woods Committee, Bangkok, Thailand",
-      "themes": [
-        "신용·은행"
-      ],
-      "stance": "신용 여건 점검",
-      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
-      "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
-      "watch": "하이일드 OAS와 은행 대출태도",
-      "relevanceScore": 6,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20261014a.htm",
       "readError": null
     },
     {
