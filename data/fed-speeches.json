@@ -1,28 +1,29 @@
 {
-  "generatedAt": "2026-11-13T19:54:56.112Z",
+  "generatedAt": "2026-11-14T06:48:34.744Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
     {
-      "speaker": "Barr",
-      "speakerFullName": "Michael S. Barr",
-      "title": "American Inequality and the Future of AI",
-      "rawTitle": "Barr, American Inequality and the Future of AI",
-      "url": "https://www.federalreserve.gov/newsevents/speech/barr20261112a.htm",
-      "description": "Speech At Yale University, New Haven, Connecticut",
-      "publishedAt": "2026-11-12T15:00:00.000Z",
-      "date": "2026-11-12",
+      "speaker": "Jefferson",
+      "speakerFullName": "Philip N. Jefferson",
+      "title": "New Technology, Old Questions: Productivity Puzzles and the Macroeconomy",
+      "rawTitle": "Jefferson, New Technology, Old Questions: Productivity Puzzles and the Macroeconomy",
+      "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20261113a.htm",
+      "description": "Speech At the University of California, San Diego Economic Roundtable, San Diego, California",
+      "publishedAt": "2026-11-14T00:00:00.000Z",
+      "date": "2026-11-14",
       "source": "Federal Reserve",
-      "venue": "Yale University, New Haven, Connecticut",
+      "venue": "the University of California, San Diego Economic Roundtable, San Diego, California",
       "themes": [
+        "성장·소비",
         "AI·생산성"
       ],
       "stance": "구조 성장",
       "marketImpact": "AI 인프라·소프트웨어 성장성은 우호, 고평가 구간은 선별",
       "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
-      "watch": "AI 투자 사이클과 생산성 지표",
-      "relevanceScore": 6,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/barr20261112a.htm",
+      "watch": "AI 투자 사이클과 생산성 지표, 소매판매·고용·소기업 신용",
+      "relevanceScore": 9,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/jefferson20261113a.htm",
       "readError": null
     },
     {
