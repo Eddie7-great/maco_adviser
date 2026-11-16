@@ -1,8 +1,55 @@
 {
-  "generatedAt": "2026-11-16T06:53:36.869Z",
+  "generatedAt": "2026-11-16T22:23:38.227Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
+    {
+      "speaker": "Warsh",
+      "speakerFullName": "Warsh",
+      "title": "Opening Remarks",
+      "rawTitle": "Warsh, Opening Remarks",
+      "url": "https://www.federalreserve.gov/newsevents/speech/warsh20261116a.htm",
+      "description": "Speech At the Productivity and Jobs Task Force Conference, hosted by the Federal Reserve Board and the Federal Reserve Bank of San Francisco, San Francisco, California",
+      "publishedAt": "2026-11-16T17:00:00.000Z",
+      "date": "2026-11-16",
+      "source": "Federal Reserve",
+      "venue": "the Productivity and Jobs Task Force Conference, hosted by the Federal Reserve Board and the Federal Reserve Bank of San Francisco, San Francisco, California",
+      "themes": [
+        "신용·은행",
+        "성장·소비",
+        "AI·생산성"
+      ],
+      "stance": "구조 성장",
+      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
+      "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
+      "watch": "하이일드 OAS와 은행 대출태도, AI 투자 사이클과 생산성 지표, 소매판매·고용·소기업 신용",
+      "relevanceScore": 13,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/warsh20261116a.htm",
+      "readError": null
+    },
+    {
+      "speaker": "Barr",
+      "speakerFullName": "Michael S. Barr",
+      "title": "Some Potential Financial Stability Implications of Artificial Intelligence",
+      "rawTitle": "Barr, Some Potential Financial Stability Implications of Artificial Intelligence",
+      "url": "https://www.federalreserve.gov/newsevents/speech/barr20261116a.htm",
+      "description": "Speech At the Seventh Annual Association for Computing Machinery International Conference on Artificial Intelligence in Finance, Milan, Italy",
+      "publishedAt": "2026-11-16T10:00:00.000Z",
+      "date": "2026-11-16",
+      "source": "Federal Reserve",
+      "venue": "the Seventh Annual Association for Computing Machinery International Conference on Artificial Intelligence in Finance, Milan, Italy",
+      "themes": [
+        "신용·은행",
+        "AI·생산성"
+      ],
+      "stance": "구조 성장",
+      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
+      "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
+      "watch": "하이일드 OAS와 은행 대출태도, AI 투자 사이클과 생산성 지표",
+      "relevanceScore": 10,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/barr20261116a.htm",
+      "readError": null
+    },
     {
       "speaker": "Jefferson",
       "speakerFullName": "Philip N. Jefferson",
@@ -94,52 +141,6 @@
       "watch": "CPI·PCE와 10년물 금리, 소매판매·고용·소기업 신용",
       "relevanceScore": 9,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/jefferson20261001a.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Waller",
-      "speakerFullName": "Christopher J. Waller",
-      "title": "The Data Version of Godzilla versus Kong: FRED Takes on AI",
-      "rawTitle": "Waller, The Data Version of Godzilla versus Kong: FRED Takes on AI",
-      "url": "https://www.federalreserve.gov/newsevents/speech/waller20261001a.htm",
-      "description": "Speech At \"Navigating Trust, AI and Storytelling in a World of Data,\" FRED Con 2026, Federal Reserve Bank of St. Louis, St. Louis, Missouri",
-      "publishedAt": "2026-10-01T14:00:00.000Z",
-      "date": "2026-10-01",
-      "source": "Federal Reserve",
-      "venue": "\"Navigating Trust, AI and Storytelling in a World of Data,\" FRED Con 2026, Federal Reserve Bank of St. Louis, St. Louis, Missouri",
-      "themes": [
-        "신용·은행",
-        "AI·생산성"
-      ],
-      "stance": "구조 성장",
-      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
-      "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
-      "watch": "하이일드 OAS와 은행 대출태도, AI 투자 사이클과 생산성 지표",
-      "relevanceScore": 8,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/waller20261001a.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Cook",
-      "speakerFullName": "Lisa D. Cook",
-      "title": "The Dual Mandate in Rural America",
-      "rawTitle": "Cook, The Dual Mandate in Rural America",
-      "url": "https://www.federalreserve.gov/newsevents/speech/cook20260930a.htm",
-      "description": "Speech At the 2026 Investing in Rural America Conference, Federal Reserve Bank of Richmond, Asheville, North Carolina",
-      "publishedAt": "2026-09-30T19:25:00.000Z",
-      "date": "2026-09-30",
-      "source": "Federal Reserve",
-      "venue": "the 2026 Investing in Rural America Conference, Federal Reserve Bank of Richmond, Asheville, North Carolina",
-      "themes": [
-        "금리·통화정책",
-        "신용·은행"
-      ],
-      "stance": "신용 여건 점검",
-      "marketImpact": "금리 민감 성장주·장기채·리츠의 할인율을 재점검",
-      "summary": "정책금리, 물가, 고용 균형에 관한 발언입니다. 성장주 밸류에이션과 장기채·리츠 같은 금리 민감 자산의 방향성 판단에 직접적입니다.",
-      "watch": "CPI·PCE와 10년물 금리, 하이일드 OAS와 은행 대출태도",
-      "relevanceScore": 10,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/cook20260930a.htm",
       "readError": null
     }
   ],
