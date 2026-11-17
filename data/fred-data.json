@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T08:11:26.176Z",
+  "generatedAt": "2026-11-17T21:07:35.368Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -276,28 +276,28 @@
       "note": "제조와 광공업 활동은 경기민감 업종을 볼 때 중요한 선행 단서입니다.",
       "observations": [
         {
-          "date": "2026-05-01",
-          "value": 102.7232
-        },
-        {
           "date": "2026-06-01",
-          "value": 102.961
+          "value": 102.9673
         },
         {
           "date": "2026-07-01",
-          "value": 103.2006
+          "value": 103.1675
         },
         {
           "date": "2026-08-01",
-          "value": 103.2664
+          "value": 103.0954
         },
         {
           "date": "2026-09-01",
-          "value": 103.9506
+          "value": 103.8458
+        },
+        {
+          "date": "2026-10-01",
+          "value": 103.3954
         }
       ],
-      "latestDate": "2026-09-01",
-      "latestValue": 103.9506,
+      "latestDate": "2026-10-01",
+      "latestValue": 103.3954,
       "fresh": true,
       "error": null
     },
@@ -309,10 +309,6 @@
       "note": "명목 소비 흐름입니다. 물가 영향을 빼고 실질 구매력도 함께 봐야 합니다.",
       "observations": [
         {
-          "date": "2026-05-01",
-          "value": 731415
-        },
-        {
           "date": "2026-06-01",
           "value": 732898
         },
@@ -322,15 +318,19 @@
         },
         {
           "date": "2026-08-01",
-          "value": 739322
+          "value": 740502
         },
         {
           "date": "2026-09-01",
-          "value": 745021
+          "value": 746637
+        },
+        {
+          "date": "2026-10-01",
+          "value": 748220
         }
       ],
-      "latestDate": "2026-09-01",
-      "latestValue": 745021,
+      "latestDate": "2026-10-01",
+      "latestValue": 748220,
       "fresh": true,
       "error": null
     },
@@ -474,10 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-11-09",
-          "value": 3.34
-        },
-        {
           "date": "2026-11-10",
           "value": 3.3
         },
@@ -492,10 +488,14 @@
         {
           "date": "2026-11-13",
           "value": 3.23
+        },
+        {
+          "date": "2026-11-16",
+          "value": 3.34
         }
       ],
-      "latestDate": "2026-11-13",
-      "latestValue": 3.23,
+      "latestDate": "2026-11-16",
+      "latestValue": 3.34,
       "fresh": true,
       "error": null
     }
