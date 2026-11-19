@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T20:46:50.030Z",
+  "generatedAt": "2026-11-19T07:41:03.737Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -45,10 +45,6 @@
       "note": "장기금리는 성장주와 주택 관련주의 밸류에이션에 직접 영향을 줍니다.",
       "observations": [
         {
-          "date": "2026-11-10",
-          "value": 4.98
-        },
-        {
           "date": "2026-11-11",
           "value": 0
         },
@@ -63,10 +59,14 @@
         {
           "date": "2026-11-16",
           "value": 5.12
+        },
+        {
+          "date": "2026-11-17",
+          "value": 5.1
         }
       ],
-      "latestDate": "2026-11-16",
-      "latestValue": 5.12,
+      "latestDate": "2026-11-17",
+      "latestValue": 5.1,
       "fresh": true,
       "error": null
     },
@@ -77,10 +77,6 @@
       "unit": "%p",
       "note": "금리차가 낮거나 재역전되면 경기 둔화 우려가 커집니다.",
       "observations": [
-        {
-          "date": "2026-11-11",
-          "value": 0
-        },
         {
           "date": "2026-11-12",
           "value": 0.24
@@ -96,10 +92,14 @@
         {
           "date": "2026-11-17",
           "value": 0.3
+        },
+        {
+          "date": "2026-11-18",
+          "value": 0.27
         }
       ],
-      "latestDate": "2026-11-17",
-      "latestValue": 0.3,
+      "latestDate": "2026-11-18",
+      "latestValue": 0.27,
       "fresh": true,
       "error": null
     },
