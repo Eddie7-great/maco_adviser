@@ -1,8 +1,31 @@
 {
-  "generatedAt": "2026-11-19T07:41:28.383Z",
+  "generatedAt": "2026-11-19T20:50:55.216Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
+    {
+      "speaker": "Jefferson",
+      "speakerFullName": "Philip N. Jefferson",
+      "title": "Monetary Policy amid Frequent and Complex Shocks",
+      "rawTitle": "Jefferson, Monetary Policy amid Frequent and Complex Shocks",
+      "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20261119a.htm",
+      "description": "Speech At the International Monetary Fund and Central Bank of Brazil Conference “A Quarter Century of Inflation Targeting in Latin America: Progress, Challenges, and the Road Ahead,” Brasília, Brazil",
+      "publishedAt": "2026-11-19T14:25:00.000Z",
+      "date": "2026-11-19",
+      "source": "Federal Reserve",
+      "venue": "the International Monetary Fund and Central Bank of Brazil Conference “A Quarter Century of Inflation Targeting in Latin America: Progress, Challenges, and the Road Ahead,” Brasília, Brazil",
+      "themes": [
+        "금리·통화정책",
+        "신용·은행"
+      ],
+      "stance": "정책 경계",
+      "marketImpact": "금리 민감 성장주·장기채·리츠의 할인율을 재점검",
+      "summary": "정책금리, 물가, 고용 균형에 관한 발언입니다. 성장주 밸류에이션과 장기채·리츠 같은 금리 민감 자산의 방향성 판단에 직접적입니다.",
+      "watch": "CPI·PCE와 10년물 금리, 하이일드 OAS와 은행 대출태도",
+      "relevanceScore": 12,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/jefferson20261119a.htm",
+      "readError": null
+    },
     {
       "speaker": "Barr",
       "speakerFullName": "Michael S. Barr",
@@ -71,29 +94,6 @@
       "watch": "하이일드 OAS와 은행 대출태도, AI 투자 사이클과 생산성 지표",
       "relevanceScore": 10,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/barr20261116a.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Jefferson",
-      "speakerFullName": "Philip N. Jefferson",
-      "title": "New Technology, Old Questions: Productivity Puzzles and the Macroeconomy",
-      "rawTitle": "Jefferson, New Technology, Old Questions: Productivity Puzzles and the Macroeconomy",
-      "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20261113a.htm",
-      "description": "Speech At the University of California, San Diego Economic Roundtable, San Diego, California",
-      "publishedAt": "2026-11-14T00:00:00.000Z",
-      "date": "2026-11-14",
-      "source": "Federal Reserve",
-      "venue": "the University of California, San Diego Economic Roundtable, San Diego, California",
-      "themes": [
-        "성장·소비",
-        "AI·생산성"
-      ],
-      "stance": "구조 성장",
-      "marketImpact": "AI 인프라·소프트웨어 성장성은 우호, 고평가 구간은 선별",
-      "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
-      "watch": "AI 투자 사이클과 생산성 지표, 소매판매·고용·소기업 신용",
-      "relevanceScore": 9,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/jefferson20261113a.htm",
       "readError": null
     },
     {
