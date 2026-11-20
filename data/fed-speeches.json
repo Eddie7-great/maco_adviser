@@ -1,8 +1,31 @@
 {
-  "generatedAt": "2026-11-20T07:33:47.940Z",
+  "generatedAt": "2026-11-20T20:35:47.246Z",
   "source": "Federal Reserve",
   "feedUrl": "https://www.federalreserve.gov/feeds/speeches.xml",
   "speeches": [
+    {
+      "speaker": "Cook",
+      "speakerFullName": "Lisa D. Cook",
+      "title": "The U.S. Economy in Global Context",
+      "rawTitle": "Cook, The U.S. Economy in Global Context",
+      "url": "https://www.federalreserve.gov/newsevents/speech/cook20261120a.htm",
+      "description": "Speech At the XXIX Annual Conference of the Central Bank of Chile, Santiago, Chile",
+      "publishedAt": "2026-11-20T17:15:00.000Z",
+      "date": "2026-11-20",
+      "source": "Federal Reserve",
+      "venue": "the XXIX Annual Conference of the Central Bank of Chile, Santiago, Chile",
+      "themes": [
+        "신용·은행",
+        "성장·소비"
+      ],
+      "stance": "신용 여건 점검",
+      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
+      "summary": "신용 접근성과 은행·대출 환경을 다룬 발언입니다. 소형주, 금융주, 하이일드 채권의 자금조달 스트레스 판단에 참고됩니다.",
+      "watch": "하이일드 OAS와 은행 대출태도, 소매판매·고용·소기업 신용",
+      "relevanceScore": 10,
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/cook20261120a.htm",
+      "readError": null
+    },
     {
       "speaker": "Jefferson",
       "speakerFullName": "Philip N. Jefferson",
@@ -71,29 +94,6 @@
       "watch": "하이일드 OAS와 은행 대출태도, AI 투자 사이클과 생산성 지표, 소매판매·고용·소기업 신용",
       "relevanceScore": 13,
       "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/warsh20261116a.htm",
-      "readError": null
-    },
-    {
-      "speaker": "Barr",
-      "speakerFullName": "Michael S. Barr",
-      "title": "Some Potential Financial Stability Implications of Artificial Intelligence",
-      "rawTitle": "Barr, Some Potential Financial Stability Implications of Artificial Intelligence",
-      "url": "https://www.federalreserve.gov/newsevents/speech/barr20261116a.htm",
-      "description": "Speech At the Seventh Annual Association for Computing Machinery International Conference on Artificial Intelligence in Finance, Milan, Italy",
-      "publishedAt": "2026-11-16T10:00:00.000Z",
-      "date": "2026-11-16",
-      "source": "Federal Reserve",
-      "venue": "the Seventh Annual Association for Computing Machinery International Conference on Artificial Intelligence in Finance, Milan, Italy",
-      "themes": [
-        "신용·은행",
-        "AI·생산성"
-      ],
-      "stance": "구조 성장",
-      "marketImpact": "소형주·금융주·하이일드 채권의 자금조달 여건 확인",
-      "summary": "AI와 생산성, 금융시스템 변화를 함께 짚은 발언입니다. 반도체·소프트웨어 성장성은 우호적이나 밸류에이션 과열은 별도 점검이 필요합니다.",
-      "watch": "하이일드 OAS와 은행 대출태도, AI 투자 사이클과 생산성 지표",
-      "relevanceScore": 10,
-      "sourceUrl": "https://www.federalreserve.gov/newsevents/speech/barr20261116a.htm",
       "readError": null
     },
     {

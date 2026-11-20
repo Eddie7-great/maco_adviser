@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T07:32:21.850Z",
+  "generatedAt": "2026-11-20T20:34:53.804Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -342,10 +342,6 @@
       "note": "소비심리는 재량소비주와 경기 체감에 민감한 경고등입니다.",
       "observations": [
         {
-          "date": "2026-05-01",
-          "value": 44.8
-        },
-        {
           "date": "2026-06-01",
           "value": 49.5
         },
@@ -360,10 +356,14 @@
         {
           "date": "2026-09-01",
           "value": 48.1
+        },
+        {
+          "date": "2026-10-01",
+          "value": 48
         }
       ],
-      "latestDate": "2026-09-01",
-      "latestValue": 48.1,
+      "latestDate": "2026-10-01",
+      "latestValue": 48,
       "fresh": true,
       "error": null
     },
@@ -474,10 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-11-12",
-          "value": 3.2
-        },
-        {
           "date": "2026-11-13",
           "value": 3.23
         },
@@ -492,10 +488,14 @@
         {
           "date": "2026-11-18",
           "value": 3.47
+        },
+        {
+          "date": "2026-11-19",
+          "value": 3.52
         }
       ],
-      "latestDate": "2026-11-18",
-      "latestValue": 3.47,
+      "latestDate": "2026-11-19",
+      "latestValue": 3.52,
       "fresh": true,
       "error": null
     }
