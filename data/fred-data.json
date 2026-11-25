@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T08:54:33.081Z",
+  "generatedAt": "2026-11-25T21:51:39.583Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -45,10 +45,6 @@
       "note": "장기금리는 성장주와 주택 관련주의 밸류에이션에 직접 영향을 줍니다.",
       "observations": [
         {
-          "date": "2026-11-17",
-          "value": 5.1
-        },
-        {
           "date": "2026-11-18",
           "value": 5.07
         },
@@ -63,10 +59,14 @@
         {
           "date": "2026-11-23",
           "value": 4.92
+        },
+        {
+          "date": "2026-11-24",
+          "value": 4.91
         }
       ],
-      "latestDate": "2026-11-23",
-      "latestValue": 4.92,
+      "latestDate": "2026-11-24",
+      "latestValue": 4.91,
       "fresh": true,
       "error": null
     },
@@ -144,28 +144,28 @@
       "note": "연준이 선호하는 물가지표라 통화정책 기대에 민감합니다.",
       "observations": [
         {
-          "date": "2026-05-01",
-          "value": 131.241
-        },
-        {
           "date": "2026-06-01",
           "value": 131.106
         },
         {
           "date": "2026-07-01",
-          "value": 131.187
+          "value": 131.185
         },
         {
           "date": "2026-08-01",
-          "value": 131.611
+          "value": 131.625
         },
         {
           "date": "2026-09-01",
-          "value": 132.257
+          "value": 132.283
+        },
+        {
+          "date": "2026-10-01",
+          "value": 132.703
         }
       ],
-      "latestDate": "2026-09-01",
-      "latestValue": 132.257,
+      "latestDate": "2026-10-01",
+      "latestValue": 132.703,
       "fresh": true,
       "error": null
     },
@@ -260,11 +260,11 @@
         },
         {
           "date": "2026-07-01",
-          "value": 24611.077
+          "value": 24665.201
         }
       ],
       "latestDate": "2026-07-01",
-      "latestValue": 24611.077,
+      "latestValue": 24665.201,
       "fresh": true,
       "error": null
     },
@@ -441,10 +441,6 @@
       "note": "모기지 금리는 주택 수요와 건설 관련주를 압박하거나 완화합니다.",
       "observations": [
         {
-          "date": "2026-10-22",
-          "value": 7.32
-        },
-        {
           "date": "2026-10-29",
           "value": 7.24
         },
@@ -459,10 +455,14 @@
         {
           "date": "2026-11-19",
           "value": 7.28
+        },
+        {
+          "date": "2026-11-25",
+          "value": 7.21
         }
       ],
-      "latestDate": "2026-11-19",
-      "latestValue": 7.28,
+      "latestDate": "2026-11-25",
+      "latestValue": 7.21,
       "fresh": true,
       "error": null
     },
@@ -473,10 +473,6 @@
       "unit": "%",
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
-        {
-          "date": "2026-11-17",
-          "value": 3.43
-        },
         {
           "date": "2026-11-18",
           "value": 3.47
@@ -492,10 +488,14 @@
         {
           "date": "2026-11-23",
           "value": 3.63
+        },
+        {
+          "date": "2026-11-24",
+          "value": 3.72
         }
       ],
-      "latestDate": "2026-11-23",
-      "latestValue": 3.63,
+      "latestDate": "2026-11-24",
+      "latestValue": 3.72,
       "fresh": true,
       "error": null
     }
