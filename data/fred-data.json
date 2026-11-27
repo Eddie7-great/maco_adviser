@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T08:51:32.634Z",
+  "generatedAt": "2026-11-27T21:29:12.140Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -45,10 +45,6 @@
       "note": "장기금리는 성장주와 주택 관련주의 밸류에이션에 직접 영향을 줍니다.",
       "observations": [
         {
-          "date": "2026-11-18",
-          "value": 5.07
-        },
-        {
           "date": "2026-11-19",
           "value": 5.04
         },
@@ -63,10 +59,14 @@
         {
           "date": "2026-11-24",
           "value": 4.91
+        },
+        {
+          "date": "2026-11-25",
+          "value": 4.85
         }
       ],
-      "latestDate": "2026-11-24",
-      "latestValue": 4.91,
+      "latestDate": "2026-11-25",
+      "latestValue": 4.85,
       "fresh": true,
       "error": null
     },
@@ -474,14 +474,6 @@
       "note": "신용 스프레드 급등은 위험자산 회피와 경기 스트레스를 뜻합니다.",
       "observations": [
         {
-          "date": "2026-11-18",
-          "value": 3.47
-        },
-        {
-          "date": "2026-11-19",
-          "value": 3.52
-        },
-        {
           "date": "2026-11-20",
           "value": 3.76
         },
@@ -492,10 +484,18 @@
         {
           "date": "2026-11-24",
           "value": 3.72
+        },
+        {
+          "date": "2026-11-25",
+          "value": 3.77
+        },
+        {
+          "date": "2026-11-26",
+          "value": 3.77
         }
       ],
-      "latestDate": "2026-11-24",
-      "latestValue": 3.72,
+      "latestDate": "2026-11-26",
+      "latestValue": 3.77,
       "fresh": true,
       "error": null
     }
