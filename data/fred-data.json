@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T21:29:12.140Z",
+  "generatedAt": "2026-11-28T08:09:56.675Z",
   "source": "FRED",
   "successCount": 15,
   "failed": [],
@@ -78,14 +78,6 @@
       "note": "금리차가 낮거나 재역전되면 경기 둔화 우려가 커집니다.",
       "observations": [
         {
-          "date": "2026-11-19",
-          "value": 0.28
-        },
-        {
-          "date": "2026-11-20",
-          "value": 0.29
-        },
-        {
           "date": "2026-11-23",
           "value": 0.29
         },
@@ -96,10 +88,18 @@
         {
           "date": "2026-11-25",
           "value": 0.24
+        },
+        {
+          "date": "2026-11-26",
+          "value": 0
+        },
+        {
+          "date": "2026-11-27",
+          "value": 0.25
         }
       ],
-      "latestDate": "2026-11-25",
-      "latestValue": 0.24,
+      "latestDate": "2026-11-27",
+      "latestValue": 0.25,
       "fresh": true,
       "error": null
     },
